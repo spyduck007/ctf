@@ -1,77 +1,36 @@
-# Jekyll Theme Serial Programmer
+# spyduck007 CTF Hub
 
-> A Jekyll theme for serial programmers (-.-)
+Personal Jekyll site for my security projects, CTF write-ups, and notes. The design is a neon, hacker-inspired skin on top of the Serial Programmer theme, with dark/light modes and accent neon highlights.
 
-[Live Demo](https://sharadcodes.github.io/jekyll-theme-serial-programmer/)
+## Structure
 
-## Latest Updates 🎉
+| Path                             | Purpose                                                   |
+| -------------------------------- | --------------------------------------------------------- |
+| `pages/`                         | Top-level static pages (home, about, blog, etc.)          |
+| `write-ups/<slug>/`              | One folder per write-up with its Markdown + assets        |
+| `blog/`                          | Placeholder for future general blog posts                 |
+| `assets/`                        | CSS/JS/theme assets (icons, scripts, shared styles)       |
 
-### New Features
+## Local Development
 
-- **Math Support**: Write beautiful mathematical equations using LaTeX syntax
-  - Inline math: `$E = mc^2$`
-  - Display math: `$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$`
-- **Code Copy Button**: One-click copy code blocks with visual feedback
-  - Appears on hover at the bottom right of code blocks
-  - Shows "Copied!" feedback when clicked
-  - Works with both light and dark themes
+```bash
+bundle install
+bundle exec jekyll serve
+```
 
-## Features
+Visit `http://127.0.0.1:4000/ctf/` by default (adjust for your `baseurl`).
 
-- Responsive
-- Dark mode/Light mode
-- Syntax highlighting
-- Feed
-- Sitemap
-- and more...
+## Customizing
 
-## How to install
+- Edit `_data/author.yml` for bio, social links, and quote.
+- Update `pages/` markdown files for site sections.
+- Drop posts into `all_collections/_posts/` (e.g., `2024-05-10-challenge.md`).
+- Add assets or tweak styles in `assets/css` and `assets/js`.
 
-1. Download or clone the repo
-   `git clone https://github.com/sharadcodes/jekyll-theme-serial-programmer.git`
-2. Enter the folder
-   `cd jekyll-theme-serial-programmer`
-3. Run
-   `bundle install`
-4. Start Jekyll server
-   `bundle exec jekyll serve`
-5. Access via
-   - localhost or according to your pc configurations.
-6. Change the `_config.yml` & `_data/author.yml` files as you like.
-7. Upload the files on your repository and :sunglasses: enjoy.
+## Deployment
 
-> NOTE: You have to remove `url` and `baseurl` from `_config.yml` to use this theme for `<your-username>.github.io`
+Designed for GitHub Pages: the repository builds with `baseurl: /ctf`. You can deploy anywhere Jekyll runs (Netlify, Cloudflare Pages, etc.).
 
-## Alert!
-
-- Don't touch `categories.js` inside `assets/js` folder unless you know what you're doing, it is used for generating links for the particular category pill you click on.
-- You should use github [discussions](https://github.com/sharadcodes/jekyll-theme-serial-programmer/discussions) to ask any question.
-- Don't use issues to ask any question unless you are facing issue related to the theme, jekyll or any file.
-
-## Asking for support!
-
-Hello everyone, If you have used this theme and if it has helped you in any way or if you just want to support me for my open source work, you can support me by donating any amount.
-
-You can use the sponsor button at the top or on the right.
-
-### [Github Sponsor Page](https://github.com/sponsors/sharadcodes)
-
-# Screenshots
-
-## PC BLOG PAGE
-
-![Blog page](https://raw.githubusercontent.com/sharadcodes/jekyll-theme-serial-programmer/main/screenshots/pc_blog_dm.png)
-
-![Blog page light mode](https://raw.githubusercontent.com/sharadcodes/jekyll-theme-serial-programmer/main/screenshots/pc_blog_lm.png)
-
-## PC POST EXAMPLE
-
-![Post page](https://raw.githubusercontent.com/sharadcodes/jekyll-theme-serial-programmer/main/screenshots/pc_post.png)
-
-## PHONE BLOG PAGE
-
-![Blog page](https://raw.githubusercontent.com/sharadcodes/jekyll-theme-serial-programmer/main/screenshots/mobile_blog.png)
-
-## PHONE POST EXAMPLE
-
-![Post page](https://raw.githubusercontent.com/sharadcodes/jekyll-theme-serial-programmer/main/screenshots/mobile_post.png)
+Credits:
+- Sharad ([sharadcodes](https://github.com/sharadcodes)) for the original site code.
+- Andrew ([snowbird01](https://github.com/snowbird91)) for the CTF design.
