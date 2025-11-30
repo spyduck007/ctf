@@ -14,22 +14,22 @@ order: 1
 
 ---
 
-## Initial Analysis
+## My initial read / first impressions
 
-We are provided with a Python script `chall.py` and a `keys.json` file containing large matrices and vectors. Reading through `chall.py`, it implements a lattice-based encryption scheme very similar to Ring-LWE (Learning With Errors over Rings) or Kyber.
+We are given a Python script `chall.py` and a data file `keys.json`. The challenge implements a lattice-based encryption scheme. It looks very similar to standard Ring-LWE (Learning With Errors over Rings) or the Kyber Key Encapsulation Mechanism.
 
-The parameters are defined as:
-- `q = 3329`
-- `n = 512`
-- `k = 4`
-- Polynomial ring `R_q = Z_q[x] / (x^n + 1)`
+The parameters defined in the script are:
+- Modulus $q = 3329$
+- Polynomial degree $n = 512$
+- Dimensions $k = 4$
 
-The encryption function takes a public matrix `A`, a public vector `t`, a message `m`, and randomness terms `r`, `e1`, `e2`.
+The arithmetic operates in the polynomial ring $\mathbb{Z}_q[x] / (x^n + 1)$. This means we are dealing with polynomials of degree 511, where coefficients are integers modulo 3329, and multiplication wraps around with a sign change (negacyclic convolution).
 
-`u = A^T * r + e1`
-`v = t^T * r + e2 + floor(q/2) * m`
+The script defines an `encrypt` function and a `_vec_poly_mul` function. The encryption looks standard for LWE:
+$$u = A^T r + e_1$$
+$$v = t^T r + e_2 + \text{message\_encoding}$$
 
-However, looking at the "Encryption" section of the code, a critical vulnerability appears immediately:
+However, scrolling down to the actual execution flow in `chall.py`, I spotted the "Attack of the Clones":
 
 ```python
 r = [_small_noise(n) for _ in range(k)]
@@ -40,55 +40,72 @@ u_1, v_1 = encrypt(A_1, t_1, m_b, r, e_1, e_2)
 u_2, v_2 = encrypt(A_2, t_2, m_b, r, e_1, e_2)
 ```
 
-The challenger generates **one set** of randomness (`r`, `e1`, `e2`) and uses it to encrypt the **same message** (`m_b`) twice, but with two different public keys (`A1`, `t1`) and (`A2`, `t2`). This is a classic "nonce reuse" or "randomness reuse" attack scenario, hence the name "Attack of the Clones".
+The challenge generates a single set of ephemeral randomness—the secret vector $r$ and the error terms $e_1, e_2$—and uses them to encrypt the **same message** twice using two different public keys ($A_1$ and $A_2$).
 
-## The Vulnerability
+In Lattice cryptography, the security relies entirely on the error terms $e$ making the system noisy and unsolveable. If we can eliminate that noise, the problem collapses into a simple system of linear equations.
 
-Let's look at the structure of the ciphertexts `u1` and `u2`:
+## The Math
 
-1.  `u1 = A1^T * r + e1`
-2.  `u2 = A2^T * r + e1`
+Let's write down the equations for the two ciphertexts we are given. Note that $A$ is a matrix of polynomials, and $r, e_1$ are vectors of polynomials.
 
-Since `e1` is identical in both equations, we can subtract the second equation from the first to eliminate the error term entirely:
+1.  $u_1 = A_1^T \cdot r + e_1$
+2.  $u_2 = A_2^T \cdot r + e_1$
 
-`u1 - u2 = (A1^T * r + e1) - (A2^T * r + e1)`
-`u1 - u2 = (A1^T - A2^T) * r`
+Because the randomness was reused, the error vector $e_1$ is identical in both $u_1$ and $u_2$. This allows us to perform a simple subtraction to eliminate the error entirely:
 
-Let `delta_u = u1 - u2` and `delta_A = A1 - A2`. We now have:
+$$u_1 - u_2 = (A_1^T \cdot r + e_1) - (A_2^T \cdot r + e_1)$$
 
-`delta_u = delta_A^T * r`
+Simplifying this, we get:
 
-This is a system of linear equations. `A1` and `A2` are known public matrices (provided in `keys.json`), and `u1`, `u2` are known ciphertexts. The only unknown is `r`.
+$$u_1 - u_2 = (A_1^T - A_2^T) r$$
 
-Usually, in Lattice cryptography, finding `r` is hard because of the error term `e1` (the Learning With Errors problem). By eliminating `e1`, we reduce the problem to simple linear algebra over the finite field `Z_q`.
+Let $\Delta u = u_1 - u_2$ and $\Delta A = A_1 - A_2$. We are left with a noiseless linear equation:
 
-## Solving for r
+$$\Delta u = \Delta A^T \cdot r$$
 
-The equation `delta_u = delta_A^T * r` involves polynomial multiplication in the ring `R_q`. To solve this using standard linear algebra solvers (like Gaussian elimination), we can represent the polynomial multiplication as a matrix-vector multiplication over `Z_q`.
+Here, $\Delta u$ is known (calculated from `keys.json`), $\Delta A$ is known, and $r$ is our unknown target. Since there is no error term, we can solve for $r$ using Gaussian elimination.
 
-Since `n=512` and `k=4`, the vectors `u` and `r` effectively contain `4 * 512 = 2048` coefficients. We can construct a 2048x2048 matrix `M` where each block represents the negacyclic convolution (multiplication by `x^n = -1`) corresponding to the polynomials in `delta_A`.
+## Constructing the Solver
 
-Once we solve for `r`, we can decrypt the message. The second part of the ciphertext is:
+To solve this using a computer, we need to convert the polynomial arithmetic into linear algebra over the field $\mathbb{Z}_q$.
 
-`v1 = t1^T * r + e2 + encoded_message`
+### From Polynomials to Matrices
+Multiplication of two polynomials $a(x)$ and $b(x)$ in the ring $\mathbb{Z}_q[x] / (x^n + 1)$ can be represented as a matrix-vector multiplication. If we represent $b(x)$ as a vector of coefficients, multiplication by $a(x)$ is equivalent to multiplying by a "negacyclic" matrix formed from the coefficients of $a$.
 
-We can compute `v_calc = t1^T * r`. Then:
+For example, if $n=4$, multiplying by $a = [a_0, a_1, a_2, a_3]$ looks like this matrix:
 
-`v1 - v_calc = e2 + encoded_message`
+$$
+\begin{pmatrix}
+a_0 & -a_3 & -a_2 & -a_1 \\
+a_1 & a_0 & -a_3 & -a_2 \\
+a_2 & a_1 & a_0 & -a_3 \\
+a_3 & a_2 & a_1 & a_0
+\end{pmatrix}
+$$
 
-Since `e2` consists of "small noise", the value `v1 - v_calc` will be close to the scaled message bits. Specifically:
-- If the bit is 0, the value is close to 0 (or `q`).
-- If the bit is 1, the value is close to `q/2` (approx 1664).
+### Building the System
+Our system has dimensions $k=4$ and $n=512$.
+- The vector $r$ has $k$ polynomials, so it has $4 \times 512 = 2048$ coefficients.
+- The matrix $\Delta A^T$ is a $4 \times 4$ matrix of polynomials.
 
-## Implementation
+When we convert this to a scalar system over $\mathbb{Z}_q$, we get a massive $2048 \times 2048$ matrix. Each "cell" of the original $4 \times 4$ matrix becomes a $512 \times 512$ block representing the polynomial multiplication described above.
 
-I used **SageMath** to handle the linear algebra and polynomial arithmetic.
+I used **SageMath** for this because it handles sparse matrices and modular arithmetic natively and efficiently.
 
-1.  **Data Loading**: Parse `keys.json`.
-2.  **Difference Calculation**: Compute `delta_A = A1 - A2` and `delta_u = u1 - u2`.
-3.  **Matrix Construction**: Build the large sparse matrix `M` representing the linear transformation over `Z_q`. The `encrypt` function uses `zip` on transposed matrices, so we map the coefficients of `delta_A` carefully into the band matrix structure.
-4.  **Solving**: Use `M.solve_right(y)` to find `r`.
-5.  **Decryption**: Recompute the shared secret, subtract it from `v1`, and decode the bits based on their proximity to `q/2`.
+### Decryption
+Once we solve the linear system to recover $r$, we can decrypt the flag. We look at the second part of the ciphertext equation:
+
+$$v_1 = t_1^T \cdot r + e_2 + \text{message}$$
+
+We can calculate the "shared secret" part ourselves since we now know $r$:
+$$v_{calc} = t_1^T \cdot r$$
+
+Then we subtract it from the ciphertext:
+$$\text{diff} = v_1 - v_{calc} = e_2 + \text{message}$$
+
+The message is encoded such that a `0` bit is mapped to integer 0, and a `1` bit is mapped to integer $\lfloor q/2 \rfloor$ (around 1664). The error $e_2$ is small.
+- If a coefficient in `diff` is close to 0 (or 3329), the bit is 0.
+- If a coefficient is close to 1664, the bit is 1.
 
 ### Solution Script
 
