@@ -70,5 +70,5 @@ I'm a high school student at TJ, passionate about cybersecurity and learning thr
 </table>
 
 ### Contact
-- Discord: [hsna674](https://discord.com/users/820421191604502538)
+- Discord: [spyduck007](https://discord.com/users/820421191604502538)
 - GitHub: [hsna674](https://github.com/hsna674)
