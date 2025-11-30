@@ -1,9 +1,10 @@
 name: hsna674 (Ansh)
 dp: /assets/icons/pfp.png
-description: |
+description: "
   <p>
-    Hi, I'm Ansh, a passionate Capture the Flag (CTF) competitor. I represent <a href="https://ctftime.org/team/53812" target="_blank">TjCSC</a>, specializing in cryptography, forensics, and networking, while trying to learn other concepts such as web and rev.
+    Hi, I'm Ansh, a passionate Capture the Flag (CTF) competitor. I represent <a href='https://ctftime.org/team/53812' target='_blank'>TjCSC</a>, specializing in cryptography, forensics, and networking, while trying to learn other concepts such as web and rev.
   </p>
+"
 quote:
   text: "To know your Enemy, you must become your Enemy."
   author: "Sun Tzu"
