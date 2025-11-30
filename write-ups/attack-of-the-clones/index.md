@@ -19,15 +19,15 @@ order: 1
 We are provided with a Python script `chall.py` and a `keys.json` file containing large matrices and vectors. Reading through `chall.py`, it implements a lattice-based encryption scheme very similar to Ring-LWE (Learning With Errors over Rings) or Kyber.
 
 The parameters are defined as:
-- $q = 3329$
-- $n = 512$
-- $k = 4$
-- Polynomial ring $R_q = \mathbb{Z}_q[x] / (x^n + 1)$
+- `q = 3329`
+- `n = 512`
+- `k = 4`
+- Polynomial ring `R_q = Z_q[x] / (x^n + 1)`
 
-The encryption function takes a public matrix $A$, a public vector $t$, a message $m$, and randomness terms $r, e_1, e_2$.
+The encryption function takes a public matrix `A`, a public vector `t`, a message `m`, and randomness terms `r`, `e1`, `e2`.
 
-$$ u = A^T r + e_1 $$
-$$ v = t^T r + e_2 + \lfloor q/2 \rfloor \cdot m $$
+`u = A^T * r + e1`
+`v = t^T * r + e2 + floor(q/2) * m`
 
 However, looking at the "Encryption" section of the code, a critical vulnerability appears immediately:
 
@@ -40,55 +40,55 @@ u_1, v_1 = encrypt(A_1, t_1, m_b, r, e_1, e_2)
 u_2, v_2 = encrypt(A_2, t_2, m_b, r, e_1, e_2)
 ```
 
-The challenger generates **one set** of randomness ($r, e_1, e_2$) and uses it to encrypt the **same message** ($m\_b$) twice, but with two different public keys ($A_1, t_1$) and ($A_2, t_2$). This is a classic "nonce reuse" or "randomness reuse" attack scenario, hence the name "Attack of the Clones".
+The challenger generates **one set** of randomness (`r`, `e1`, `e2`) and uses it to encrypt the **same message** (`m_b`) twice, but with two different public keys (`A1`, `t1`) and (`A2`, `t2`). This is a classic "nonce reuse" or "randomness reuse" attack scenario, hence the name "Attack of the Clones".
 
 ## The Vulnerability
 
-Let's look at the mathematical structure of the ciphertexts $u_1$ and $u_2$:
+Let's look at the structure of the ciphertexts `u1` and `u2`:
 
-1.  $u_1 = A_1^T r + e_1$
-2.  $u_2 = A_2^T r + e_1$
+1.  `u1 = A1^T * r + e1`
+2.  `u2 = A2^T * r + e1`
 
-Since $e_1$ is identical in both equations, we can subtract the second equation from the first to eliminate the error term entirely:
+Since `e1` is identical in both equations, we can subtract the second equation from the first to eliminate the error term entirely:
 
-$$ u_1 - u_2 = (A_1^T r + e_1) - (A_2^T r + e_1) $$
-$$ u_1 - u_2 = (A_1^T - A_2^T) r $$
+`u1 - u2 = (A1^T * r + e1) - (A2^T * r + e1)`
+`u1 - u2 = (A1^T - A2^T) * r`
 
-Let $\Delta u = u_1 - u_2$ and $\Delta A = A_1 - A_2$. We now have:
+Let `delta_u = u1 - u2` and `delta_A = A1 - A2`. We now have:
 
-$$ \Delta u = \Delta A^T r $$
+`delta_u = delta_A^T * r`
 
-This is a system of linear equations. $A_1$ and $A_2$ are known public matrices (provided in `keys.json`), and $u_1, u_2$ are known ciphertexts. The only unknown is $r$.
+This is a system of linear equations. `A1` and `A2` are known public matrices (provided in `keys.json`), and `u1`, `u2` are known ciphertexts. The only unknown is `r`.
 
-Usually, in Lattice cryptography, finding $r$ is hard because of the error term $e_1$ (the Learning With Errors problem). By eliminating $e_1$, we reduce the problem to simple linear algebra over the finite field $\mathbb{Z}_q$.
+Usually, in Lattice cryptography, finding `r` is hard because of the error term `e1` (the Learning With Errors problem). By eliminating `e1`, we reduce the problem to simple linear algebra over the finite field `Z_q`.
 
 ## Solving for r
 
-The equation $\Delta u = \Delta A^T r$ involves polynomial multiplication in the ring $R_q$. To solve this using standard linear algebra solvers (like Gaussian elimination), we can represent the polynomial multiplication as a matrix-vector multiplication over $\mathbb{Z}_q$.
+The equation `delta_u = delta_A^T * r` involves polynomial multiplication in the ring `R_q`. To solve this using standard linear algebra solvers (like Gaussian elimination), we can represent the polynomial multiplication as a matrix-vector multiplication over `Z_q`.
 
-Since $n=512$ and $k=4$, the vectors $u$ and $r$ effectively contain $4 \times 512 = 2048$ coefficients. We can construct a $2048 \times 2048$ matrix $M$ where each block represents the negacyclic convolution (multiplication by $x^n = -1$) corresponding to the polynomials in $\Delta A$.
+Since `n=512` and `k=4`, the vectors `u` and `r` effectively contain `4 * 512 = 2048` coefficients. We can construct a 2048x2048 matrix `M` where each block represents the negacyclic convolution (multiplication by `x^n = -1`) corresponding to the polynomials in `delta_A`.
 
-Once we solve for $r$, we can decrypt the message. The second part of the ciphertext is:
+Once we solve for `r`, we can decrypt the message. The second part of the ciphertext is:
 
-$$ v_1 = t_1^T r + e_2 + \text{encoded\_message} $$
+`v1 = t1^T * r + e2 + encoded_message`
 
-We can compute $v_{calc} = t_1^T r$. Then:
+We can compute `v_calc = t1^T * r`. Then:
 
-$$ v_1 - v_{calc} = e_2 + \text{encoded\_message} $$
+`v1 - v_calc = e2 + encoded_message`
 
-Since $e_2$ consists of "small noise", the value $v_1 - v_{calc}$ will be close to the scaled message bits. Specifically:
-- If the bit is 0, the value is close to 0 (or $q$).
-- If the bit is 1, the value is close to $q/2 \approx 1664$.
+Since `e2` consists of "small noise", the value `v1 - v_calc` will be close to the scaled message bits. Specifically:
+- If the bit is 0, the value is close to 0 (or `q`).
+- If the bit is 1, the value is close to `q/2` (approx 1664).
 
 ## Implementation
 
 I used **SageMath** to handle the linear algebra and polynomial arithmetic.
 
 1.  **Data Loading**: Parse `keys.json`.
-2.  **Difference Calculation**: Compute $\Delta A = A_1 - A_2$ and $\Delta u = u_1 - u_2$.
-3.  **Matrix Construction**: Build the large sparse matrix $M$ representing the linear transformation over $\mathbb{Z}_q$. The `encrypt` function uses `zip` on transposed matrices, so we map the coefficients of $\Delta A$ carefully into the band matrix structure.
-4.  **Solving**: Use `M.solve_right(y)` to find $r$.
-5.  **Decryption**: Recompute the shared secret, subtract it from $v_1$, and decode the bits based on their proximity to $q/2$.
+2.  **Difference Calculation**: Compute `delta_A = A1 - A2` and `delta_u = u1 - u2`.
+3.  **Matrix Construction**: Build the large sparse matrix `M` representing the linear transformation over `Z_q`. The `encrypt` function uses `zip` on transposed matrices, so we map the coefficients of `delta_A` carefully into the band matrix structure.
+4.  **Solving**: Use `M.solve_right(y)` to find `r`.
+5.  **Decryption**: Recompute the shared secret, subtract it from `v1`, and decode the bits based on their proximity to `q/2`.
 
 ### Solution Script
 
