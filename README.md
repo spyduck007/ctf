@@ -33,4 +33,4 @@ Designed for GitHub Pages: the repository builds with `baseurl: /ctf`. You can d
 
 Credits:
 - Sharad ([sharadcodes](https://github.com/sharadcodes)) for the original site code.
-- Andrew ([snowbird01](https://github.com/snowbird91)) for the CTF design.
+- Andrew ([snowbird91](https://github.com/snowbird91)) for the CTF design.
