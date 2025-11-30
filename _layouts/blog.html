@@ -3,24 +3,70 @@
   {% include head.html %}
   <body>
     <main>
-      {% include header.html %} {% include bio.html %}
-      <section class="articles">
-        {% for post in site.posts %}
-        <article class="article">
-          <h2 class="article-title">
-            <a href="{{site.baseurl}}{{post.url}}"> {{post.title}} </a>
-          </h2>
-          <small class="date">{{post.date | date_to_string}}</small>
-          <div class="categories">
-            {% for c in post.categories %}
-            <a href="#!" data-base-url="{{site.baseurl}}" class="category"
-              >{{c}}</a
-            >
-            {% endfor %}
-          </div>
-        </article>
-        {%endfor%}
+      {% include header.html %}
+      {% if page.show_bio %} {% include bio.html %} {% endif %}
+
+      {% if page.show_intro != false and content and content != "" %}
+      <section class="page home-overview">
+        <div class="content">{{content}}</div>
       </section>
+      {% endif %}
+      {% assign list_source = page.list_source | default: "writeups" %}
+      {% unless list_source == "none" %}
+        {% if list_source == "writeups" %}
+        {% assign articles = site.pages | where: "writeup", true %}
+        {% assign articles = articles | sort: "order" | reverse %}
+        {% elsif list_source == "blog_posts" %}
+        {% assign articles = site.pages | where: "blog_post", true | sort: "date" | reverse %}
+        {% else %}
+        {% assign articles = site.posts | sort: "date" | reverse %}
+        {% endif %}
+        <section class="articles" id="blog">
+          {% if articles == empty %}
+          {% unless page.hide_placeholder %}
+          {% assign placeholder_message = page.placeholder_message %}
+          {% if placeholder_message == nil %}
+          {% if page.title == "Write-ups" %}
+          {% assign placeholder_message = "Write-ups will appear here when published." %}
+          {% elsif page.title == "Blog" %}
+          {% assign placeholder_message = "Blog posts will appear here once published." %}
+          {% else %}
+          {% assign placeholder_message = "Posts will appear here once published." %}
+          {% endif %}
+          {% endif %}
+          <article
+            class="article"
+            data-tags="{{post.categories | join: ',' | downcase}}"
+            data-date="{{post.date | date_to_xmlschema}}"
+            data-order="{{post.order | default: 0}}"
+          >
+            <h2 class="article-title">Coming soon</h2>
+            <p class="article-desc">{{placeholder_message}}</p>
+          </article>
+          {% endunless %}
+          {% else %}
+          {% for post in articles %}
+          <article
+            class="article"
+            data-tags="{{post.categories | join: ',' | downcase}}"
+            data-date="{{post.date | date_to_xmlschema}}"
+          >
+            <h2 class="article-title">
+              <a href="{{site.baseurl}}{{post.url}}"> {{post.title}} </a>
+            </h2>
+            <small class="date">{{post.date | date_to_string}}</small>
+            <div class="categories">
+              {% for c in post.categories %}
+              <a href="#!" data-base-url="{{site.baseurl}}" class="category"
+                >{{c}}</a
+              >
+              {% endfor %}
+            </div>
+          </article>
+          {%endfor%}
+          {% endif %}
+        </section>
+      {% endunless %}
       {% include footer.html %}
     </main>
     {% include category-modal.html%}

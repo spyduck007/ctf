@@ -1,15 +1,30 @@
 <section id="bio">
   <section id="img-wrapper">
-    <img src="{{site.data.author.dp}}" alt="" />
+    <img
+      src="{{site.baseurl}}{{site.data.author.dp}}"
+      alt="{{site.data.author.name}} profile photo"
+    />
   </section>
   <section id="bio-wrapper">
     <div id="text-wrapper">{{site.data.author.description}}</div>
+    {% assign quote_data = site.data.author.quote %}
+    {% if quote_data and quote_data.text %}
+    <div class="quote-box">
+      <span class="quote-mark">“</span>{{quote_data.text}}
+      <span class="quote-mark end">”</span>
+      {% if quote_data.author %}
+      <span class="quote-author">— {{quote_data.author}}</span>
+      {% endif %}
+    </div>
+    {% endif %} {% if site.data.author.contact and site.data.author.contact.size >
+    0 %}
     <div id="social-wrapper">
       {% for i in site.data.author.contact %}
-      <a href="{{i.url}}" target="_blank">
+      <a href="{{i.url}}" target="_blank" aria-label="{{i.title}}">
         <img src="{{site.baseurl}}/assets/icons/{{i.title}}.png" alt="" />
       </a>
       {%endfor%}
     </div>
+    {% endif %}
   </section>
 </section>

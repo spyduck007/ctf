@@ -1,23 +1,16 @@
-name: Sharad Raj
-dp: https://avatars2.githubusercontent.com/u/36638057?s=460&u=0cbe4fd6b5a3655d91b3eb86db834d0829a0c086&v=4
+name: hsna674 (Ansh)
+dp: /assets/icons/pfp.png
 description: "
   <p>
-    Developed by Sharad Raj who lives in India building useful things for the world.
+    Hi, I'm Ansh, a passionate Capture the Flag (CTF) competitor. I represent <a href="https://ctftime.org/team/53812" target="_blank">TjCSC</a>, specializing in cryptography, forensics, and networking, while trying to learn other concepts such as web and rev.
   </p>
-  <br/>
-  <p>
-    You should follow him on <a href='https://github.com/sharadcodes' target='_blank'>Github</a>
-  </P>
 "
-email: dev_sharad@outlook.com
+quote:
+  text: "To know your Enemy, you must become your Enemy."
+  author: "Sun Tzu"
+email: ""
 contact:
-  - title: linkedin
-    url: https://www.linkedin.com/in/srsmaurya
+  - title: discord
+    url: https://discord.com/users/820421191604502538
   - title: github
-    url: https://github.com/sharadcodes
-  - title: twitter
-    url: https://twitter.com/iamsharadraj
-  - title: dev
-    url: https://dev.to/sharadcodes
-  - title: email
-    url: mailto:dev_sharad@outlook.com
+    url: https://github.com/hsna674

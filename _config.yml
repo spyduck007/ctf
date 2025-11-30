@@ -1,10 +1,15 @@
-title: Jekyll Serial Programmer
+title: hsna674
+description: >
+  A blank Serial Programmer Jekyll theme ready for customization.
+url: https://hsna674.github.io
+baseurl: "/ctf"
 markdown: kramdown
+kramdown:
+  input: GFM
 
-# for atom feed
 author:
-  name: Sharad Raj Singh Maurya
-  email: dev_sharad@outlook.com
+  name: "hsna674 (Ansh)"
+  email: ""
 
 plugins:
   - jemoji
@@ -12,15 +17,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
 
-collections_dir: all_collections
-collections:
-  posts:
-    output: true
-
 defaults:
   - scope:
-      path: "_posts"
+      path: "write-ups"
     values:
       layout: "post"
-      permalink: /posts/:title/
 exclude: ["sitemap.xml", "feed.xml", "LICENSE", "README.md"]
