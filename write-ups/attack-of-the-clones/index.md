@@ -16,20 +16,26 @@ order: 1
 
 ## My initial read / first impressions
 
-We are given a Python script `chall.py` and a data file `keys.json`. The challenge implements a lattice-based encryption scheme. It looks very similar to standard Ring-LWE (Learning With Errors over Rings) or the Kyber Key Encapsulation Mechanism.
+We are given a Python script `chall.py` and a data file `keys.json`. The challenge implements a specific type of cryptography based on lattices. If you are familiar with Ring-LWE (Learning With Errors) or the Kyber algorithm used in post-quantum cryptography, this structure looks very familiar.
 
-The parameters defined in the script are:
-- Modulus $q = 3329$
-- Polynomial degree $n = 512$
-- Dimensions $k = 4$
+The script defines a few specific parameters:
+- **Modulus (q):** 3329 (all numbers are kept within this range).
+- **Dimension (n):** 512 (we are working with polynomials that have 512 coefficients).
+- **k:** 4 (the matrices are 4x4 grids of these polynomials).
 
-The arithmetic operates in the polynomial ring $\mathbb{Z}_q[x] / (x^n + 1)$. This means we are dealing with polynomials of degree 511, where coefficients are integers modulo 3329, and multiplication wraps around with a sign change (negacyclic convolution).
+The math operates in a "Polynomial Ring". In simple terms, this means we add and multiply polynomials. If the coefficients get too big, we take the remainder modulo 3329. If the polynomial gets too long (degree 512 or higher), we wrap it around using a rule where `x^512` becomes `-1`.
 
-The script defines an `encrypt` function and a `_vec_poly_mul` function. The encryption looks standard for LWE:
-$$u = A^T r + e_1$$
-$$v = t^T r + e_2 + \text{message\_encoding}$$
+The encryption function looks standard for this type of cryptography. It takes a public matrix `A`, a public vector `t`, and a message. It generates a secret vector `r` and two error vectors, `e1` and `e2`.
 
-However, scrolling down to the actual execution flow in `chall.py`, I spotted the "Attack of the Clones":
+The equations for the ciphertext parts `u` and `v` are essentially:
+1. `u = A * r + e1`
+2. `v = t * r + e2 + message`
+
+The security of this system relies entirely on `e1` and `e2`. These are random "noise" that make it mathematically impossible to figure out `r` or the `message` just by looking at the public keys and ciphertexts.
+
+## The Vulnerability
+
+I looked at the specific section of the code that runs the encryption:
 
 ```python
 r = [_small_noise(n) for _ in range(k)]
@@ -40,74 +46,78 @@ u_1, v_1 = encrypt(A_1, t_1, m_b, r, e_1, e_2)
 u_2, v_2 = encrypt(A_2, t_2, m_b, r, e_1, e_2)
 ```
 
-The challenge generates a single set of ephemeral randomness—the secret vector $r$ and the error terms $e_1, e_2$—and uses them to encrypt the **same message** twice using two different public keys ($A_1$ and $A_2$).
+This is where the "Attack of the Clones" happens. The challenger generates the randomness **once**. Specifically, the secret vector `r` and the error vector `e1` are generated a single time.
 
-In Lattice cryptography, the security relies entirely on the error terms $e$ making the system noisy and unsolveable. If we can eliminate that noise, the problem collapses into a simple system of linear equations.
+Then, the script encrypts the **same message** twice.
+1. First, using Public Key 1 (`A1`, `t1`).
+2. Second, using Public Key 2 (`A2`, `t2`).
 
-## The Math
+Because the randomness was reused, we can break the encryption. The vulnerability lies in the fact that the error term `e1` is identical in both encrypted outputs.
 
-Let's write down the equations for the two ciphertexts we are given. Note that $A$ is a matrix of polynomials, and $r, e_1$ are vectors of polynomials.
+## The Logic
 
-1.  $u_1 = A_1^T \cdot r + e_1$
-2.  $u_2 = A_2^T \cdot r + e_1$
+Let's look at the equations for the first part of the ciphertext (`u`) for both encryptions:
 
-Because the randomness was reused, the error vector $e_1$ is identical in both $u_1$ and $u_2$. This allows us to perform a simple subtraction to eliminate the error entirely:
+1. `u1 = A1 * r + e1`
+2. `u2 = A2 * r + e1`
 
-$$u_1 - u_2 = (A_1^T \cdot r + e_1) - (A_2^T \cdot r + e_1)$$
+In algebra, if you have two equations with the same unknown value added to them, you can subtract the equations to get rid of that value. Here, we can subtract the second equation from the first to completely eliminate the error `e1`.
 
-Simplifying this, we get:
+`u1 - u2 = (A1 * r + e1) - (A2 * r + e1)`
 
-$$u_1 - u_2 = (A_1^T - A_2^T) r$$
+The `e1` cancels out, leaving us with:
 
-Let $\Delta u = u_1 - u_2$ and $\Delta A = A_1 - A_2$. We are left with a noiseless linear equation:
+`u1 - u2 = (A1 - A2) * r`
 
-$$\Delta u = \Delta A^T \cdot r$$
+We know `u1` and `u2` from the file provided. We also know the public keys `A1` and `A2`. We can calculate the difference between the ciphertexts (let's call it `diff_u`) and the difference between the keys (let's call it `diff_A`).
 
-Here, $\Delta u$ is known (calculated from `keys.json`), $\Delta A$ is known, and $r$ is our unknown target. Since there is no error term, we can solve for $r$ using Gaussian elimination.
+We are left with a clean linear equation with no noise:
+`diff_u = diff_A * r`
+
+This is just a system of linear equations. We can solve this to find `r` directly.
 
 ## Constructing the Solver
 
-To solve this using a computer, we need to convert the polynomial arithmetic into linear algebra over the field $\mathbb{Z}_q$.
+To solve this using a computer, we need to translate the "polynomial multiplication" used in the encryption into standard linear algebra (matrices and vectors of numbers).
 
 ### From Polynomials to Matrices
-Multiplication of two polynomials $a(x)$ and $b(x)$ in the ring $\mathbb{Z}_q[x] / (x^n + 1)$ can be represented as a matrix-vector multiplication. If we represent $b(x)$ as a vector of coefficients, multiplication by $a(x)$ is equivalent to multiplying by a "negacyclic" matrix formed from the coefficients of $a$.
+When you multiply two polynomials in this specific ring, it is equivalent to multiplying a vector by a special kind of matrix called a "negacyclic matrix".
 
-For example, if $n=4$, multiplying by $a = [a_0, a_1, a_2, a_3]$ looks like this matrix:
-
-$$
-\begin{pmatrix}
-a_0 & -a_3 & -a_2 & -a_1 \\
-a_1 & a_0 & -a_3 & -a_2 \\
-a_2 & a_1 & a_0 & -a_3 \\
-a_3 & a_2 & a_1 & a_0
-\end{pmatrix}
-$$
+If we treat our unknown `r` as a long list of numbers, multiplying it by a polynomial coefficient involves shifting the list.
+- Multiplying by a constant is just standard multiplication.
+- Multiplying by `x` shifts every number to the right by one spot.
+- The number that falls off the end wraps around to the front, but its sign is flipped (multiplied by -1).
 
 ### Building the System
-Our system has dimensions $k=4$ and $n=512$.
-- The vector $r$ has $k$ polynomials, so it has $4 \times 512 = 2048$ coefficients.
-- The matrix $\Delta A^T$ is a $4 \times 4$ matrix of polynomials.
+We have `k=4` polynomials, each with `n=512` coefficients.
+- The vector `r` contains 4 polynomials, so it has `4 * 512 = 2048` total variables.
+- The matrix we built (`diff_A`) is a 4x4 grid of polynomials.
 
-When we convert this to a scalar system over $\mathbb{Z}_q$, we get a massive $2048 \times 2048$ matrix. Each "cell" of the original $4 \times 4$ matrix becomes a $512 \times 512$ block representing the polynomial multiplication described above.
-
-I used **SageMath** for this because it handles sparse matrices and modular arithmetic natively and efficiently.
+When we convert this to a standard system of numbers, we get a massive grid of size 2048x2048. I used **SageMath** to build this matrix because it has excellent built-in tools for handling sparse matrices (matrices mostly filled with zeros) and doing math with a modulus.
 
 ### Decryption
-Once we solve the linear system to recover $r$, we can decrypt the flag. We look at the second part of the ciphertext equation:
+Once we solve the system, we have the secret vector `r`. Now we can look at the second part of the ciphertext to get the flag.
 
-$$v_1 = t_1^T \cdot r + e_2 + \text{message}$$
+The equation for the second part is:
+`v1 = t1 * r + e2 + message`
 
-We can calculate the "shared secret" part ourselves since we now know $r$:
-$$v_{calc} = t_1^T \cdot r$$
+Since we know the public key `t1` and we just recovered `r`, we can calculate the "shared secret" part ourselves:
+`shared_secret = t1 * r`
 
-Then we subtract it from the ciphertext:
-$$\text{diff} = v_1 - v_{calc} = e_2 + \text{message}$$
+Now we subtract that from the ciphertext:
+`remainder = v1 - shared_secret`
 
-The message is encoded such that a `0` bit is mapped to integer 0, and a `1` bit is mapped to integer $\lfloor q/2 \rfloor$ (around 1664). The error $e_2$ is small.
-- If a coefficient in `diff` is close to 0 (or 3329), the bit is 0.
-- If a coefficient is close to 1664, the bit is 1.
+Mathematically, `remainder` is equal to `e2 + message`.
+- `e2` is very small "noise".
+- The `message` is encoded bits. A binary `0` is encoded as the number 0. A binary `1` is encoded as a number roughly half the size of the modulus (approx. 1664).
 
-### Solution Script
+So, to decrypt, we just look at each number in the remainder:
+- If the number is close to 0 (or close to 3329), the bit is **0**.
+- If the number is close to 1664, the bit is **1**.
+
+## Solution Script
+
+Here is the final SageMath script. It loads the keys, constructs the large linear system by computing the difference between the two instances, solves for the reused randomness `r`, and decrypts the flag.
 
 ```python
 import json
