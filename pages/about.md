@@ -5,7 +5,7 @@ permalink: /about/
 show_bio: false
 ---
 
-## What's up! I'm Ansh (hsna674)
+## What's up! I'm Ansh (spyduck007)
 
 I'm a high school student at TJ, passionate about cybersecurity and learning through CTFs. Most of my hands-on work happens with my club team:
 
@@ -71,4 +71,4 @@ I'm a high school student at TJ, passionate about cybersecurity and learning thr
 
 ### Contact
 - Discord: [spyduck007](https://discord.com/users/820421191604502538)
-- GitHub: [hsna674](https://github.com/hsna674)
+- GitHub: [spyduck007](https://github.com/spyduck007)
