@@ -459,12 +459,26 @@ main {
   border: 1px solid rgba(91, 214, 255, 0.2);
 }
 
+.content pre code {
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
 @media (prefers-color-scheme: light) {
   .content code,
   .content pre {
     color: var(--white-2);
     background: var(--gray-2_5) !important;
     border-color: rgba(31, 160, 242, 0.2);
+  }
+
+  .content pre code {
+    color: inherit;
+    background: transparent !important;
+    border: none;
   }
 }
 
@@ -475,6 +489,12 @@ main {
     background: var(--gray-2_5) !important;
     border-color: rgba(31, 160, 242, 0.2);
   }
+
+  .content pre code {
+    color: inherit;
+    background: transparent !important;
+    border: none;
+  }
 }
 
 [data-theme="dark"] {
@@ -483,6 +503,12 @@ main {
     color: var(--accent-blue);
     background: rgba(91, 214, 255, 0.08);
     border-color: var(--border-strong);
+  }
+
+  .content pre code {
+    color: inherit;
+    background: transparent !important;
+    border: none;
   }
 }
 
