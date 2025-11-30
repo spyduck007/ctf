@@ -30,20 +30,20 @@ body {
   padding: 2.5rem;
   background: radial-gradient(
       circle at 10% 20%,
-      rgba(59, 247, 166, 0.1),
+      rgba(255, 91, 92, 0.12),
       transparent 30%
     ),
     radial-gradient(
       circle at 85% 12%,
-      rgba(88, 196, 255, 0.12),
+      rgba(255, 142, 60, 0.14),
       transparent 26%
     ),
     radial-gradient(
       circle at 20% 82%,
-      rgba(43, 241, 211, 0.08),
+      rgba(255, 191, 95, 0.1),
       transparent 28%
     ),
-    linear-gradient(180deg, #050b12, #040a10 45%, #050b12 100%);
+    linear-gradient(180deg, #090303, #060202 45%, #090303 100%);
   position: relative;
   overflow-x: hidden;
 }
@@ -52,59 +52,59 @@ body {
   body {
     background: radial-gradient(
         circle at 12% 18%,
-        rgba(11, 191, 146, 0.18),
+        rgba(255, 108, 108, 0.22),
         transparent 32%
       ),
       radial-gradient(
         circle at 78% 10%,
-        rgba(31, 160, 242, 0.2),
+        rgba(255, 150, 70, 0.24),
         transparent 30%
       ),
       radial-gradient(
         circle at 20% 82%,
-        rgba(11, 191, 146, 0.14),
+        rgba(255, 176, 90, 0.18),
         transparent 28%
       ),
-      linear-gradient(180deg, #f2f9ff, #e6f3fb 55%, #f8fcff);
+      linear-gradient(180deg, #fff3ec, #ffe4d6 55%, #fff6ef);
   }
 }
 
 html[data-theme="light"] body {
   background: radial-gradient(
       circle at 12% 18%,
-      rgba(11, 191, 146, 0.18),
+      rgba(255, 108, 108, 0.22),
       transparent 32%
     ),
     radial-gradient(
       circle at 78% 10%,
-      rgba(31, 160, 242, 0.2),
+      rgba(255, 150, 70, 0.24),
       transparent 30%
     ),
     radial-gradient(
       circle at 20% 82%,
-      rgba(11, 191, 146, 0.14),
+      rgba(255, 176, 90, 0.18),
       transparent 28%
     ),
-    linear-gradient(180deg, #f2f9ff, #e6f3fb 55%, #f8fcff);
+    linear-gradient(180deg, #fff3ec, #ffe4d6 55%, #fff6ef);
 }
 
 html[data-theme="dark"] body {
   background: radial-gradient(
       circle at 10% 20%,
-      rgba(59, 247, 166, 0.1),
+      rgba(255, 91, 92, 0.12),
       transparent 30%
     ),
     radial-gradient(
       circle at 85% 12%,
-      rgba(88, 196, 255, 0.12),
+      rgba(255, 142, 60, 0.14),
       transparent 26%
     ),
     radial-gradient(
       circle at 20% 82%,
-      rgba(43, 241, 211, 0.08),
+      rgba(255, 191, 95, 0.1),
       transparent 28%
     ),
-    linear-gradient(180deg, #050b12, #040a10 45%, #050b12 100%);
+    linear-gradient(180deg, #090303, #060202 45%, #090303 100%);
 }
 
 body::before {
@@ -143,12 +143,12 @@ body::after {
   inset: 0;
   background: radial-gradient(
       circle at 50% 0,
-      rgba(88, 196, 255, 0.12),
+      rgba(255, 142, 60, 0.16),
       transparent 35%
     ),
     radial-gradient(
       circle at 12% 75%,
-      rgba(59, 247, 166, 0.09),
+      rgba(255, 91, 92, 0.12),
       transparent 35%
     );
   pointer-events: none;
@@ -179,8 +179,8 @@ header .brand {
   align-items: center;
   gap: 0.65rem;
   text-transform: uppercase;
-  text-shadow: 0 0 16px rgba(58, 247, 166, 0.15),
-    0 0 8px rgba(72, 168, 255, 0.25);
+  text-shadow: 0 0 16px rgba(255, 91, 92, 0.18),
+    0 0 8px rgba(255, 142, 60, 0.28);
 }
 .site-title::before {
   content: "▸";
@@ -249,12 +249,12 @@ main {
   border-radius: inherit;
   background: radial-gradient(
       circle at 12% 18%,
-      rgba(59, 247, 166, 0.12),
+      rgba(255, 91, 92, 0.16),
       transparent 35%
     ),
     radial-gradient(
       circle at 85% 0%,
-      rgba(91, 214, 255, 0.12),
+      rgba(255, 142, 60, 0.16),
       transparent 35%
     );
   opacity: 0.35;
@@ -264,7 +264,7 @@ main {
 .article-header {
   margin-bottom: 2.5rem;
   padding-bottom: 1.2rem;
-  border-bottom: 1px solid rgba(88, 196, 255, 0.35);
+  border-bottom: 1px solid rgba(255, 142, 60, 0.35);
   position: relative;
 }
 .article-header::after {
@@ -275,9 +275,9 @@ main {
   width: 120px;
   height: 3px;
   background: linear-gradient(
-    90deg,
-    rgba(59, 247, 166, 0.7),
-    rgba(88, 196, 255, 0.6)
+      90deg,
+      rgba(255, 91, 92, 0.75),
+      rgba(255, 142, 60, 0.6)
   );
   border-radius: 999px;
 }
@@ -288,7 +288,7 @@ main {
   font-family: "Space Grotesk", "IBM Plex Mono", monospace;
   color: var(--white-1);
   letter-spacing: 0.02em;
-  text-shadow: 0 0 12px rgba(58, 247, 166, 0.12);
+  text-shadow: 0 0 12px rgba(255, 91, 92, 0.15);
 }
 
 .article .date {
@@ -307,9 +307,9 @@ main {
   display: block;
   color: var(--white-1);
   background: linear-gradient(
-    120deg,
-    rgba(59, 247, 166, 0.18),
-    rgba(91, 214, 255, 0.2)
+      120deg,
+      rgba(255, 91, 92, 0.2),
+      rgba(255, 142, 60, 0.24)
   );
   border-radius: 14px;
   font-size: 0.72rem;
@@ -318,14 +318,14 @@ main {
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border: 1px solid rgba(91, 214, 255, 0.4);
+  border: 1px solid rgba(255, 142, 60, 0.4);
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   transition: all 0.2s ease-in-out;
 }
 .categories .category:hover {
   border-color: var(--accent-green);
   color: var(--accent-green);
-  box-shadow: 0 0 12px rgba(91, 214, 255, 0.3);
+  box-shadow: 0 0 12px rgba(255, 142, 60, 0.3);
 }
 
 /* markdown content */
@@ -367,7 +367,7 @@ main {
 }
 .content a {
   color: var(--accent-green);
-  border-bottom: 1px solid rgba(59, 247, 166, 0.35);
+  border-bottom: 1px solid rgba(255, 91, 92, 0.35);
 }
 .content a:hover {
   color: var(--accent-blue);
@@ -379,9 +379,9 @@ main {
   font-style: italic;
   border-left: 3px solid var(--accent-blue);
   background: linear-gradient(
-    120deg,
-    rgba(59, 247, 166, 0.08),
-    rgba(88, 196, 255, 0.08)
+      120deg,
+      rgba(255, 91, 92, 0.1),
+      rgba(255, 142, 60, 0.1)
   );
   border-radius: 10px;
 }
@@ -414,12 +414,12 @@ main {
   background: rgba(255, 255, 255, 0.01);
 }
 .content table th {
-  background-color: rgba(91, 214, 255, 0.12);
+  background-color: rgba(255, 142, 60, 0.16);
   color: var(--white-1);
-  border: 1px solid rgba(91, 214, 255, 0.3);
+  border: 1px solid rgba(255, 142, 60, 0.3);
 }
 .content table * {
-  border: 1px solid rgba(91, 214, 255, 0.25);
+  border: 1px solid rgba(255, 142, 60, 0.25);
   padding: 0.4rem 0.5rem;
 }
 .content img {
@@ -442,7 +442,7 @@ main {
 }
 
 .content pre {
-  background: linear-gradient(145deg, #0d2030, #0b1624);
+  background: linear-gradient(145deg, #2c1011, #180707);
   padding: 1rem 1.5rem;
   margin-bottom: 1.6rem;
   border-radius: 12px;
@@ -454,9 +454,9 @@ main {
   padding: 3px 5px;
   color: var(--accent-blue);
   white-space: pre;
-  background: rgba(91, 214, 255, 0.08);
+  background: rgba(255, 142, 60, 0.12);
   border-radius: 6px;
-  border: 1px solid rgba(91, 214, 255, 0.2);
+  border: 1px solid rgba(255, 142, 60, 0.28);
 }
 
 .content pre code {
@@ -472,7 +472,7 @@ main {
   .content pre {
     color: var(--white-2);
     background: var(--gray-2_5) !important;
-    border-color: rgba(31, 160, 242, 0.2);
+    border-color: rgba(255, 125, 45, 0.2);
   }
 
   .content pre code {
@@ -487,7 +487,7 @@ main {
   .content pre {
     color: var(--white-2);
     background: var(--gray-2_5) !important;
-    border-color: rgba(31, 160, 242, 0.2);
+    border-color: rgba(255, 125, 45, 0.2);
   }
 
   .content pre code {
@@ -501,7 +501,7 @@ main {
   .content code,
   .content pre {
     color: var(--accent-blue);
-    background: rgba(91, 214, 255, 0.08);
+    background: rgba(255, 142, 60, 0.12);
     border-color: var(--border-strong);
   }
 

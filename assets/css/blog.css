@@ -30,20 +30,20 @@ body {
   padding: 2.5rem;
   background: radial-gradient(
       circle at 10% 20%,
-      rgba(59, 247, 166, 0.1),
+      rgba(255, 91, 92, 0.12),
       transparent 30%
     ),
     radial-gradient(
       circle at 85% 12%,
-      rgba(88, 196, 255, 0.12),
+      rgba(255, 142, 60, 0.14),
       transparent 26%
     ),
     radial-gradient(
       circle at 20% 82%,
-      rgba(43, 241, 211, 0.08),
+      rgba(255, 191, 95, 0.1),
       transparent 28%
     ),
-    linear-gradient(180deg, #050b12, #040a10 45%, #050b12 100%);
+    linear-gradient(180deg, #090303, #060202 45%, #090303 100%);
   position: relative;
   overflow-x: hidden;
 }
@@ -52,59 +52,59 @@ body {
   body {
     background: radial-gradient(
         circle at 12% 18%,
-        rgba(11, 191, 146, 0.18),
+        rgba(255, 108, 108, 0.22),
         transparent 32%
       ),
       radial-gradient(
         circle at 78% 10%,
-        rgba(31, 160, 242, 0.2),
+        rgba(255, 150, 70, 0.24),
         transparent 30%
       ),
       radial-gradient(
         circle at 20% 82%,
-        rgba(11, 191, 146, 0.14),
+        rgba(255, 176, 90, 0.18),
         transparent 28%
       ),
-      linear-gradient(180deg, #f2f9ff, #e6f3fb 55%, #f8fcff);
+      linear-gradient(180deg, #fff3ec, #ffe4d6 55%, #fff6ef);
   }
 }
 
 html[data-theme="light"] body {
   background: radial-gradient(
       circle at 12% 18%,
-      rgba(11, 191, 146, 0.18),
+      rgba(255, 108, 108, 0.22),
       transparent 32%
     ),
     radial-gradient(
       circle at 78% 10%,
-      rgba(31, 160, 242, 0.2),
+      rgba(255, 150, 70, 0.24),
       transparent 30%
     ),
     radial-gradient(
       circle at 20% 82%,
-      rgba(11, 191, 146, 0.14),
+      rgba(255, 176, 90, 0.18),
       transparent 28%
     ),
-    linear-gradient(180deg, #f2f9ff, #e6f3fb 55%, #f8fcff);
+    linear-gradient(180deg, #fff3ec, #ffe4d6 55%, #fff6ef);
 }
 
 html[data-theme="dark"] body {
   background: radial-gradient(
       circle at 10% 20%,
-      rgba(59, 247, 166, 0.1),
+      rgba(255, 91, 92, 0.12),
       transparent 30%
     ),
     radial-gradient(
       circle at 85% 12%,
-      rgba(88, 196, 255, 0.12),
+      rgba(255, 142, 60, 0.14),
       transparent 26%
     ),
     radial-gradient(
       circle at 20% 82%,
-      rgba(43, 241, 211, 0.08),
+      rgba(255, 191, 95, 0.1),
       transparent 28%
     ),
-    linear-gradient(180deg, #050b12, #040a10 45%, #050b12 100%);
+    linear-gradient(180deg, #090303, #060202 45%, #090303 100%);
 }
 
 body::before {
@@ -143,12 +143,12 @@ body::after {
   inset: 0;
   background: radial-gradient(
       circle at 50% 0,
-      rgba(88, 196, 255, 0.12),
+      rgba(255, 142, 60, 0.16),
       transparent 35%
     ),
     radial-gradient(
       circle at 12% 75%,
-      rgba(59, 247, 166, 0.09),
+      rgba(255, 91, 92, 0.12),
       transparent 35%
     );
   pointer-events: none;
@@ -189,8 +189,8 @@ header .site-title {
   align-items: center;
   gap: 0.75rem;
   text-transform: uppercase;
-  text-shadow: 0 0 16px rgba(58, 247, 166, 0.15),
-    0 0 8px rgba(72, 168, 255, 0.25);
+  text-shadow: 0 0 16px rgba(255, 91, 92, 0.18),
+    0 0 8px rgba(255, 142, 60, 0.28);
 }
 header .site-title::before {
   content: "▸";
@@ -245,8 +245,8 @@ header .site-title:hover {
   padding: 1.35rem;
   background: linear-gradient(
       135deg,
-      rgba(65, 255, 199, 0.08),
-      rgba(73, 149, 255, 0.06)
+      rgba(255, 95, 92, 0.12),
+      rgba(255, 150, 70, 0.1)
     ),
     var(--panel-glass);
   border-radius: 18px;
@@ -256,8 +256,8 @@ header .site-title:hover {
 #img-wrapper img {
   border-radius: 50%;
   max-width: 110px;
-  border: 2px solid rgba(91, 214, 255, 0.35);
-  box-shadow: 0 0 0 5px rgba(63, 247, 166, 0.08);
+  border: 2px solid rgba(255, 142, 60, 0.35);
+  box-shadow: 0 0 0 5px rgba(255, 91, 92, 0.1);
 }
 #bio-wrapper {
   margin-left: 0.2rem;
@@ -272,7 +272,7 @@ header .site-title:hover {
 }
 #text-wrapper a {
   color: var(--accent-green);
-  border-bottom: 1px solid rgba(59, 247, 166, 0.35);
+  border-bottom: 1px solid rgba(255, 91, 92, 0.35);
 }
 #text-wrapper a:hover {
   color: var(--accent-blue);
@@ -283,7 +283,7 @@ header .site-title:hover {
 }
 #social-wrapper img {
   filter: invert() brightness(1.2)
-    drop-shadow(0 0 6px rgba(91, 214, 255, 0.35));
+    drop-shadow(0 0 6px rgba(255, 142, 60, 0.35));
   width: 26px;
   height: 26px;
   margin: 0 0.4rem 0 0;
@@ -291,18 +291,18 @@ header .site-title:hover {
 }
 @media (prefers-color-scheme: light) {
   #social-wrapper img {
-    filter: drop-shadow(0 0 6px rgba(31, 160, 242, 0.25));
+    filter: drop-shadow(0 0 6px rgba(255, 125, 45, 0.25));
   }
 }
 [data-theme="light"] {
   #social-wrapper img {
-    filter: drop-shadow(0 0 6px rgba(31, 160, 242, 0.25));
+    filter: drop-shadow(0 0 6px rgba(255, 125, 45, 0.25));
   }
 }
 [data-theme="dark"] {
   #social-wrapper img {
     filter: invert() brightness(1.2)
-      drop-shadow(0 0 6px rgba(91, 214, 255, 0.35));
+      drop-shadow(0 0 6px rgba(255, 142, 60, 0.35));
   }
 }
 #social-wrapper img:hover {
@@ -314,9 +314,9 @@ header .site-title:hover {
   padding: 1rem 1.25rem;
   border-left: 3px solid var(--accent-blue);
   background: linear-gradient(
-    120deg,
-    rgba(59, 247, 166, 0.08),
-    rgba(88, 196, 255, 0.08)
+      120deg,
+      rgba(255, 91, 92, 0.1),
+      rgba(255, 142, 60, 0.1)
   );
   border-radius: 12px;
   color: var(--white-1);
@@ -369,12 +369,12 @@ header .site-title:hover {
   border-radius: inherit;
   background: radial-gradient(
       circle at 15% 20%,
-      rgba(59, 247, 166, 0.12),
+      rgba(255, 91, 92, 0.16),
       transparent 35%
     ),
     radial-gradient(
       circle at 80% 0%,
-      rgba(91, 214, 255, 0.12),
+      rgba(255, 142, 60, 0.16),
       transparent 35%
     );
   opacity: 0;
@@ -400,7 +400,7 @@ header .site-title:hover {
 }
 .articles .article:hover {
   transform: translateY(-6px);
-  border-color: rgba(59, 247, 166, 0.5);
+  border-color: rgba(255, 91, 92, 0.5);
 }
 .articles .article:hover::after {
   opacity: 1;
@@ -422,9 +422,9 @@ header .site-title:hover {
   display: block;
   color: var(--white-1);
   background: linear-gradient(
-    120deg,
-    rgba(59, 247, 166, 0.18),
-    rgba(91, 214, 255, 0.2)
+      120deg,
+      rgba(255, 91, 92, 0.2),
+      rgba(255, 142, 60, 0.24)
   );
   border-radius: 14px;
   font-size: 0.72rem;
@@ -433,7 +433,7 @@ header .site-title:hover {
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border: 1px solid rgba(91, 214, 255, 0.4);
+  border: 1px solid rgba(255, 142, 60, 0.4);
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   transition: all 0.2s ease-in-out;
 }
@@ -446,7 +446,7 @@ header .site-title:hover {
 .filter-chip {
   padding: 0.35rem 0.85rem;
   border-radius: 12px;
-  border: 1px solid rgba(91, 214, 255, 0.35);
+  border: 1px solid rgba(255, 142, 60, 0.35);
   cursor: pointer;
   font-size: 0.85rem;
   letter-spacing: 0.05em;
@@ -492,7 +492,7 @@ header .site-title:hover {
 .articles .article .categories .category:hover {
   border-color: var(--accent-green);
   color: var(--accent-green);
-  box-shadow: 0 0 12px rgba(91, 214, 255, 0.3);
+  box-shadow: 0 0 12px rgba(255, 142, 60, 0.3);
 }
 
 .page {
@@ -513,12 +513,12 @@ header .site-title:hover {
   border-radius: inherit;
   background: radial-gradient(
       circle at 14% 16%,
-      rgba(59, 247, 166, 0.12),
+      rgba(255, 91, 92, 0.16),
       transparent 35%
     ),
     radial-gradient(
       circle at 80% 0%,
-      rgba(91, 214, 255, 0.12),
+      rgba(255, 142, 60, 0.16),
       transparent 35%
     );
   opacity: 0.35;
@@ -531,7 +531,7 @@ header .site-title:hover {
   font-family: "Space Grotesk", "IBM Plex Mono", monospace;
   color: var(--white-1);
   letter-spacing: 0.02em;
-  text-shadow: 0 0 12px rgba(58, 247, 166, 0.12);
+  text-shadow: 0 0 12px rgba(255, 91, 92, 0.15);
 }
 .page .content * {
   line-height: 180%;
@@ -552,7 +552,7 @@ header .site-title:hover {
 }
 .page .content a {
   color: var(--accent-green);
-  border-bottom: 1px solid rgba(59, 247, 166, 0.35);
+  border-bottom: 1px solid rgba(255, 91, 92, 0.35);
 }
 .page .content a:hover {
   color: var(--accent-blue);
@@ -575,12 +575,12 @@ header .site-title:hover {
   padding: 3px 5px;
   color: var(--accent-blue);
   white-space: pre;
-  background: rgba(91, 214, 255, 0.08);
+  background: rgba(255, 142, 60, 0.12);
   border-radius: 6px;
-  border: 1px solid rgba(91, 214, 255, 0.2);
+  border: 1px solid rgba(255, 142, 60, 0.28);
 }
 .page .content pre {
-  background: linear-gradient(145deg, #0d2030, #0b1624);
+  background: linear-gradient(145deg, #2c1011, #180707);
   padding: 1rem 1.5rem;
   margin-bottom: 1.6rem;
   border-radius: 12px;
@@ -594,9 +594,9 @@ header .site-title:hover {
   font-style: italic;
   border-left: 3px solid var(--accent-blue);
   background: linear-gradient(
-    120deg,
-    rgba(59, 247, 166, 0.08),
-    rgba(88, 196, 255, 0.08)
+      120deg,
+      rgba(255, 91, 92, 0.1),
+      rgba(255, 142, 60, 0.1)
   );
   border-radius: 10px;
 }
@@ -617,7 +617,7 @@ header .site-title:hover {
   padding: 1rem 1.25rem;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(91, 214, 255, 0.25);
+  border: 1px solid rgba(255, 142, 60, 0.28);
 }
 .latest-card h3 {
   margin-bottom: 0.3rem;
@@ -645,12 +645,12 @@ header .site-title:hover {
 }
 .page .content table th,
 .page .content table td {
-  border: 1px solid rgba(91, 214, 255, 0.25);
+  border: 1px solid rgba(255, 142, 60, 0.25);
   padding: 0.75rem;
   text-align: left;
 }
 .page .content table th {
-  background: rgba(91, 214, 255, 0.12);
+  background: rgba(255, 142, 60, 0.16);
   color: var(--white-1);
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -749,10 +749,10 @@ footer p {
   }
 }
 .ctf-table tbody tr:nth-child(odd) {
-  background: rgba(91, 214, 255, 0.04);
+  background: rgba(255, 142, 60, 0.06);
 }
 .ctf-table tbody tr:hover {
-  background: rgba(59, 247, 166, 0.08);
+  background: rgba(255, 91, 92, 0.12);
   transition: background 0.2s ease-in-out;
 }
 .page .content table th:nth-child(1) {

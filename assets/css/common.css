@@ -1,95 +1,95 @@
 :root {
-  --gray-1: #0f2a3a;
-  --gray-2: #0c1f2e;
-  --gray-2_5: #0a1622;
-  --gray-3: #0a1926;
-  --gray-4: #041014;
-  --gray-5: #050b12;
-  --gray-6: #02070d;
-  --white-1: #e9fff5;
-  --white-2: #b8d7ff;
-  --accent-green: #3bf7a6;
-  --accent-blue: #58c4ff;
-  --accent-cyan: #2bf1d3;
-  --glow-strong: 0 0 35px rgba(43, 241, 211, 0.18);
-  --panel-glass: rgba(12, 27, 41, 0.82);
-  --border-strong: rgba(88, 196, 255, 0.25);
+  --gray-1: #2d1413;
+  --gray-2: #221010;
+  --gray-2_5: #1b0c0c;
+  --gray-3: #150809;
+  --gray-4: #0d0405;
+  --gray-5: #090203;
+  --gray-6: #050101;
+  --white-1: #fff0e6;
+  --white-2: #fbd0ba;
+  --accent-green: #ff5b5c;
+  --accent-blue: #ff8e3c;
+  --accent-cyan: #ffbf5f;
+  --glow-strong: 0 0 35px rgba(255, 91, 92, 0.25);
+  --panel-glass: rgba(40, 14, 14, 0.82);
+  --border-strong: rgba(255, 142, 60, 0.3);
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    --gray-1: #dbeaf5;
-    --gray-2: #c8deee;
-    --gray-2_5: #bed6e8;
-    --gray-3: #b7d3e8;
-    --gray-4: #0f2535;
-    --gray-5: #e6f3fb;
-    --gray-6: #f2f9ff;
-    --white-1: #0d1a26;
-    --white-2: #16324a;
-    --accent-green: #0bcf99;
-    --accent-blue: #1fa0f2;
-    --accent-cyan: #0bbf92;
-    --glow-strong: 0 0 25px rgba(31, 160, 242, 0.2);
+    --gray-1: #fbe7de;
+    --gray-2: #f6d9cc;
+    --gray-2_5: #f1d0c3;
+    --gray-3: #ebc6b9;
+    --gray-4: #31110f;
+    --gray-5: #fff3ed;
+    --gray-6: #fff8f4;
+    --white-1: #2a0907;
+    --white-2: #45130d;
+    --accent-green: #ff5b5c;
+    --accent-blue: #ff7d2d;
+    --accent-cyan: #ffa74a;
+    --glow-strong: 0 0 25px rgba(255, 125, 45, 0.22);
     --panel-glass: rgba(255, 255, 255, 0.82);
-    --border-strong: rgba(31, 160, 242, 0.2);
+    --border-strong: rgba(255, 125, 45, 0.22);
   }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --gray-1: #0f2a3a;
-    --gray-2: #0c1f2e;
-    --gray-2_5: #0a1622;
-    --gray-3: #0a1926;
-    --gray-4: #041014;
-    --gray-5: #050b12;
-    --gray-6: #02070d;
-    --white-1: #e9fff5;
-    --white-2: #b8d7ff;
-    --accent-green: #3bf7a6;
-    --accent-blue: #58c4ff;
-    --accent-cyan: #2bf1d3;
-    --glow-strong: 0 0 35px rgba(43, 241, 211, 0.18);
-    --panel-glass: rgba(12, 27, 41, 0.82);
-    --border-strong: rgba(88, 196, 255, 0.25);
+    --gray-1: #2d1413;
+    --gray-2: #221010;
+    --gray-2_5: #1b0c0c;
+    --gray-3: #150809;
+    --gray-4: #0d0405;
+    --gray-5: #090203;
+    --gray-6: #050101;
+    --white-1: #fff0e6;
+    --white-2: #fbd0ba;
+    --accent-green: #ff5b5c;
+    --accent-blue: #ff8e3c;
+    --accent-cyan: #ffbf5f;
+    --glow-strong: 0 0 35px rgba(255, 91, 92, 0.25);
+    --panel-glass: rgba(40, 14, 14, 0.82);
+    --border-strong: rgba(255, 142, 60, 0.3);
   }
 }
 
 [data-theme="light"] {
-  --gray-1: #dbeaf5;
-  --gray-2: #c8deee;
-  --gray-2_5: #bed6e8;
-  --gray-3: #b7d3e8;
-  --gray-4: #0f2535;
-  --gray-5: #e6f3fb;
-  --gray-6: #f2f9ff;
-  --white-1: #0d1a26;
-  --white-2: #16324a;
-  --accent-green: #0bcf99;
-  --accent-blue: #1fa0f2;
-  --accent-cyan: #0bbf92;
-  --glow-strong: 0 0 25px rgba(31, 160, 242, 0.2);
+  --gray-1: #fbe7de;
+  --gray-2: #f6d9cc;
+  --gray-2_5: #f1d0c3;
+  --gray-3: #ebc6b9;
+  --gray-4: #31110f;
+  --gray-5: #fff3ed;
+  --gray-6: #fff8f4;
+  --white-1: #2a0907;
+  --white-2: #45130d;
+  --accent-green: #ff5b5c;
+  --accent-blue: #ff7d2d;
+  --accent-cyan: #ffa74a;
+  --glow-strong: 0 0 25px rgba(255, 125, 45, 0.22);
   --panel-glass: rgba(255, 255, 255, 0.82);
-  --border-strong: rgba(31, 160, 242, 0.2);
+  --border-strong: rgba(255, 125, 45, 0.22);
 }
 
 [data-theme="dark"] {
-  --gray-1: #0f2a3a;
-  --gray-2: #0c1f2e;
-  --gray-2_5: #0a1622;
-  --gray-3: #0a1926;
-  --gray-4: #041014;
-  --gray-5: #050b12;
-  --gray-6: #02070d;
-  --white-1: #e9fff5;
-  --white-2: #b8d7ff;
-  --accent-green: #3bf7a6;
-  --accent-blue: #58c4ff;
-  --accent-cyan: #2bf1d3;
-  --glow-strong: 0 0 35px rgba(43, 241, 211, 0.18);
-  --panel-glass: rgba(12, 27, 41, 0.82);
-  --border-strong: rgba(88, 196, 255, 0.25);
+  --gray-1: #2d1413;
+  --gray-2: #221010;
+  --gray-2_5: #1b0c0c;
+  --gray-3: #150809;
+  --gray-4: #0d0405;
+  --gray-5: #090203;
+  --gray-6: #050101;
+  --white-1: #fff0e6;
+  --white-2: #fbd0ba;
+  --accent-green: #ff5b5c;
+  --accent-blue: #ff8e3c;
+  --accent-cyan: #ffbf5f;
+  --glow-strong: 0 0 35px rgba(255, 91, 92, 0.25);
+  --panel-glass: rgba(40, 14, 14, 0.82);
+  --border-strong: rgba(255, 142, 60, 0.3);
 }
 
 #category-modal-bg {
@@ -161,10 +161,10 @@
   border-radius: 0.75rem;
   border: 1px solid transparent;
   background: linear-gradient(
-    120deg,
-    rgba(59, 247, 166, 0.12),
-    rgba(88, 196, 255, 0.12)
-  );
+      120deg,
+      rgba(255, 91, 92, 0.14),
+      rgba(255, 142, 60, 0.14)
+    );
 }
 
 .modal-article-date {
@@ -178,7 +178,7 @@
 }
 
 hr {
-  border-top: 1px dashed rgba(43, 241, 211, 0.6) !important;
+  border-top: 1px dashed rgba(255, 91, 92, 0.6) !important;
   border-bottom: none !important;
   border-left: none !important;
   border-right: none !important;
@@ -197,7 +197,7 @@ hr {
   border: 1px solid var(--border-strong);
   border-radius: 0.25rem;
   cursor: pointer;
-  background-color: rgba(88, 196, 255, 0.12);
+  background-color: rgba(255, 142, 60, 0.14);
   color: var(--white-1);
   transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out,
     box-shadow 0.2s ease-in-out;
@@ -208,7 +208,7 @@ pre:hover .copy-code-button {
 }
 
 .copy-code-button:hover {
-  background-color: rgba(59, 247, 166, 0.2);
+  background-color: rgba(255, 91, 92, 0.22);
   box-shadow: var(--glow-strong);
 }
 
@@ -227,21 +227,21 @@ pre:hover .copy-code-button {
 }
 
 [data-theme="light"] .copy-code-button {
-  background-color: rgba(31, 160, 242, 0.12);
+  background-color: rgba(255, 125, 45, 0.12);
   color: var(--white-2);
 }
 
 [data-theme="light"] .copy-code-button:hover {
-  background-color: rgba(11, 191, 146, 0.2);
+  background-color: rgba(255, 91, 92, 0.2);
 }
 
 @media (prefers-color-scheme: light) {
   .copy-code-button {
-    background-color: rgba(31, 160, 242, 0.12);
+    background-color: rgba(255, 125, 45, 0.12);
     color: var(--white-2);
   }
 
   .copy-code-button:hover {
-    background-color: rgba(11, 191, 146, 0.2);
+    background-color: rgba(255, 91, 92, 0.2);
   }
 }
