@@ -2,7 +2,7 @@
 layout: post
 title: "Quantum vernam"
 categories: [crypto, LakeCTF-Quals-2025]
-date: 2025-11-28 13:04:55 -0500
+date: 2025-11-28 13:17:58 -0500
 writeup: true
 permalink: /write-ups/quantum-vernam/
 order: 4
