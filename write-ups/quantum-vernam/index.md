@@ -23,7 +23,7 @@ The code flow is as follows:
 2.  It generates a random 2x2 unitary matrix called **X**.
 3.  It asks us (the attacker) to provide two custom 2x2 matrices: **Gate1** and **Gate2**.
 4.  For every bit of the flag:
-    *   It converts the bit into a Qubit ($|0\rangle$ or $|1\rangle$).
+    *   A classical bit becomes a qubit, which means it’s represented as a quantum state. That quantum state can be the quantum version of 0 or the quantum version of 1.
     *   It applies our **Gate1**.
     *   **Encryption Step:** If the corresponding Key bit is `1`, it applies the matrix **X**. If the Key bit is `0`, it does nothing.
     *   It applies our **Gate2**.
