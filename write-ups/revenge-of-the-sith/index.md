@@ -8,7 +8,7 @@ permalink: /write-ups/revenge-of-the-sith/
 order: 2
 ---
 
-**Challenge:** Revenge of the Sith
+**Challenge:** Revenge of the Sith  
 **Category:** Crypto  
 **Flag:** ``EPFL{N07_0N1Y_7H3_m3n_BU7_7h3_w0M3N_4ND_CHILDR3N_7o0_T50nanWvW1}``
 
