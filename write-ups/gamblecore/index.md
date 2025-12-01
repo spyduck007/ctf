@@ -81,7 +81,7 @@ Since the game is pure RNG (Random Number Generation) with no seed manipulation 
 
 1.  **Bet the full $0.09.** If we win, we have $0.90.
 2.  **Bet the full $0.90.** If we win, we have $9.00.
-3.  **Bet $1.00 repeatedly.** We have $9, so we have 9 attempts to hit a 1-in-11 shot to get over the $10 mark.
+3.  **Bet $1.00 repeatedly.** We have 9 dollars, so we have 9 attempts to hit a 1-in-11 shot to get over the 10 dollar mark.
 
 If we fail at any point, we just restart the script and create a new session. The probability of this chain succeeding is roughly 1 in 240, which a script can crack in less than a minute.
 
