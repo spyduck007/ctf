@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "gamblecore"
-categories: [crypto, LakeCTF-Quals-2025]
+categories: [web, LakeCTF-Quals-2025]
 date: 2025-11-28 13:41:13 -0500
 writeup: true
 permalink: /write-ups/gamblecore/
@@ -9,7 +9,7 @@ order: 7
 ---
 
 **Challenge:** gamblecore  
-**Category:** Crypto  
+**Category:** Web  
 **Flag:** ``EPFL{we_truly_live_in_a_society}``
 
 ---
