@@ -5,7 +5,7 @@ categories: [crypto, LakeCTF-Quals-2025]
 date: 2025-11-28 13:08:18 -0500
 writeup: true
 permalink: /write-ups/the-phantom-menace/
-order: 2
+order: 3
 ---
 
 **Challenge:** The Phantom Menace  
