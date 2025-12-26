@@ -119,6 +119,14 @@
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--site-border-color);
   box-shadow: none !important;
+  color: var(--md-default-fg-color) !important;
+}
+
+/* Force header text/icons to be visible in both modes */
+.md-header__button,
+.md-header__title,
+.md-header__option {
+  color: var(--md-default-fg-color) !important;
 }
 
 /* Custom Logo & Title Styling */
