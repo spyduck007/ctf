@@ -1,0 +1,79 @@
+site_name: CTF Writeups & Blog
+site_url: https://spyduck007.github.io/ctf/
+site_author: spyduck007
+site_description: A collection of CTF writeups and blog posts.
+
+# Repo link removed for minimalism
+# repo_name: spyduck007/ctf
+# repo_url: https://github.com/spyduck007/ctf
+
+theme:
+  name: material
+  font:
+    text: Inter
+    code: JetBrains Mono
+  palette:
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: black
+      accent: lime
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - scheme: default
+      primary: white
+      accent: lime
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+    - header.autohide
+
+plugins:
+  - search
+  - awesome-pages
+  - blog:
+      post_dir: blog/posts
+      archive: true
+      categories: true
+      post_url_format: "{date}/{slug}"
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
+# Nav is handled by awesome-pages plugin and folder structure
+# This allows you to just add files and they appear automatically.
+# You can control order using .pages files in directories.
+
+# Let's try to use the default auto-discovery for writeups by NOT listing them individually.

@@ -1,0 +1,228 @@
+:root {
+  /* Custom Palette - "Crimson Void" */
+  --md-primary-fg-color:        #000000;
+  --md-primary-fg-color--light: #1a1a1a;
+  --md-primary-fg-color--dark:  #000000;
+  --md-accent-fg-color:         #ff3333; /* Neon Red */
+  
+  /* Fonts */
+  --md-text-font: "Inter", sans-serif;
+  --md-code-font: "JetBrains Mono", monospace;
+}
+
+/* DARK MODE (Slate) */
+[data-md-color-scheme="slate"] {
+  --md-hue: 0;
+  --md-default-bg-color: #050505;
+  --md-default-fg-color: #e0e0e0;
+  --md-surfaces-bg-color: #0a0a0a;
+  --md-code-bg-color: #0a0a0a;
+  --md-code-fg-color: #ff5b5c;
+  
+  /* Custom vars for dark mode */
+  --site-header-bg: rgba(5, 5, 5, 0.8);
+  --site-border-color: #222;
+  --site-card-bg: #0a0a0a;
+  --site-hero-subtitle: #888;
+  --site-heading-gradient: linear-gradient(135deg, #fff 0%, #666 100%);
+}
+
+/* LIGHT MODE (Default) */
+[data-md-color-scheme="default"] {
+  --md-hue: 0;
+  --md-default-bg-color: #ffffff;
+  --md-default-fg-color: #222222;
+  --md-surfaces-bg-color: #f5f5f5;
+  --md-code-bg-color: #f5f5f5;
+  --md-code-fg-color: #d01616;
+  
+  /* Custom vars for light mode */
+  --site-header-bg: rgba(255, 255, 255, 0.8);
+  --site-border-color: #e0e0e0;
+  --site-card-bg: #ffffff;
+  --site-hero-subtitle: #555;
+  --site-heading-gradient: linear-gradient(135deg, #000 0%, #444 100%);
+}
+
+/* 
+   LAYOUT OVERHAUL 
+   Hide the left navigation sidebar to make it look like a website, not docs.
+   We rely on the Top Navigation Tabs.
+*/
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    display: none;
+  }
+  
+  /* Center the content */
+  .md-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  /* Adjust the right sidebar (TOC) to be less intrusive */
+  .md-sidebar--secondary {
+    margin-left: 0;
+    background: transparent;
+  }
+}
+
+/* HEADER */
+.md-header {
+  background-color: var(--site-header-bg) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--site-border-color);
+  box-shadow: none !important;
+}
+
+.md-tabs {
+  background-color: transparent !important;
+  border-bottom: 1px solid var(--site-border-color);
+}
+
+.md-tabs__link {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color); /* Ensure visible in light mode */
+  opacity: 0.7;
+}
+
+.md-tabs__link:hover, .md-tabs__link--active {
+  color: var(--md-accent-fg-color);
+  opacity: 1;
+}
+
+/* TYPOGRAPHY */
+h1 {
+  font-weight: 800;
+  letter-spacing: -1px;
+  background: var(--site-heading-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-weight: 700;
+  border-bottom: 1px solid var(--site-border-color);
+  padding-bottom: 0.5rem;
+  margin-top: 2.5rem;
+  color: var(--md-default-fg-color);
+}
+
+h3, h4, h5, h6 {
+  color: var(--md-default-fg-color);
+}
+
+/* CARDS & LISTS */
+.md-typeset .admonition, 
+.md-typeset details {
+  background-color: var(--site-card-bg);
+  border: 1px solid var(--site-border-color);
+  border-radius: 0; /* Sharp corners */
+  color: var(--md-default-fg-color);
+}
+
+/* BUTTONS */
+.md-button {
+  border-radius: 0; /* Sharp corners */
+  border: 1px solid var(--md-accent-fg-color);
+  background: transparent;
+  color: var(--md-accent-fg-color);
+  transition: all 0.3s ease;
+}
+
+.md-button:hover {
+  background: var(--md-accent-fg-color);
+  color: #fff; /* White text on hover for better contrast */
+  box-shadow: 0 0 20px rgba(255, 51, 51, 0.4);
+}
+
+/* HERO SECTION (Custom class for index.md) */
+.hero-section {
+  text-align: center;
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--site-border-color);
+  margin-bottom: 3rem;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #ff3333, #ff8e3c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--site-hero-subtitle);
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+/* BLOG LIST STYLING */
+.md-post {
+  border-bottom: 1px solid var(--site-border-color);
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.md-post__meta {
+  color: var(--site-hero-subtitle);
+  font-family: var(--md-code-font);
+  font-size: 0.8rem;
+}
+
+/* GRID CARDS SUPPORT */
+.grid.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.grid.cards ul {
+  display: contents;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.grid.cards li {
+  background-color: var(--site-card-bg);
+  border: 1px solid var(--site-border-color);
+  padding: 1.5rem;
+  transition: transform 0.2s, border-color 0.2s;
+  list-style: none !important;
+  margin: 0 !important;
+}
+
+.grid.cards li:hover {
+  border-color: var(--md-accent-fg-color);
+  transform: translateY(-2px);
+}
+
+.grid.cards strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--md-default-fg-color);
+}
+
+.grid.cards a {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--md-accent-fg-color);
+  text-decoration: none;
+}
+
+.grid.cards a:hover {
+  text-decoration: underline;
+}
+
