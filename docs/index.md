@@ -24,24 +24,41 @@ Welcome to my website! Here's what I have to offer:
 
 ## Latest Updates
 
-<div class="grid cards" markdown>
+<div class="writeup-grid">
 
-- :material-flag: **Attack of the Clones**
+  <a href="write-ups/the-phantom-menace/" class="writeup-card">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2025-11-28</span>
+        <h3 class="card-title">The Phantom Menace</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">LakeCTF-Quals-2025</span><span class="tag">crypto</span>
+      </div>
+    </div>
+  </a>
 
-  A deep dive into lattice-based cryptography and the "Attack of the Clones" vulnerability.
+  <a href="write-ups/revenge-of-the-sith/" class="writeup-card">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2025-11-28</span>
+        <h3 class="card-title">Revenge of the Sith</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">LakeCTF-Quals-2025</span><span class="tag">crypto</span>
+      </div>
+    </div>
+  </a>
 
-  [Read Writeup](write-ups/attack-of-the-clones.md)
-
-- :material-atom: **Quantum Vernam**
-
-  Breaking a quantum one-time pad using eigenvectors and measurement flaws.
-
-  [Read Writeup](write-ups/quantum-vernam.md)
-
-- :material-post: **Coming Soon**
-
-  I haven't written any blog posts yet, but stay tuned!
-
-  [Read Post](blog/posts/coming-soon.md)
-
+  <a href="write-ups/attack-of-the-clones/" class="writeup-card">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2025-11-28</span>
+        <h3 class="card-title">Attack of the Clones</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">LakeCTF-Quals-2025</span><span class="tag">crypto</span>
+      </div>
+    </div>
+  </a>
 </div>
