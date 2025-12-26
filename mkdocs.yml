@@ -9,6 +9,7 @@ site_description: A collection of CTF writeups and blog posts.
 
 theme:
   name: material
+  logo: assets/logo.png
   font:
     text: Inter
     code: JetBrains Mono

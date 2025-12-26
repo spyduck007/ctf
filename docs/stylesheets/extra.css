@@ -75,6 +75,29 @@
   box-shadow: none !important;
 }
 
+/* Custom Logo & Title Styling */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  border-radius: 50%;
+  height: 42px; /* Bigger logo */
+  width: auto;
+  border: 2px solid var(--md-accent-fg-color); /* Nice accent border */
+  padding: 2px; /* Space between image and border */
+}
+
+.md-header__title {
+  font-size: 1.4rem !important; /* Bigger text */
+  font-weight: 900 !important;
+  letter-spacing: -0.5px;
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.md-header__topic {
+  font-weight: 900 !important;
+}
+
 .md-tabs {
   background-color: transparent !important;
   border-bottom: 1px solid var(--site-border-color);
