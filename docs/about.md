@@ -19,6 +19,14 @@ I'm a high school student at TJ, passionate about cybersecurity and learning thr
 
 | CTF Competition       | Placement                         |
 | :-------------------- | :-------------------------------- |
+| TSG CTF 2025          | 31st                              |
+| 0CTF 2025             | 15th                              |
+| BSides Algiers 2025   | 7th                               |
+| niteCTF 2025          | 1st 👑                            |
+| NexHunt CTF 2025      | 28th                              |
+| BackdoorCTF 2025      | 47th                              |
+| VuwCTF 2025           | 5th                               |
+| Null CTF 2025         | 18th                              |
 | Haix-la-Chapelle 2025 | 1st 👑                            |
 | LakeCTF Quals 2025    | 51st                              |
 | PatriotCTF 2025       | 54th                              |
@@ -27,7 +35,8 @@ I'm a high school student at TJ, passionate about cybersecurity and learning thr
 | BuckeyeCTF 2025       | 3rd (Undergraduate & HS Division) |
 | V1t CTF 2025          | 40th                              |
 | DEADFACE CTF 2025     | 69th                              |
-| CrewCTF 2025          | 308th                             |
+| picoCTF 2025          | 35th                              |
+| WinterCTF 2024        | 1st 👑                            |
 
 ## Contact
 
