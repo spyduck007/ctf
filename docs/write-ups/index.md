@@ -14,50 +14,50 @@ hide:
 
 <div class="writeup-grid filterable">
 
-  <a href="the-phantom-menace/" class="writeup-card" data-tags="LakeCTF-Quals-2025 crypto">
+  <a href="the-phantom-menace/" class="writeup-card" data-tags="crypto LakeCTF-Quals-2025">
     <div class="card-content">
       <div class="card-header">
         <span class="card-date">2025-11-28</span>
         <h3 class="card-title">The Phantom Menace</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">LakeCTF-Quals-2025</span><span class="tag">crypto</span>
+        <span class="tag">crypto</span><span class="tag">LakeCTF-Quals-2025</span>
       </div>
     </div>
   </a>
 
-  <a href="revenge-of-the-sith/" class="writeup-card" data-tags="LakeCTF-Quals-2025 crypto">
+  <a href="revenge-of-the-sith/" class="writeup-card" data-tags="crypto LakeCTF-Quals-2025">
     <div class="card-content">
       <div class="card-header">
         <span class="card-date">2025-11-28</span>
         <h3 class="card-title">Revenge of the Sith</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">LakeCTF-Quals-2025</span><span class="tag">crypto</span>
+        <span class="tag">crypto</span><span class="tag">LakeCTF-Quals-2025</span>
       </div>
     </div>
   </a>
 
-  <a href="attack-of-the-clones/" class="writeup-card" data-tags="LakeCTF-Quals-2025 crypto">
+  <a href="attack-of-the-clones/" class="writeup-card" data-tags="crypto LakeCTF-Quals-2025">
     <div class="card-content">
       <div class="card-header">
         <span class="card-date">2025-11-28</span>
         <h3 class="card-title">Attack of the Clones</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">LakeCTF-Quals-2025</span><span class="tag">crypto</span>
+        <span class="tag">crypto</span><span class="tag">LakeCTF-Quals-2025</span>
       </div>
     </div>
   </a>
 
-  <a href="quantum-vernam/" class="writeup-card" data-tags="LakeCTF-Quals-2025 crypto">
+  <a href="quantum-vernam/" class="writeup-card" data-tags="crypto LakeCTF-Quals-2025">
     <div class="card-content">
       <div class="card-header">
         <span class="card-date">2025-11-28</span>
         <h3 class="card-title">Quantum Vernam</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">LakeCTF-Quals-2025</span><span class="tag">crypto</span>
+        <span class="tag">crypto</span><span class="tag">LakeCTF-Quals-2025</span>
       </div>
     </div>
   </a>
@@ -74,26 +74,26 @@ hide:
     </div>
   </a>
 
-  <a href="ez-part/" class="writeup-card" data-tags="LakeCTF-Quals-2025 crypto">
+  <a href="ez-part/" class="writeup-card" data-tags="crypto LakeCTF-Quals-2025">
     <div class="card-content">
       <div class="card-header">
         <span class="card-date">2025-11-28</span>
         <h3 class="card-title">Ez Part</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">LakeCTF-Quals-2025</span><span class="tag">crypto</span>
+        <span class="tag">crypto</span><span class="tag">LakeCTF-Quals-2025</span>
       </div>
     </div>
   </a>
 
-  <a href="guess-flag/" class="writeup-card" data-tags="LakeCTF-Quals-2025 crypto">
+  <a href="guess-flag/" class="writeup-card" data-tags="crypto LakeCTF-Quals-2025">
     <div class="card-content">
       <div class="card-header">
         <span class="card-date">2025-11-28</span>
         <h3 class="card-title">Guess Flag</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">LakeCTF-Quals-2025</span><span class="tag">crypto</span>
+        <span class="tag">crypto</span><span class="tag">LakeCTF-Quals-2025</span>
       </div>
     </div>
   </a>

@@ -1,4 +1,4 @@
-site_name: CTF Writeups & Blog
+site_name: spyduck007
 site_url: https://spyduck007.github.io/ctf/
 site_author: spyduck007
 site_description: A collection of CTF writeups and blog posts.
@@ -29,9 +29,6 @@ theme:
         icon: material/weather-sunny
         name: Switch to dark mode
   features:
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.sections
     - navigation.top
     - navigation.instant
     - navigation.tracking
@@ -42,14 +39,15 @@ theme:
     - content.action.edit
     - header.autohide
 
+nav:
+  - Home: index.md
+  - About Me: about.md
+  - CTF Writeups: write-ups/index.md
+  - CTF Competitions: ctf-history.md
+  - Projects: projects.md
+
 plugins:
   - search
-  - awesome-pages
-  - blog:
-      post_dir: blog/posts
-      archive: true
-      categories: true
-      post_url_format: "{date}/{slug}"
 
 markdown_extensions:
   - admonition
@@ -68,6 +66,7 @@ markdown_extensions:
   - md_in_html
 extra_javascript:
   - javascripts/mathjax.js
+  - javascripts/contact_modal.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 

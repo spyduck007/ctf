@@ -46,21 +46,67 @@
 
 /* 
    LAYOUT OVERHAUL 
-   Hide the left navigation sidebar to make it look like a website, not docs.
-   We rely on the Top Navigation Tabs.
+   Floating Sidebar Navigation
 */
 @media screen and (min-width: 76.25em) {
+  /* Fixed Sidebar on the left */
   .md-sidebar--primary {
+    display: block;
+    position: fixed;
+    top: 6rem;
+    left: 1rem;
+    width: 14rem; /* Wider */
+    height: auto;
+    max-height: calc(100vh - 120px);
+    z-index: 10;
+    margin-left: 0;
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    background-color: var(--site-card-bg);
+    border: 1px solid var(--site-border-color);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin: 0;
+    overflow-y: auto;
+  }
+
+  /* Hide site title */
+  .md-nav__title--site {
     display: none;
   }
+
+  /* Nav Links Styling */
+  .md-nav__list { padding: 10px 0 0 0; }
+  .md-nav__item { padding: 0; }
   
-  /* Center the content */
+  .md-nav__link {
+    margin-top: 0;
+    padding: 8px 12px; /* Reduced padding */
+    border-radius: 6px;
+    transition: background 0.2s;
+    font-size: 0.85rem; /* Smaller font */
+  }
+
+  .md-nav__link:hover {
+    background-color: var(--md-accent-fg-color--transparent);
+  }
+
+  .md-nav__link--active {
+    font-weight: bold;
+    color: var(--md-accent-fg-color) !important;
+    background-color: rgba(0,0,0,0.05);
+  }
+
+  /* Content Offset */
   .md-content {
-    max-width: 900px;
-    margin: 0 auto;
+    margin-left: 17rem; /* 1rem left + 14rem width + 2rem gap */
+    margin-right: 2rem;
+    max-width: 1200px; /* Increased max-width */
   }
   
-  /* Adjust the right sidebar (TOC) to be less intrusive */
+  /* Hide secondary sidebar background */
   .md-sidebar--secondary {
     margin-left: 0;
     background: transparent;
@@ -98,23 +144,9 @@
   font-weight: 900 !important;
 }
 
+/* Hide tabs since we are using side nav now */
 .md-tabs {
-  background-color: transparent !important;
-  border-bottom: 1px solid var(--site-border-color);
-}
-
-.md-tabs__link {
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  color: var(--md-default-fg-color); /* Ensure visible in light mode */
-  opacity: 0.7;
-}
-
-.md-tabs__link:hover, .md-tabs__link--active {
-  color: var(--md-accent-fg-color);
-  opacity: 1;
+  display: none;
 }
 
 /* TYPOGRAPHY */
@@ -365,5 +397,145 @@ h3, h4, h5, h6 {
   background-color: var(--md-accent-fg-color);
   color: black; /* Contrast for active state */
   font-weight: bold;
+}
+
+/* CONTACT MODAL */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.6); 
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background-color: var(--site-card-bg);
+  margin: 10% auto; 
+  padding: 2rem;
+  border: 1px solid var(--md-accent-fg-color);
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  position: relative;
+  animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.close-modal {
+  color: var(--md-default-fg-color--light);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: var(--md-accent-fg-color);
+  text-decoration: none;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: var(--md-code-bg-color);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--md-typeset-color);
+  transition: transform 0.2s, background 0.2s;
+  border: 1px solid transparent;
+}
+
+.contact-item:hover {
+  transform: translateX(5px);
+  border-color: var(--md-accent-fg-color);
+  background: var(--md-accent-fg-color--transparent);
+}
+
+.contact-icon {
+  margin-right: 15px;
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+  display: flex; /* Center SVG */
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+/* ABOUT PAGE LAYOUT */
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-text {
+  /* Left column styles */
+}
+
+.about-sidebar {
+  /* Right column styles */
+  position: sticky;
+  top: 2rem;
+  background: var(--site-card-bg);
+  padding: 1.5rem;
+  border: 1px solid var(--site-border-color);
+  border-radius: 8px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.about-sidebar h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  border-bottom: 2px solid var(--md-accent-fg-color);
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.about-sidebar table {
+  width: 100%;
+  font-size: 0.85rem;
+  display: table; /* Override mkdocs default */
+}
+
+.about-sidebar td, .about-sidebar th {
+  padding: 8px;
+}
+
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+  .about-sidebar {
+    position: static;
+    max-height: none;
+  }
 }
 
