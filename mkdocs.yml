@@ -17,14 +17,14 @@ theme:
     # Palette toggle for dark mode
     - scheme: slate
       primary: black
-      accent: lime
+      accent: indigo
       toggle:
         icon: material/weather-night
         name: Switch to light mode
     # Palette toggle for light mode
     - scheme: default
-      primary: white
-      accent: lime
+      primary: indigo
+      accent: indigo
       toggle:
         icon: material/weather-sunny
         name: Switch to dark mode
