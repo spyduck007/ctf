@@ -7,7 +7,7 @@ hide:
 
 <div class="mentoring-intro">
   <p>
-    I am passionate about sharing my knowledge in cybersecurity. As an officer at my club, I regularly give lectures and create practice CTF challenges to help members improve their skills. Below are some of the presentations I have delivered.
+    I am passionate about sharing my knowledge in cybersecurity. As an officer at my club, I regularly give lectures and create practice CTF challenges to help high-schoolers improve their skills. Below are some of the presentations I have delivered.
   </p>
 </div>
 
