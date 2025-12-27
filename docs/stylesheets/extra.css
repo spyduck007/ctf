@@ -537,6 +537,22 @@ h3, h4, h5, h6 {
   padding: 8px;
 }
 
+/* Mentoring Page Styles */
+.mentoring-intro {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--md-typeset-color);
+  max-width: 800px;
+}
+
+.card-description {
+  margin: 10px 0 15px 0;
+  font-size: 0.95rem;
+  color: var(--md-typeset-color);
+  opacity: 0.9;
+}
+
 @media (max-width: 900px) {
   .about-container {
     grid-template-columns: 1fr;
