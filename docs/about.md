@@ -19,7 +19,7 @@ That experience hooked me. Since then, I’ve been steadily expanding into diffe
 
 A big part of my growth has come from my involvement with my school’s cybersecurity club:
 
-- **[TJCSC](https://ctftime.org/team/53812)** — TJ’s Cybersecurity Club
+- **[TJCSC](https://www.tjcsec.club/)** — TJ’s Cybersecurity Club ([CTFtime](https://ctftime.org/team/53812))
 
 I’m currently an **officer** in TJCSC, where I:
 
