@@ -15,6 +15,18 @@ hide:
 
 <div class="writeup-grid">
 
+  <a href="write-ups/the-mission-begins/" class="writeup-card">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2025-12-01</span>
+        <h3 class="card-title">The Mission Begins</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">Advent-of-CTF-2025</span><span class="tag">crypto</span>
+      </div>
+    </div>
+  </a>
+
   <a href="write-ups/the-phantom-menace/" class="writeup-card">
     <div class="card-content">
       <div class="card-header">
@@ -22,7 +34,7 @@ hide:
         <h3 class="card-title">The Phantom Menace</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">crypto</span><span class="tag">LakeCTF-Quals-2025</span>
+        <span class="tag">LakeCTF-Quals-2025</span><span class="tag">crypto</span>
       </div>
     </div>
   </a>
@@ -34,19 +46,7 @@ hide:
         <h3 class="card-title">Revenge of the Sith</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">crypto</span><span class="tag">LakeCTF-Quals-2025</span>
-      </div>
-    </div>
-  </a>
-
-  <a href="write-ups/attack-of-the-clones/" class="writeup-card">
-    <div class="card-content">
-      <div class="card-header">
-        <span class="card-date">2025-11-28</span>
-        <h3 class="card-title">Attack of the Clones</h3>
-      </div>
-      <div class="card-tags">
-        <span class="tag">crypto</span><span class="tag">LakeCTF-Quals-2025</span>
+        <span class="tag">LakeCTF-Quals-2025</span><span class="tag">crypto</span>
       </div>
     </div>
   </a>
