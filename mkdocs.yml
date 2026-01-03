@@ -43,9 +43,10 @@ nav:
   - Home: index.md
   - About Me: about.md
   - CTF Writeups: write-ups/index.md
-  - CTF Competitions: ctf-history.md
+  # - CTF Competitions: ctf-history.md
   - Projects: projects.md
-  - Mentoring: mentoring.md
+  # - Mentoring: mentoring.md
+  - Contact: "#"
 
 plugins:
   - search

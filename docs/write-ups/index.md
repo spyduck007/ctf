@@ -62,14 +62,14 @@ hide:
     </div>
   </a>
 
-  <a href="gamblecore/" class="writeup-card" data-tags="web LakeCTF-Quals-2025">
+  <a href="gamblecore/" class="writeup-card" data-tags="LakeCTF-Quals-2025 web">
     <div class="card-content">
       <div class="card-header">
         <span class="card-date">2025-11-28</span>
         <h3 class="card-title">gamblecore</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">web</span><span class="tag">LakeCTF-Quals-2025</span>
+        <span class="tag">LakeCTF-Quals-2025</span><span class="tag">web</span>
       </div>
     </div>
   </a>
