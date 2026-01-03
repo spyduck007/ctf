@@ -22,7 +22,7 @@ hide:
         <h3 class="card-title">The Phantom Menace</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">crypto</span><span class="tag">LakeCTF-Quals-2025</span>
+        <span class="tag">LakeCTF-Quals-2025</span><span class="tag">crypto</span>
       </div>
     </div>
   </a>
@@ -34,7 +34,7 @@ hide:
         <h3 class="card-title">Revenge of the Sith</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">crypto</span><span class="tag">LakeCTF-Quals-2025</span>
+        <span class="tag">LakeCTF-Quals-2025</span><span class="tag">crypto</span>
       </div>
     </div>
   </a>
@@ -46,7 +46,7 @@ hide:
         <h3 class="card-title">Attack of the Clones</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">crypto</span><span class="tag">LakeCTF-Quals-2025</span>
+        <span class="tag">LakeCTF-Quals-2025</span><span class="tag">crypto</span>
       </div>
     </div>
   </a>
