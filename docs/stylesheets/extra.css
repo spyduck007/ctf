@@ -537,8 +537,9 @@ h3, h4, h5, h6 {
   padding: 8px;
 }
 
-/* Mentoring Page Styles */
-.mentoring-intro {
+/* Mentoring & Projects Page Styles */
+.mentoring-intro,
+.projects-intro {
   margin-bottom: 2rem;
   font-size: 1.1rem;
   line-height: 1.6;
