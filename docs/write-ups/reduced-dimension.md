@@ -1,6 +1,6 @@
 ---
 title: Reduced Dimension
-date: 2025-01-27
+date: 2026-01-23
 tags:
   - crypto
   - 0xL4ugh-CTF-v5
