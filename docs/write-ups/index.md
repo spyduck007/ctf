@@ -7,6 +7,7 @@ hide:
 
 <div class="filter-container">
   <button class="filter-btn active" onclick="filterSelection('all')">All</button>
+  <button class="filter-btn" onclick="filterSelection('0xL4ugh-CTF-v5')">0xL4ugh-CTF-v5</button>
   <button class="filter-btn" onclick="filterSelection('Advent-of-CTF-2025')">Advent-of-CTF-2025</button>
   <button class="filter-btn" onclick="filterSelection('LakeCTF-Quals-2025')">LakeCTF-Quals-2025</button>
   <button class="filter-btn" onclick="filterSelection('crypto')">crypto</button>
@@ -14,6 +15,18 @@ hide:
 </div>
 
 <div class="writeup-grid filterable">
+
+  <a href="bitcoin/" class="writeup-card" data-tags="0xL4ugh-CTF-v5 crypto">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-01-23</span>
+        <h3 class="card-title">Bitcoin</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">0xL4ugh-CTF-v5</span><span class="tag">crypto</span>
+      </div>
+    </div>
+  </a>
 
   <a href="the-mission-begins/" class="writeup-card" data-tags="Advent-of-CTF-2025 crypto">
     <div class="card-content">
@@ -75,14 +88,14 @@ hide:
     </div>
   </a>
 
-  <a href="gamblecore/" class="writeup-card" data-tags="LakeCTF-Quals-2025 web">
+  <a href="gamblecore/" class="writeup-card" data-tags="web LakeCTF-Quals-2025">
     <div class="card-content">
       <div class="card-header">
         <span class="card-date">2025-11-28</span>
         <h3 class="card-title">gamblecore</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">LakeCTF-Quals-2025</span><span class="tag">web</span>
+        <span class="tag">web</span><span class="tag">LakeCTF-Quals-2025</span>
       </div>
     </div>
   </a>

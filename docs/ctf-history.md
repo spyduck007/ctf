@@ -9,6 +9,8 @@ Here is a record of my participation and rankings in various CTF competitions.
 
 | Competition                                                 | Rank   | # of Teams |
 | :---------------------------------------------------------- | :----- | :--------- |
+| [VSL CTF 2026](https://ctftime.org/event/3060)              | 78th   | 114        |
+| [0xL4ugh CTF v5](https://ctftime.org/event/3024)            | 20th   | 533        |
 | [UofTCTF 2026](https://ctftime.org/event/2969)              | 46th   | 1550       |
 | [New Year CTF 2026](https://ctftime.org/event/3021)         | 26th   | 556        |
 | [Advent of CTF 2025](https://cyberstudents.net/advent/2025) | 78th   | 2230       |

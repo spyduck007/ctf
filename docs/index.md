@@ -15,6 +15,18 @@ hide:
 
 <div class="writeup-grid">
 
+  <a href="write-ups/bitcoin/" class="writeup-card">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-01-23</span>
+        <h3 class="card-title">Bitcoin</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">0xL4ugh-CTF-v5</span><span class="tag">crypto</span>
+      </div>
+    </div>
+  </a>
+
   <a href="write-ups/the-mission-begins/" class="writeup-card">
     <div class="card-content">
       <div class="card-header">
@@ -32,18 +44,6 @@ hide:
       <div class="card-header">
         <span class="card-date">2025-11-28</span>
         <h3 class="card-title">The Phantom Menace</h3>
-      </div>
-      <div class="card-tags">
-        <span class="tag">LakeCTF-Quals-2025</span><span class="tag">crypto</span>
-      </div>
-    </div>
-  </a>
-
-  <a href="write-ups/revenge-of-the-sith/" class="writeup-card">
-    <div class="card-content">
-      <div class="card-header">
-        <span class="card-date">2025-11-28</span>
-        <h3 class="card-title">Revenge of the Sith</h3>
       </div>
       <div class="card-tags">
         <span class="tag">LakeCTF-Quals-2025</span><span class="tag">crypto</span>
