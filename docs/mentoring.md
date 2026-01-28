@@ -71,6 +71,18 @@ hide:
 <h2>Presentations</h2>
 
 <div class="writeup-grid">
+  <a href="https://docs.google.com/presentation/d/1ukGT8GX0kK-wixQj9JbKjRo-_IAaDq7O_znEiCIRb84/edit?usp=sharing" class="writeup-card" target="_blank">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-01-21</span>
+        <h3 class="card-title">Polyglot Files</h3>
+      </div>
+      <p class="card-description">Introductions to polyglot files and file types</p>
+      <div class="card-tags">
+        <span class="tag">Forensics</span><span class="tag">File Security</span>
+      </div>
+    </div>
+  </a>
 
   <a href="https://docs.google.com/presentation/d/1jlL15qFqSs2CMGhEwMjO6RBMnfJr1tc38h74ZeAMe3U/edit?usp=sharing" class="writeup-card" target="_blank">
     <div class="card-content">
