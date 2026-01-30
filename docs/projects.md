@@ -12,6 +12,22 @@ hide:
 </div>
 
 <div class="writeup-grid">
+    <a href="https://nhsjs.com/2026/genetic-neural-network-architecture-optimization-a-hybrid-evolutionary-and-bayesian-approach/" class="writeup-card" target="_blank">
+    <div class="card-content">
+      <div class="card-header">
+        <h3 class="card-title">Genetic Neural Network Architecture Optimization</h3>
+      </div>
+      <p class="card-description">
+        Published peer-reviewed research in the National High School Journal of Science (NHSJS). Developed a hybrid evolutionary + Bayesian optimization framework that evolves neural network architectures using genetic algorithms and then fine-tunes them with Bayesian optimization, achieving higher validation accuracy than manual tuning, random search, or standalone BO on MNIST.
+      </p>
+      <div class="card-tags">
+        <span class="tag">Research</span>
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Neural Architecture Search</span>
+      </div>
+    </div>
+  </a>
+
   <a href="https://github.com/spyduck007/DeviceFileTransfer" class="writeup-card" target="_blank">
     <div class="card-content">
       <div class="card-header">
