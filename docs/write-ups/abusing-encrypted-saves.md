@@ -3,7 +3,7 @@ title: Abusing Encrypted Saves
 date: 2026-01-30
 tags:
   - crypto
-  - Jeanne-d'Hack-CTF-2026
+  - Jeanne-d-Hack-CTF-2026
 ---
 
 **Challenge:** Abusing Encrypted Saves  
