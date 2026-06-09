@@ -9,7 +9,16 @@ Here is a record of my participation and rankings in various CTF competitions.
 
 | Competition                                                                                                                | Rank   | # of Teams |
 | :------------------------------------------------------------------------------------------------------------------------- | :----- | :--------- |
-| [Lockheed Martin CyberQuest 2026 (Bethesda)](https://www.lockheedmartin.com/en-us/who-we-are/communities/cyber-quest.html) | 1st    | 22         |
+| [UMDCTF 2026](https://ctftime.org/event/3056)                                                                              | 9th    | 762        |
+| [Incognito 7.0](https://ctftime.org/event/3225)                                                                            | 1st 👑 | 277        |
+| [DawgCTF 2026](https://ctftime.org/event/3102)                                                                             | 10th   | 674        |
+| [SillyCTF 2](https://ctftime.org/event/3042)                                                                               | 2nd    | 253        |
+| [Hack for a Change 2026 March: UN SDG 3](https://ctftime.org/event/3184)                                                   | 8th    | 295        |
+| [KalmarCTF 2026](https://ctftime.org/event/3130)                                                                           | 6th    | 324        |
+| [TexSAW 2026](https://ctftime.org/event/3130)                                                                              | 20th   | 511        |
+| [BSidesSF CTF 2026](https://ctftime.org/event/3108)                                                                        | 2nd    | 688        |
+| [TAMUctf 2026](https://ctftime.org/event/3095)                                                                             | 1st 👑 | 697        |
+| [Lockheed Martin CyberQuest 2026 (Bethesda)](https://www.lockheedmartin.com/en-us/who-we-are/communities/cyber-quest.html) | 1st 👑 | 22         |
 | [PsychCTF 2026](https://ctftime.org/event/3166)                                                                            | 22nd   | 420        |
 | [UTCTF 2026](https://ctftime.org/event/3133)                                                                               | 1st 👑 | 736        |
 | [DiceCTF 2026 Quals](https://ctftime.org/event/3110)                                                                       | 41st   | 496        |
