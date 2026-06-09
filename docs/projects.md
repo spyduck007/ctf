@@ -105,4 +105,20 @@ hide:
       </div>
     </div>
   </a>  
+
+  <a href="https://github.com/spyduck007/deepseek-cli" class="writeup-card" target="_blank">
+    <div class="card-content">
+      <div class="card-header">
+        <h3 class="card-title">DeepSeek Terminal Studio</h3>
+      </div>
+      <p class="card-description">
+        A polished, reasoning-aware terminal workspace for DeepSeek chat and agentic coding/automation, built with Textual. It includes slash commands, search and reasoning toggles, offline token estimates, and an agent mode that can read, search, edit, patch, and run workspace commands.
+      </p>
+      <div class="card-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Textual</span>
+        <span class="tag">Automation</span>
+      </div>
+    </div>
+  </a>
 </div>
