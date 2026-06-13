@@ -2,12 +2,14 @@
 hide:
   - navigation
   - toc
+title: Ansh Agrawal (spyduck007)
+description: Personal cybersecurity and CTF portfolio of Ansh Agrawal, also known online as spyduck007, a TJHSST student exploring cybersecurity, AI/ML, and software.
 ---
 
 <div class="hero-section">
-  <div class="hero-title">spyduck007</div>
+  <div class="hero-title">Ansh Agrawal</div>
   <div class="hero-subtitle">
-    TJCSC Officer & High School Student. Exploring Cybersecurity and AI/ML through CTFs, mentorship, and breaking things.
+    Also known online as <strong>spyduck007</strong>. TJHSST student, TJCSC officer, and cybersecurity enthusiast exploring AI/ML through CTFs, mentorship, and breaking things.
   </div>
 </div>
 

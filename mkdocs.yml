@@ -1,7 +1,7 @@
-site_name: spyduck007
-site_url: https://spyduck007.github.io/ctf/
-site_author: spyduck007
-site_description: A collection of CTF writeups and blog posts.
+site_name: Ansh Agrawal
+site_url: https://anshagrawal.xyz/
+site_author: Ansh Agrawal
+site_description: Personal cybersecurity and CTF portfolio of Ansh Agrawal, also known online as spyduck007, a TJHSST student.
 
 # Repo link removed for minimalism
 # repo_name: spyduck007/ctf
@@ -74,6 +74,13 @@ extra_javascript:
 
 extra_css:
   - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/spyduck007
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/ansh-agrawal-3b7a14356/
 # Nav is handled by awesome-pages plugin and folder structure
 # This allows you to just add files and they appear automatically.
 # You can control order using .pages files in directories.
