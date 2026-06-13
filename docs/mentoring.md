@@ -71,7 +71,7 @@ hide:
 <h2>Presentations</h2>
 
 <div class="writeup-grid">
-  <a href="https://docs.google.com/presentation/d/1ukGT8GX0kK-wixQj9JbKjRo-_IAaDq7O_znEiCIRb84/edit?usp=sharing" class="writeup-card" target="_blank">
+  <a href="https://docs.google.com/presentation/d/1ukGT8GX0kK-wixQj9JbKjRo-_IAaDq7O_znEiCIRb84/edit?usp=sharing" class="writeup-card" target="_blank" rel="noopener noreferrer">
     <div class="card-content">
       <div class="card-header">
         <span class="card-date">2026-01-21</span>
@@ -84,7 +84,7 @@ hide:
     </div>
   </a>
 
-  <a href="https://docs.google.com/presentation/d/1jlL15qFqSs2CMGhEwMjO6RBMnfJr1tc38h74ZeAMe3U/edit?usp=sharing" class="writeup-card" target="_blank">
+  <a href="https://docs.google.com/presentation/d/1jlL15qFqSs2CMGhEwMjO6RBMnfJr1tc38h74ZeAMe3U/edit?usp=sharing" class="writeup-card" target="_blank" rel="noopener noreferrer">
     <div class="card-content">
       <div class="card-header">
         <span class="card-date">2025-10-28</span>
@@ -97,7 +97,7 @@ hide:
     </div>
   </a>
 
-  <a href="https://docs.google.com/presentation/d/1GJtP4GPeIgswDSUtulWSOEe4jGNfMnMIjS0A2pC2dn8/edit?usp=sharing" class="writeup-card" target="_blank">
+  <a href="https://docs.google.com/presentation/d/1GJtP4GPeIgswDSUtulWSOEe4jGNfMnMIjS0A2pC2dn8/edit?usp=sharing" class="writeup-card" target="_blank" rel="noopener noreferrer">
     <div class="card-content">
       <div class="card-header">
         <span class="card-date">2025-10-01</span>
@@ -110,7 +110,7 @@ hide:
     </div>
   </a>
 
-  <a href="https://docs.google.com/presentation/d/151S4LhkQ5nm4C0oc7usuTO2u2flUtSSLn3kx3UncmpM/edit?usp=sharing" class="writeup-card" target="_blank">
+  <a href="https://docs.google.com/presentation/d/151S4LhkQ5nm4C0oc7usuTO2u2flUtSSLn3kx3UncmpM/edit?usp=sharing" class="writeup-card" target="_blank" rel="noopener noreferrer">
     <div class="card-content">
       <div class="card-header">
         <span class="card-date">2025-04-09</span>

@@ -13,9 +13,27 @@ description: Personal cybersecurity and CTF portfolio of Ansh Agrawal, also know
   </div>
 </div>
 
+<div class="hero-actions">
+  <a href="projects/" class="md-button md-button--primary">View Projects</a>
+  <a href="write-ups/" class="md-button">Read CTF Writeups</a>
+  <a href="ctf-history/" class="md-button">See CTF Results</a>
+</div>
+
 ## Latest Updates
 
 <div class="writeup-grid">
+
+  <a href="write-ups/abusing-encrypted-saves/" class="writeup-card">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-01-30</span>
+        <h3 class="card-title">Abusing Encrypted Saves</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">crypto</span><span class="tag">Jeanne-d-Hack-CTF-2026</span>
+      </div>
+    </div>
+  </a>
 
   <a href="write-ups/reduced-dimension/" class="writeup-card">
     <div class="card-content">
@@ -37,18 +55,6 @@ description: Personal cybersecurity and CTF portfolio of Ansh Agrawal, also know
       </div>
       <div class="card-tags">
         <span class="tag">crypto</span><span class="tag">0xL4ugh-CTF-v5</span>
-      </div>
-    </div>
-  </a>
-
-  <a href="write-ups/the-mission-begins/" class="writeup-card">
-    <div class="card-content">
-      <div class="card-header">
-        <span class="card-date">2025-12-01</span>
-        <h3 class="card-title">The Mission Begins</h3>
-      </div>
-      <div class="card-tags">
-        <span class="tag">crypto</span><span class="tag">Advent-of-CTF-2025</span>
       </div>
     </div>
   </a>

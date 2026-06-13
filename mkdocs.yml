@@ -9,6 +9,7 @@ site_description: Personal cybersecurity and CTF portfolio of Ansh Agrawal, also
 
 theme:
   name: material
+  custom_dir: docs/overrides
   logo: assets/logo.png
   font:
     text: Inter
@@ -68,6 +69,7 @@ markdown_extensions:
   - md_in_html
 extra_javascript:
   - javascripts/mathjax.js
+  - javascripts/writeup_filters.js
   - javascripts/contact_modal.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
@@ -81,8 +83,4 @@ extra:
       link: https://github.com/spyduck007
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/ansh-agrawal-3b7a14356/
-# Nav is handled by awesome-pages plugin and folder structure
-# This allows you to just add files and they appear automatically.
-# You can control order using .pages files in directories.
-
 # Let's try to use the default auto-discovery for writeups by NOT listing them individually.

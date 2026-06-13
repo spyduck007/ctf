@@ -47,7 +47,7 @@ def get_all_writeups():
         if isinstance(categories, str):
             categories = [categories]
 
-        combined_tags = list(set(tags + categories))
+        combined_tags = list(dict.fromkeys(tags + categories))
 
         writeups.append(
             {
@@ -77,13 +77,13 @@ hide:
 # CTF Writeups
 
 <div class="filter-container">
-  <button class="filter-btn active" onclick="filterSelection('all')">All</button>
+  <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All</button>
 """
 
     # Add filter buttons
     sorted_tags = sorted(list(all_tags))
     for tag in sorted_tags:
-        content += f'  <button class="filter-btn" onclick="filterSelection(\'{tag}\')">{tag}</button>\n'
+        content += f'  <button class="filter-btn" type="button" data-filter="{tag}" aria-pressed="false">{tag}</button>\n'
 
     content += """</div>
 
@@ -111,53 +111,6 @@ hide:
 """
 
     content += """</div>
-
-<script>
-function filterSelection(c) {
-  var x, i;
-  x = document.getElementsByClassName("writeup-card");
-  var btns = document.getElementsByClassName("filter-btn");
-  
-  // Update active button state
-  for (i = 0; i < btns.length; i++) {
-    if (btns[i].innerText.toLowerCase() === c.toLowerCase() || (c === 'all' && btns[i].innerText === 'All')) {
-      btns[i].classList.add("active");
-    } else {
-      btns[i].classList.remove("active");
-    }
-  }
-
-  if (c == "all") c = "";
-  for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].getAttribute("data-tags").indexOf(c) > -1) w3AddClass(x[i], "show");
-  }
-}
-
-function w3AddClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-  }
-}
-
-function w3RemoveClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);     
-    }
-  }
-  element.className = arr1.join(" ");
-}
-
-// Initialize
-filterSelection("all")
-</script>
 """
 
     with open(INDEX_FILE, "w") as f:

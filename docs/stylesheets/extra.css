@@ -13,10 +13,10 @@
 /* DARK MODE (Slate) */
 [data-md-color-scheme="slate"] {
   --md-hue: 240;
-  --md-default-bg-color: #000000; /* Pure Black */
+  --md-default-bg-color: #05070d;
   --md-default-fg-color: #e0e0e0; /* Light Grey */
-  --md-surfaces-bg-color: #0a0a0a; /* Almost Black */
-  --md-code-bg-color: #0a0a0a;
+  --md-surfaces-bg-color: #0b1020;
+  --md-code-bg-color: #0b1020;
   --md-code-fg-color: #818cf8; /* Indigo 400 */
   
   /* Custom vars for dark mode */
@@ -228,6 +228,19 @@ h3, h4, h5, h6 {
   margin: 0 auto 2rem auto;
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: -1.5rem auto 3rem auto;
+}
+
+.hero-actions .md-button {
+  min-width: 10rem;
+  text-align: center;
+}
+
 /* BLOG LIST STYLING */
 .md-post {
   border-bottom: 1px solid var(--site-border-color);
@@ -421,6 +434,10 @@ h3, h4, h5, h6 {
   backdrop-filter: blur(5px);
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 .modal-content {
   background-color: var(--site-card-bg);
   margin: 10% auto; 
@@ -440,11 +457,16 @@ h3, h4, h5, h6 {
 }
 
 .close-modal {
+  appearance: none;
+  background: transparent;
+  border: 0;
   color: var(--md-default-fg-color--light);
   float: right;
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
+  line-height: 1;
+  padding: 0.25rem;
   transition: color 0.2s;
 }
 
@@ -562,6 +584,13 @@ h3, h4, h5, h6 {
   margin: 30px 0;
 }
 
+.ctf-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
 .stat-box {
   background-color: var(--md-code-bg-color);
   border: 1px solid var(--md-default-fg-color--lightest);
@@ -654,4 +683,3 @@ h3, h4, h5, h6 {
   color: var(--md-default-fg-color--light);
   line-height: 1.4;
 }
-

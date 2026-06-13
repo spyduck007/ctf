@@ -6,15 +6,28 @@ hide:
 # CTF Writeups
 
 <div class="filter-container">
-  <button class="filter-btn active" onclick="filterSelection('all')">All</button>
-  <button class="filter-btn" onclick="filterSelection('0xL4ugh-CTF-v5')">0xL4ugh-CTF-v5</button>
-  <button class="filter-btn" onclick="filterSelection('Advent-of-CTF-2025')">Advent-of-CTF-2025</button>
-  <button class="filter-btn" onclick="filterSelection('LakeCTF-Quals-2025')">LakeCTF-Quals-2025</button>
-  <button class="filter-btn" onclick="filterSelection('crypto')">crypto</button>
-  <button class="filter-btn" onclick="filterSelection('web')">web</button>
+  <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All</button>
+  <button class="filter-btn" type="button" data-filter="0xL4ugh-CTF-v5" aria-pressed="false">0xL4ugh-CTF-v5</button>
+  <button class="filter-btn" type="button" data-filter="Advent-of-CTF-2025" aria-pressed="false">Advent-of-CTF-2025</button>
+  <button class="filter-btn" type="button" data-filter="Jeanne-d-Hack-CTF-2026" aria-pressed="false">Jeanne-d-Hack-CTF-2026</button>
+  <button class="filter-btn" type="button" data-filter="LakeCTF-Quals-2025" aria-pressed="false">LakeCTF-Quals-2025</button>
+  <button class="filter-btn" type="button" data-filter="crypto" aria-pressed="false">crypto</button>
+  <button class="filter-btn" type="button" data-filter="web" aria-pressed="false">web</button>
 </div>
 
 <div class="writeup-grid filterable">
+
+  <a href="abusing-encrypted-saves/" class="writeup-card" data-tags="crypto Jeanne-d-Hack-CTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-01-30</span>
+        <h3 class="card-title">Abusing Encrypted Saves</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">crypto</span><span class="tag">Jeanne-d-Hack-CTF-2026</span>
+      </div>
+    </div>
+  </a>
 
   <a href="reduced-dimension/" class="writeup-card" data-tags="crypto 0xL4ugh-CTF-v5">
     <div class="card-content">
@@ -100,14 +113,14 @@ hide:
     </div>
   </a>
 
-  <a href="gamblecore/" class="writeup-card" data-tags="LakeCTF-Quals-2025 web">
+  <a href="gamblecore/" class="writeup-card" data-tags="web LakeCTF-Quals-2025">
     <div class="card-content">
       <div class="card-header">
         <span class="card-date">2025-11-28</span>
         <h3 class="card-title">gamblecore</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">LakeCTF-Quals-2025</span><span class="tag">web</span>
+        <span class="tag">web</span><span class="tag">LakeCTF-Quals-2025</span>
       </div>
     </div>
   </a>
@@ -136,50 +149,3 @@ hide:
     </div>
   </a>
 </div>
-
-<script>
-function filterSelection(c) {
-  var x, i;
-  x = document.getElementsByClassName("writeup-card");
-  var btns = document.getElementsByClassName("filter-btn");
-  
-  // Update active button state
-  for (i = 0; i < btns.length; i++) {
-    if (btns[i].innerText.toLowerCase() === c.toLowerCase() || (c === 'all' && btns[i].innerText === 'All')) {
-      btns[i].classList.add("active");
-    } else {
-      btns[i].classList.remove("active");
-    }
-  }
-
-  if (c == "all") c = "";
-  for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].getAttribute("data-tags").indexOf(c) > -1) w3AddClass(x[i], "show");
-  }
-}
-
-function w3AddClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-  }
-}
-
-function w3RemoveClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);     
-    }
-  }
-  element.className = arr1.join(" ");
-}
-
-// Initialize
-filterSelection("all")
-</script>

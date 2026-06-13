@@ -12,7 +12,7 @@ hide:
 </div>
 
 <div class="writeup-grid">
-    <a href="https://nhsjs.com/2026/genetic-neural-network-architecture-optimization-a-hybrid-evolutionary-and-bayesian-approach/" class="writeup-card" target="_blank">
+    <a href="https://nhsjs.com/2026/genetic-neural-network-architecture-optimization-a-hybrid-evolutionary-and-bayesian-approach/" class="writeup-card" target="_blank" rel="noopener noreferrer">
     <div class="card-content">
       <div class="card-header">
         <h3 class="card-title">Genetic Neural Network Architecture Optimization</h3>
@@ -28,7 +28,7 @@ hide:
     </div>
   </a>
 
-  <a href="https://github.com/spyduck007/DeviceFileTransfer" class="writeup-card" target="_blank">
+  <a href="https://github.com/spyduck007/DeviceFileTransfer" class="writeup-card" target="_blank" rel="noopener noreferrer">
     <div class="card-content">
       <div class="card-header">
         <h3 class="card-title">Secure File Transfer Tool</h3>
@@ -44,7 +44,7 @@ hide:
     </div>
   </a>
 
-  <a href="https://github.com/spyduck007/AdversarialAIDefense" class="writeup-card" target="_blank">
+  <a href="https://github.com/spyduck007/AdversarialAIDefense" class="writeup-card" target="_blank" rel="noopener noreferrer">
     <div class="card-content">
       <div class="card-header">
         <h3 class="card-title">Adversarial AI Defense</h3>
@@ -59,7 +59,7 @@ hide:
     </div>
   </a>
 
-  <a href="https://github.com/spyduck007/LogAnalyzer" class="writeup-card" target="_blank">
+  <a href="https://github.com/spyduck007/LogAnalyzer" class="writeup-card" target="_blank" rel="noopener noreferrer">
     <div class="card-content">
       <div class="card-header">
         <h3 class="card-title">Log Analyzer</h3>
@@ -74,7 +74,7 @@ hide:
     </div>
   </a>
 
-  <a href="https://github.com/spyduck007/NetFlowAttackSequencer" class="writeup-card" target="_blank">
+  <a href="https://github.com/spyduck007/NetFlowAttackSequencer" class="writeup-card" target="_blank" rel="noopener noreferrer">
     <div class="card-content">
       <div class="card-header">
         <h3 class="card-title">NetFlow Attack Sequencer</h3>
@@ -90,7 +90,7 @@ hide:
     </div>
   </a>
 
-  <a href="https://doi.org/10.13021/jssr2025.5364" class="writeup-card" target="_blank">
+  <a href="https://doi.org/10.13021/jssr2025.5364" class="writeup-card" target="_blank" rel="noopener noreferrer">
     <div class="card-content">
       <div class="card-header">
         <h3 class="card-title">Understanding the Effectiveness of Deep Learning Models for Vulnerability Detection</h3>
@@ -106,7 +106,7 @@ hide:
     </div>
   </a>  
 
-  <a href="https://github.com/spyduck007/deepseek-cli" class="writeup-card" target="_blank">
+  <a href="https://github.com/spyduck007/deepseek-cli" class="writeup-card" target="_blank" rel="noopener noreferrer">
     <div class="card-content">
       <div class="card-header">
         <h3 class="card-title">DeepSeek Terminal Studio</h3>

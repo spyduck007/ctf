@@ -25,7 +25,7 @@ I’m currently an **officer** in TJCSC, where I:
 
 - Compete in CTFs with the team
 - Help organize and run in-house events
-- **Mentoring fellow club members** cybersecurity topics and core concepts
+- **Mentor fellow club members** on cybersecurity topics and core concepts
 - Design challenges and explain solutions in a way that’s approachable
 
 Teaching has been one of the most rewarding parts of this experience. Explaining a concept forces me to understand it more deeply, and I enjoy helping others go from confusion to confidence, especially when they solve something they initially thought was impossible.
@@ -48,7 +48,7 @@ Right now, I’m focused on:
 - Preparing **lectures, workshops, and challenges** for TJCSC events
 - Writing clearer **documentation and write-ups** that reflect my real thought process
 - Actively improving in **rev and pwn** (they’re still humbling, but that’s part of the fun)
-- Writing and Publishing a research paper on **AI/ML** algorithms
+- Writing and publishing a research paper on **AI/ML** algorithms
 - Continuing to participate in more CTF competitions all over the world
 
 ## Outside the code

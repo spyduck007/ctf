@@ -29,19 +29,15 @@ Open [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser.
 3.  Copy the content from `_template.md` and fill it in.
 4.  It will automatically appear on the site!
 
-### New Blog Post
+### Regenerate Writeup Listings
 
-1.  Go to `docs/blog/posts/`.
-2.  Create a new Markdown file (e.g., `my-post.md`).
-3.  Add the Front Matter (metadata) at the top:
-    ```yaml
-    ---
-    date: 2025-01-01
-    categories:
-      - General
-    ---
-    ```
-4.  Write your post.
+The writeup index and homepage latest updates are generated from writeup front matter:
+
+```bash
+python scripts/build_writeups.py
+```
+
+Run this before building or serving the site.
 
 ## Deployment to GitHub Pages
 
@@ -57,4 +53,4 @@ This site is ready to be deployed to GitHub Pages.
 ## Configuration
 
 - **`mkdocs.yml`**: Main configuration file (site name, theme, plugins).
-- **`docs/.pages`**: Controls the order of the navigation menu.
+- **`scripts/build_writeups.py`**: Regenerates the writeup index and homepage latest updates.
