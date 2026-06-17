@@ -6,20 +6,40 @@ title: Ansh Agrawal (spyduck007)
 description: Personal cybersecurity and CTF portfolio of Ansh Agrawal, also known online as spyduck007, a TJHSST student exploring cybersecurity, AI/ML, and software.
 ---
 
-<div class="hero-section">
-  <div class="hero-title">Ansh Agrawal</div>
-  <div class="hero-subtitle">
-    Also known online as <strong>spyduck007</strong>. TJHSST student, TJCSC officer, and cybersecurity enthusiast exploring AI/ML through CTFs, mentorship, and breaking things.
+<div class="hero">
+  <div class="hero__inner">
+    <div class="hero__eyebrow">TJHSST &nbsp;·&nbsp; TJCSC Officer &nbsp;·&nbsp; Cybersecurity &amp; AI/ML</div>
+    <h1 class="hero__name">Ansh Agrawal</h1>
+    <div class="hero__handle">
+      <span class="hero__bracket">[</span><span class="hero__typed" data-text="spyduck007">spyduck007</span><span class="hero__bracket">]</span>
+    </div>
+    <p class="hero__bio">I like to understand how systems work — then see how they break, how to improve them, and how to explain all of that to other people.</p>
+    <div class="hero__actions">
+      <a href="projects/" class="btn btn--primary">View Projects</a>
+      <a href="write-ups/" class="btn btn--ghost">Read Writeups</a>
+      <a href="ctf-history/" class="btn btn--ghost">CTF Results</a>
+    </div>
+  </div>
+  <div class="hero__stats">
+    <div class="hero__stat">
+      <div class="hero__stat-num" data-count="48">48</div>
+      <div class="hero__stat-label">CTF Competitions</div>
+    </div>
+    <div class="hero__stat">
+      <div class="hero__stat-num" data-count="11">11</div>
+      <div class="hero__stat-label">1st Place Finishes</div>
+    </div>
+    <div class="hero__stat">
+      <div class="hero__stat-num" data-count="21">21</div>
+      <div class="hero__stat-label">Top-10 Finishes</div>
+    </div>
   </div>
 </div>
 
-<div class="hero-actions">
-  <a href="projects/" class="md-button md-button--primary">View Projects</a>
-  <a href="write-ups/" class="md-button">Read CTF Writeups</a>
-  <a href="ctf-history/" class="md-button">See CTF Results</a>
+<div class="section-header" data-animate>
+  <span class="section-label">// latest writeups</span>
+  <a href="write-ups/" class="section-link">View all →</a>
 </div>
-
-## Latest Updates
 
 <div class="writeup-grid">
 
@@ -58,4 +78,5 @@ description: Personal cybersecurity and CTF portfolio of Ansh Agrawal, also know
       </div>
     </div>
   </a>
+
 </div>

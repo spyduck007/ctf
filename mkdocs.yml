@@ -3,10 +3,6 @@ site_url: https://anshagrawal.xyz/
 site_author: Ansh Agrawal
 site_description: Personal cybersecurity and CTF portfolio of Ansh Agrawal, also known online as spyduck007, a TJHSST student.
 
-# Repo link removed for minimalism
-# repo_name: spyduck007/ctf
-# repo_url: https://github.com/spyduck007/ctf
-
 theme:
   name: material
   custom_dir: docs/overrides
@@ -15,38 +11,35 @@ theme:
     text: Inter
     code: JetBrains Mono
   palette:
-    # Palette toggle for dark mode
     - scheme: slate
       primary: black
-      accent: indigo
+      accent: cyan
       toggle:
         icon: material/weather-night
         name: Switch to light mode
-    # Palette toggle for light mode
     - scheme: default
-      primary: indigo
-      accent: indigo
+      primary: cyan
+      accent: cyan
       toggle:
         icon: material/weather-sunny
         name: Switch to dark mode
   features:
+    - navigation.tabs
     - navigation.top
     - navigation.instant
     - navigation.tracking
-    - toc.integrate
     - search.suggest
     - search.highlight
     - content.code.copy
-    - content.action.edit
     - header.autohide
 
 nav:
   - Home: index.md
-  - About Me: about.md
-  - CTF Writeups: write-ups/index.md
-  - CTF Competitions: ctf-history.md
+  - About: about.md
+  - Writeups: write-ups/index.md
+  - CTF Results: ctf-history.md
   - Projects: projects.md
-  - Mentoring: mentoring.md
+  - Teaching: mentoring.md
   - Contact: "#"
 
 plugins:
@@ -67,10 +60,12 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - attr_list
   - md_in_html
+
 extra_javascript:
   - javascripts/mathjax.js
   - javascripts/writeup_filters.js
   - javascripts/contact_modal.js
+  - javascripts/animations.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
@@ -83,4 +78,3 @@ extra:
       link: https://github.com/spyduck007
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/ansh-agrawal-3b7a14356/
-# Let's try to use the default auto-discovery for writeups by NOT listing them individually.

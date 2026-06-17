@@ -5,12 +5,12 @@ hide:
 
 # CTF Writeups
 
-<div class="filter-container">
+<div class="filter-container" data-animate>
   <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All</button>
-  <button class="filter-btn" type="button" data-filter="0xL4ugh-CTF-v5" aria-pressed="false">0xL4ugh-CTF-v5</button>
-  <button class="filter-btn" type="button" data-filter="Advent-of-CTF-2025" aria-pressed="false">Advent-of-CTF-2025</button>
-  <button class="filter-btn" type="button" data-filter="Jeanne-d-Hack-CTF-2026" aria-pressed="false">Jeanne-d-Hack-CTF-2026</button>
-  <button class="filter-btn" type="button" data-filter="LakeCTF-Quals-2025" aria-pressed="false">LakeCTF-Quals-2025</button>
+  <button class="filter-btn" type="button" data-filter="0xL4ugh-CTF-v5" aria-pressed="false">0xL4ugh v5</button>
+  <button class="filter-btn" type="button" data-filter="Advent-of-CTF-2025" aria-pressed="false">Advent of CTF</button>
+  <button class="filter-btn" type="button" data-filter="Jeanne-d-Hack-CTF-2026" aria-pressed="false">Jeanne d'Hack</button>
+  <button class="filter-btn" type="button" data-filter="LakeCTF-Quals-2025" aria-pressed="false">LakeCTF</button>
   <button class="filter-btn" type="button" data-filter="crypto" aria-pressed="false">crypto</button>
   <button class="filter-btn" type="button" data-filter="web" aria-pressed="false">web</button>
 </div>
@@ -148,4 +148,5 @@ hide:
       </div>
     </div>
   </a>
+
 </div>

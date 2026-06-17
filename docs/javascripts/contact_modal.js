@@ -6,7 +6,7 @@ document$.subscribe(function() {
             <button class="close-modal" type="button" aria-label="Close contact dialog">&times;</button>
             <h2 id="contactModalTitle">Get in Touch</h2>
             <p>Feel free to reach out if you have questions about my writeups or just want to chat!</p>
-            
+
             <ul class="contact-list">
               <li>
                 <a href="https://discord.com/users/820421191604502538" class="contact-item" target="_blank" rel="noopener noreferrer">
@@ -65,16 +65,13 @@ document$.subscribe(function() {
         modal.style.display = "none";
         modal.setAttribute("aria-hidden", "true");
         document.body.classList.remove("modal-open");
-
         if (previousFocus && typeof previousFocus.focus === "function") {
             previousFocus.focus();
         }
     }
 
     function handleKeydown(event) {
-        if (modal.getAttribute("aria-hidden") === "true") {
-            return;
-        }
+        if (modal.getAttribute("aria-hidden") === "true") return;
 
         if (event.key === "Escape") {
             event.preventDefault();
@@ -82,15 +79,10 @@ document$.subscribe(function() {
             return;
         }
 
-        if (event.key !== "Tab") {
-            return;
-        }
+        if (event.key !== "Tab") return;
 
         var focusable = getFocusableElements();
-        if (!focusable.length) {
-            event.preventDefault();
-            return;
-        }
+        if (!focusable.length) { event.preventDefault(); return; }
 
         var first = focusable[0];
         var last = focusable[focusable.length - 1];
@@ -104,7 +96,8 @@ document$.subscribe(function() {
         }
     }
 
-    var navLinks = document.querySelectorAll(".md-nav__link");
+    // Attach to both sidebar nav links and tabs nav links
+    var navLinks = document.querySelectorAll(".md-nav__link, .md-tabs__link");
     navLinks.forEach(function(link) {
         if (link.textContent.trim() === "Contact") {
             link.onclick = openModal;
@@ -116,9 +109,7 @@ document$.subscribe(function() {
     }
 
     window.onclick = function(event) {
-        if (event.target === modal) {
-            closeModal();
-        }
+        if (event.target === modal) closeModal();
     };
 
     if (window.contactModalKeydownHandler) {

@@ -5,20 +5,19 @@ hide:
 
 # Projects
 
-<div class="projects-intro">
-  <p>
-    Here are some of the technical projects I've worked on, ranging from cybersecurity tools to AI/ML experiments.
-  </p>
+<div class="projects-intro" data-animate>
+  Here are some of the technical projects I've worked on, ranging from cybersecurity tools to AI/ML experiments.
 </div>
 
 <div class="writeup-grid">
-    <a href="https://nhsjs.com/2026/genetic-neural-network-architecture-optimization-a-hybrid-evolutionary-and-bayesian-approach/" class="writeup-card" target="_blank" rel="noopener noreferrer">
+
+  <a href="https://nhsjs.com/2026/genetic-neural-network-architecture-optimization-a-hybrid-evolutionary-and-bayesian-approach/" class="writeup-card" target="_blank" rel="noopener noreferrer">
     <div class="card-content">
       <div class="card-header">
         <h3 class="card-title">Genetic Neural Network Architecture Optimization</h3>
       </div>
       <p class="card-description">
-        Published peer-reviewed research in the National High School Journal of Science (NHSJS). Developed a hybrid evolutionary + Bayesian optimization framework that evolves neural network architectures using genetic algorithms and then fine-tunes them with Bayesian optimization, achieving higher validation accuracy than manual tuning, random search, or standalone BO on MNIST.
+        Published peer-reviewed research in the National High School Journal of Science (NHSJS). A hybrid evolutionary + Bayesian optimization framework that evolves neural network architectures using genetic algorithms and fine-tunes with Bayesian optimization, achieving higher validation accuracy than manual tuning, random search, or standalone BO on MNIST.
       </p>
       <div class="card-tags">
         <span class="tag">Research</span>
@@ -50,7 +49,7 @@ hide:
         <h3 class="card-title">Adversarial AI Defense</h3>
       </div>
       <p class="card-description">
-        Developed an end-to-end adversarial machine learning pipeline in Python that trains a CNN on MNIST, generates adversarial examples using FGSM and PGD attacks, and implements a statistical anomaly detector to identify and mitigate adversarial inputs, illustrating core concepts in AI security and model robustness.
+        An end-to-end adversarial machine learning pipeline in Python that trains a CNN on MNIST, generates adversarial examples using FGSM and PGD attacks, and implements a statistical anomaly detector to identify and mitigate adversarial inputs, illustrating core concepts in AI security and model robustness.
       </p>
       <div class="card-tags">
         <span class="tag">Machine Learning</span>
@@ -65,7 +64,7 @@ hide:
         <h3 class="card-title">Log Analyzer</h3>
       </div>
       <p class="card-description">
-        Created a lightweight Python-based intrusion detection framework that parses Zeek system logs, normalizes events, and applies time-windowed behavioral rules to detect SSH brute force, web scanning, and other malicious activity patterns for offline security analysis.
+        A lightweight Python-based intrusion detection framework that parses Zeek system logs, normalizes events, and applies time-windowed behavioral rules to detect SSH brute force, web scanning, and other malicious activity patterns for offline security analysis.
       </p>
       <div class="card-tags">
         <span class="tag">Python</span>
@@ -80,7 +79,7 @@ hide:
         <h3 class="card-title">NetFlow Attack Sequencer</h3>
       </div>
       <p class="card-description">
-        Automated a Python-based event correlation engine that ingests NetFlow network flow data to build a temporal-similarity graph and extract sequences of related events, helping reveal potential multi-stage attack chains hidden within large volumes of traffic for more insightful analysis.
+        An automated Python-based event correlation engine that ingests NetFlow network flow data to build a temporal-similarity graph and extract sequences of related events, helping reveal potential multi-stage attack chains hidden within large volumes of traffic.
       </p>
       <div class="card-tags">
         <span class="tag">Networking</span>
@@ -93,7 +92,7 @@ hide:
   <a href="https://doi.org/10.13021/jssr2025.5364" class="writeup-card" target="_blank" rel="noopener noreferrer">
     <div class="card-content">
       <div class="card-header">
-        <h3 class="card-title">Understanding the Effectiveness of Deep Learning Models for Vulnerability Detection</h3>
+        <h3 class="card-title">Understanding Deep Learning for Vulnerability Detection</h3>
       </div>
       <p class="card-description">
         Replicated and evaluated a state-of-the-art deep learning vulnerability detection approach by implementing behavior graph extraction and CodeBERT-based embeddings to demonstrate that incorporating inter-function semantic relationships improves recall and overall performance on real C code datasets.
@@ -104,7 +103,7 @@ hide:
         <span class="tag">Research</span>
       </div>
     </div>
-  </a>  
+  </a>
 
   <a href="https://github.com/spyduck007/deepseek-cli" class="writeup-card" target="_blank" rel="noopener noreferrer">
     <div class="card-content">
@@ -112,7 +111,7 @@ hide:
         <h3 class="card-title">DeepSeek Terminal Studio</h3>
       </div>
       <p class="card-description">
-        A polished, reasoning-aware terminal workspace for DeepSeek chat and agentic coding/automation, built with Textual. It includes slash commands, search and reasoning toggles, offline token estimates, and an agent mode that can read, search, edit, patch, and run workspace commands.
+        A polished, reasoning-aware terminal workspace for DeepSeek chat and agentic coding/automation, built with Textual. Includes slash commands, search and reasoning toggles, offline token estimates, and an agent mode that can read, search, edit, patch, and run workspace commands.
       </p>
       <div class="card-tags">
         <span class="tag">Python</span>
@@ -121,4 +120,5 @@ hide:
       </div>
     </div>
   </a>
+
 </div>

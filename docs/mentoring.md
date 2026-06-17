@@ -3,39 +3,36 @@ hide:
   - toc
 ---
 
-# Mentoring
+# Teaching & Mentoring
 
-<div class="mentoring-intro">
-  <p>
-    I am passionate about sharing my knowledge in cybersecurity. As an officer at my club, I regularly give lectures and create practice CTF challenges to help members improve their skills. Below are some of the presentations I have delivered.
-  </p>
+<div class="mentoring-intro" data-animate>
+  As an officer at TJCSC, I regularly give lectures and create practice CTF challenges to help members improve their skills. Below are some of the presentations I've delivered and measurable outcomes from my mentoring work.
 </div>
 
-<!-- Mentoring Statistics Section -->
 <div class="mentoring-stats-grid">
-  <div class="stat-box">
-    <div class="stat-number">50+</div>
+  <div class="stat-box" data-animate data-animate-delay="1">
+    <div class="stat-number" data-count="50" data-suffix="+">—</div>
     <div class="stat-title">Students Mentored</div>
-    <div class="stat-desc">Including 15-20 one-on-one</div>
+    <div class="stat-desc">Including 15–20 one-on-one</div>
   </div>
-  <div class="stat-box">
-    <div class="stat-number">9-12</div>
+  <div class="stat-box" data-animate data-animate-delay="2">
+    <div class="stat-number">9–12</div>
     <div class="stat-title">Grade Levels</div>
     <div class="stat-desc">Freshmen to Seniors</div>
   </div>
-  <div class="stat-box">
-    <div class="stat-number">150+</div>
+  <div class="stat-box" data-animate data-animate-delay="3">
+    <div class="stat-number" data-count="150" data-suffix="+">—</div>
     <div class="stat-title">Hours Invested</div>
-    <div class="stat-desc">4 hrs/week preparing & teaching</div>
+    <div class="stat-desc">4 hrs/week preparing &amp; teaching</div>
   </div>
-  <div class="stat-box">
-    <div class="stat-number">5+</div>
+  <div class="stat-box" data-animate data-animate-delay="4">
+    <div class="stat-number" data-count="5" data-suffix="+">—</div>
     <div class="stat-title">Core Topics</div>
     <div class="stat-desc">Crypto, Forensics, Networking, Linux, Rev</div>
   </div>
 </div>
 
-<div class="mentoring-outcomes-section">
+<div class="mentoring-outcomes-section" data-animate>
   <h3>Measurable Outcomes</h3>
   <div class="outcomes-grid">
     <div class="outcome-item">
@@ -68,9 +65,10 @@ hide:
   </div>
 </div>
 
-<h2>Presentations</h2>
+## Presentations
 
 <div class="writeup-grid">
+
   <a href="https://docs.google.com/presentation/d/1ukGT8GX0kK-wixQj9JbKjRo-_IAaDq7O_znEiCIRb84/edit?usp=sharing" class="writeup-card" target="_blank" rel="noopener noreferrer">
     <div class="card-content">
       <div class="card-header">
