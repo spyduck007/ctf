@@ -246,6 +246,8 @@ body {
 
 .md-content {
   max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .md-content__inner {
