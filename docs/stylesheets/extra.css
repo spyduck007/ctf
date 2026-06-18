@@ -973,10 +973,17 @@ body {
    19. TABLE (CTF History)
    ==================================================================== */
 
+.md-typeset__scrollwrap {
+  text-align: center;
+}
+
 .md-typeset__table {
+  display: inline-block;
   overflow-x: auto;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
+  text-align: left;
+  max-width: 100%;
 }
 
 .md-typeset table {
