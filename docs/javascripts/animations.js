@@ -164,9 +164,10 @@ document$.subscribe(function () {
     var cells = row.querySelectorAll('td');
     if (cells.length < 2) return;
     var rankText = cells[1].textContent.trim();
-    if (rankText.indexOf('1st') !== -1 || rankText.indexOf('👑') !== -1) {
+    var rank = parseInt(rankText, 10);
+    if (rank === 1) {
       row.classList.add('rank-first');
-    } else if (rankText.indexOf('2nd') !== -1 || rankText.indexOf('3rd') !== -1) {
+    } else if (rank === 2 || rank === 3) {
       row.classList.add('rank-podium');
     }
   });
