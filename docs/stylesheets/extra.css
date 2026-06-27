@@ -1217,9 +1217,9 @@ body.modal-open { overflow: hidden; }
   background: var(--bg-2);
   border: 1px solid var(--border-2);
   border-radius: var(--radius-xl);
-  padding: 2rem;
-  width: 90%;
-  max-width: 420px;
+  padding: clamp(1.5rem, 5vw, 2rem);
+  width: min(92vw, 460px);
+  max-width: 460px;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--border-2);
   animation: modalIn 0.3s var(--ease);
   outline: none;
@@ -1286,7 +1286,7 @@ body.modal-open { overflow: hidden; }
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 0.875rem;
+  gap: 0.75rem;
   padding: 0.875rem 1rem;
   margin-bottom: 0.5rem;
   background: var(--card);
@@ -1294,7 +1294,7 @@ body.modal-open { overflow: hidden; }
   border-radius: var(--radius);
   text-decoration: none !important;
   color: var(--text) !important;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   transition:
     border-color var(--dur) var(--ease),
     transform var(--dur) var(--ease),
@@ -1303,7 +1303,9 @@ body.modal-open { overflow: hidden; }
 
 .contact-item > span:last-child {
   min-width: 0;
-  overflow-wrap: anywhere;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   line-height: 1.35;
 }
 
