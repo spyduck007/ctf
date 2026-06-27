@@ -6,9 +6,9 @@ tags:
 - TraceBash-CTF-2026
 ---
 
-**Challenge:** Retired Hacker
-**Category:** OSINT
-**Flag:** `TBCTF{Piața_Gheorghe_Domășneanu}`
+- **Challenge:** Retired Hacker
+- **Category:** OSINT
+- **Flag:** `TBCTF{Piața_Gheorghe_Domășneanu}`
 
 ---
 

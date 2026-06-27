@@ -6,9 +6,9 @@ tags:
 - TraceBash-CTF-2026
 ---
 
-**Challenge:** Follow the Yellow
-**Category:** Misc
-**Flag:** `TBCTF{patternscanrevealletters}`
+- **Challenge:** Follow the Yellow
+- **Category:** Misc
+- **Flag:** `TBCTF{patternscanrevealletters}`
 
 ---
 

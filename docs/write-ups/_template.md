@@ -9,8 +9,8 @@ tags:
 
 # Challenge Name
 
-**Category:** Crypto  
-**Flag:** `flag{example_flag}`
+- **Category:** Crypto
+- **Flag:** `flag{example_flag}`
 
 ## Description
 

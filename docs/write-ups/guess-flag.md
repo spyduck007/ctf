@@ -6,9 +6,9 @@ tags:
   - LakeCTF-Quals-2025
 ---
 
-**Challenge:** Guess Flag  
-**Category:** Crypto  
-**Flag:** `EPFL{15392948299929328383828399923990}`
+- **Challenge:** Guess Flag
+- **Category:** Crypto
+- **Flag:** `EPFL{15392948299929328383828399923990}`
 
 ---
 

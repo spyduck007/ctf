@@ -6,9 +6,9 @@ tags:
   - Advent-of-CTF-2025
 ---
 
-**Challenge:** The Mission Begins  
-**Category:** Crypto  
-**Flag:** `csd{W3lc0m3_8aCK_70_adv3N7_2025}`
+- **Challenge:** The Mission Begins
+- **Category:** Crypto
+- **Flag:** `csd{W3lc0m3_8aCK_70_adv3N7_2025}`
 
 ---
 

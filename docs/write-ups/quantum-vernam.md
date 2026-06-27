@@ -6,9 +6,9 @@ tags:
   - LakeCTF-Quals-2025
 ---
 
-**Challenge:** Quantum vernam  
-**Category:** Crypto  
-**Flag:** `EPFL{URE_3ITH3R_QU4NTUM_BOSSssss_OR_LINALG_BOSS}`
+- **Challenge:** Quantum vernam
+- **Category:** Crypto
+- **Flag:** `EPFL{URE_3ITH3R_QU4NTUM_BOSSssss_OR_LINALG_BOSS}`
 
 ---
 

@@ -6,9 +6,9 @@ tags:
 - TraceBash-CTF-2026
 ---
 
-**Challenge:** Legacy Ledger
-**Category:** Pwn
-**Flag:** `TBCTF{b0rg3d-5t@ck}`
+- **Challenge:** Legacy Ledger
+- **Category:** Pwn
+- **Flag:** `TBCTF{b0rg3d-5t@ck}`
 
 ---
 

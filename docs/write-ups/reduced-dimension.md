@@ -6,9 +6,9 @@ tags:
   - 0xL4ugh-CTF-v5
 ---
 
-**Challenge:** Reduced Dimension
-**Category:** Crypto
-**Flag:** `0xL4ugh{M4t_Qu4t3rn1on_By_Zwique}`
+- **Challenge:** Reduced Dimension
+- **Category:** Crypto
+- **Flag:** `0xL4ugh{M4t_Qu4t3rn1on_By_Zwique}`
 
 ---
 

@@ -6,9 +6,9 @@ tags:
   - LakeCTF-Quals-2025
 ---
 
-**Challenge:** Ez Part  
-**Category:** Crypto  
-**Flag:** `EPFL{s0me_b1ts_ar3_really_ez_i_t0ld_ya}`
+- **Challenge:** Ez Part
+- **Category:** Crypto
+- **Flag:** `EPFL{s0me_b1ts_ar3_really_ez_i_t0ld_ya}`
 
 ---
 

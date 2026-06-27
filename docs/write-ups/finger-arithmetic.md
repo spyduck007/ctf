@@ -6,9 +6,9 @@ tags:
 - TraceBash-CTF-2026
 ---
 
-**Challenge:** Finger Arithmetic
-**Category:** Rev
-**Flag:** `TBCTF{ju75u5_n_d34d_3nd5_4w417!}`
+- **Challenge:** Finger Arithmetic
+- **Category:** Rev
+- **Flag:** `TBCTF{ju75u5_n_d34d_3nd5_4w417!}`
 
 ---
 

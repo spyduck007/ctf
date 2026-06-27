@@ -6,9 +6,9 @@ tags:
   - LakeCTF-Quals-2025
 ---
 
-**Challenge:** gamblecore  
-**Category:** Web  
-**Flag:** `EPFL{we_truly_live_in_a_society}`
+- **Challenge:** gamblecore
+- **Category:** Web
+- **Flag:** `EPFL{we_truly_live_in_a_society}`
 
 ---
 

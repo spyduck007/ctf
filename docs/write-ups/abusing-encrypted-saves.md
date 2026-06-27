@@ -6,9 +6,9 @@ tags:
   - Jeanne-d-Hack-CTF-2026
 ---
 
-**Challenge:** Abusing Encrypted Saves  
-**Category:** Crypto  
-**Flag:** `JDHACK{M45t3r_0f_A3S_ch34t1nG}`
+- **Challenge:** Abusing Encrypted Saves
+- **Category:** Crypto
+- **Flag:** `JDHACK{M45t3r_0f_A3S_ch34t1nG}`
 
 ---
 

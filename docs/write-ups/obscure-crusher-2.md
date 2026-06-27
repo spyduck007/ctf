@@ -6,9 +6,9 @@ tags:
 - TJCTF-2026
 ---
 
-**Challenge:** obscure-crusher-2
-**Category:** Forensics
-**Flag:** `tjctf{polygl0t_m3tadata_1s_th3_k3y}`
+- **Challenge:** obscure-crusher-2
+- **Category:** Forensics
+- **Flag:** `tjctf{polygl0t_m3tadata_1s_th3_k3y}`
 
 ---
 

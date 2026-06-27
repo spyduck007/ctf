@@ -6,9 +6,9 @@ tags:
   - 0xL4ugh-CTF-v5
 ---
 
-**Challenge:** Bitcoin  
-**Category:** Crypto  
-**Flag:** `0xL4ugh{B1tc0in_Squiggl3_d3m0_By_Zwique_1af5f2582942ff7d}`
+- **Challenge:** Bitcoin
+- **Category:** Crypto
+- **Flag:** `0xL4ugh{B1tc0in_Squiggl3_d3m0_By_Zwique_1af5f2582942ff7d}`
 
 ---
 
