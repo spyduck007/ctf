@@ -345,6 +345,9 @@ body {
   background: var(--card) !important;
   border: 1px solid var(--border) !important;
   border-radius: var(--radius-lg) !important;
+  margin: 1rem 0 1.25rem !important;
+  padding: 0.9rem 3.2rem 0.9rem 1rem !important;
+  min-height: 3rem;
 }
 
 .md-typeset pre code {
@@ -355,6 +358,33 @@ body {
 
 .md-typeset pre > code {
   font-size: 0.85em;
+  line-height: 1.65;
+}
+
+.md-typeset .highlight {
+  margin: 1rem 0 1.25rem;
+}
+
+.md-typeset .highlight pre {
+  margin: 0 !important;
+}
+
+.md-typeset .highlight code {
+  display: block;
+}
+
+.md-typeset .highlight .md-clipboard {
+  top: 0.55rem;
+  right: 0.55rem;
+  color: var(--text-3);
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.md-typeset .highlight .md-clipboard:hover {
+  color: var(--accent);
+  border-color: var(--border-2);
 }
 
 /* Highlight line numbers */
