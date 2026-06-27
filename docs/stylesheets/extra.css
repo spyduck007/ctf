@@ -377,16 +377,33 @@ body {
 .md-typeset .highlight .md-clipboard {
   top: 0.55rem;
   right: 0.55rem;
-  color: var(--text-3);
-  background: var(--bg-2);
-  border: 1px solid var(--border);
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid transparent;
   border-radius: var(--radius-sm);
+  box-shadow: none;
+  opacity: 0.68;
+  transition:
+    color var(--dur) var(--ease),
+    background var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    opacity var(--dur) var(--ease);
+}
+
+.md-typeset .highlight .md-code__button::after,
+.md-typeset .highlight .md-clipboard::after {
+  width: 1.05rem;
+  height: 1.05rem;
+  background: currentColor !important;
 }
 
 .md-typeset .highlight .md-code__button:hover,
+.md-typeset .highlight .md-code__button:focus,
 .md-typeset .highlight .md-clipboard:hover {
   color: var(--accent);
+  background: rgba(7, 21, 40, 0.72);
   border-color: var(--border-2);
+  opacity: 1;
 }
 
 .md-dialog {
