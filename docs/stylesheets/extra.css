@@ -1301,6 +1301,12 @@ body.modal-open { overflow: hidden; }
     box-shadow var(--dur) var(--ease);
 }
 
+.contact-item > span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+}
+
 .contact-item:hover {
   border-color: var(--accent);
   transform: translateX(4px);
