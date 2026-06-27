@@ -1,37 +1,72 @@
 document$.subscribe(function() {
-  var filterContainer = document.querySelector(".filter-container");
+  var filterContainer = document.querySelector(".writeup-filters");
   var filterableGrid = document.querySelector(".writeup-grid.filterable");
 
   if (!filterContainer || !filterableGrid) {
     return;
   }
 
-  var buttons = Array.prototype.slice.call(
-    filterContainer.querySelectorAll(".filter-btn")
-  );
+  var ctfSelect = filterContainer.querySelector("#writeup-ctf-filter");
+  var categorySelect = filterContainer.querySelector("#writeup-category-filter");
+  var resetButton = filterContainer.querySelector(".filter-reset");
+  var countLabel = filterContainer.querySelector(".filter-count");
+  var emptyMessage = document.querySelector(".filter-empty");
   var cards = Array.prototype.slice.call(
     filterableGrid.querySelectorAll(".writeup-card")
   );
 
-  function setFilter(filter) {
-    buttons.forEach(function(button) {
-      var isActive = button.getAttribute("data-filter") === filter;
-      button.classList.toggle("active", isActive);
-      button.setAttribute("aria-pressed", isActive ? "true" : "false");
-    });
+  if (!ctfSelect || !categorySelect) {
+    return;
+  }
+
+  function matchesFilter(card, filterName, selectedValue) {
+    return selectedValue === "all" || card.getAttribute(filterName) === selectedValue;
+  }
+
+  function pluralizeWriteups(count) {
+    return count === 1 ? "1 writeup" : count + " writeups";
+  }
+
+  function updateFilters() {
+    var selectedCtf = ctfSelect.value || "all";
+    var selectedCategory = categorySelect.value || "all";
+    var visibleCount = 0;
 
     cards.forEach(function(card) {
-      var tags = (card.getAttribute("data-tags") || "").split(/\s+/);
-      var shouldShow = filter === "all" || tags.indexOf(filter) !== -1;
+      var shouldShow =
+        matchesFilter(card, "data-ctf", selectedCtf) &&
+        matchesFilter(card, "data-category", selectedCategory);
+
       card.classList.toggle("show", shouldShow);
+      if (shouldShow) {
+        visibleCount += 1;
+      }
+    });
+
+    if (countLabel) {
+      countLabel.textContent = pluralizeWriteups(visibleCount);
+    }
+
+    if (emptyMessage) {
+      emptyMessage.hidden = visibleCount !== 0;
+    }
+
+    if (resetButton) {
+      resetButton.hidden = selectedCtf === "all" && selectedCategory === "all";
+    }
+  }
+
+  ctfSelect.addEventListener("change", updateFilters);
+  categorySelect.addEventListener("change", updateFilters);
+
+  if (resetButton) {
+    resetButton.addEventListener("click", function() {
+      ctfSelect.value = "all";
+      categorySelect.value = "all";
+      updateFilters();
+      ctfSelect.focus();
     });
   }
 
-  buttons.forEach(function(button) {
-    button.addEventListener("click", function() {
-      setFilter(button.getAttribute("data-filter") || "all");
-    });
-  });
-
-  setFilter("all");
+  updateFilters();
 });

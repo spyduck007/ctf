@@ -36,6 +36,7 @@ description: Personal cybersecurity and CTF portfolio of Ansh Agrawal, also know
   </div>
 </div>
 
+<!-- writeups:generated:start -->
 <div class="section-header" data-animate>
   <span class="section-label">// latest writeups</span>
   <a href="write-ups/" class="section-link">View all →</a>
@@ -43,40 +44,41 @@ description: Personal cybersecurity and CTF portfolio of Ansh Agrawal, also know
 
 <div class="writeup-grid">
 
-  <a href="write-ups/abusing-encrypted-saves/" class="writeup-card">
+  <a href="write-ups/ppp/" class="writeup-card">
     <div class="card-content">
       <div class="card-header">
-        <span class="card-date">2026-01-30</span>
-        <h3 class="card-title">Abusing Encrypted Saves</h3>
+        <span class="card-date">2026-06-27</span>
+        <h3 class="card-title">PPP</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">crypto</span><span class="tag">Jeanne-d-Hack-CTF-2026</span>
+        <span class="tag">pwn</span><span class="tag">SekaiCTF-2026</span>
       </div>
     </div>
   </a>
 
-  <a href="write-ups/reduced-dimension/" class="writeup-card">
+  <a href="write-ups/retired-hacker/" class="writeup-card">
     <div class="card-content">
       <div class="card-header">
-        <span class="card-date">2026-01-23</span>
-        <h3 class="card-title">Reduced Dimension</h3>
+        <span class="card-date">2026-06-26</span>
+        <h3 class="card-title">Retired Hacker</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">crypto</span><span class="tag">0xL4ugh-CTF-v5</span>
+        <span class="tag">osint</span><span class="tag">TraceBash-CTF-2026</span>
       </div>
     </div>
   </a>
 
-  <a href="write-ups/bitcoin/" class="writeup-card">
+  <a href="write-ups/legacy-ledger/" class="writeup-card">
     <div class="card-content">
       <div class="card-header">
-        <span class="card-date">2026-01-23</span>
-        <h3 class="card-title">Bitcoin</h3>
+        <span class="card-date">2026-06-26</span>
+        <h3 class="card-title">Legacy Ledger</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">crypto</span><span class="tag">0xL4ugh-CTF-v5</span>
+        <span class="tag">pwn</span><span class="tag">TraceBash-CTF-2026</span>
       </div>
     </div>
   </a>
 
 </div>
+<!-- writeups:generated:end -->
