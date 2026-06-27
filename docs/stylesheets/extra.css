@@ -373,6 +373,7 @@ body {
   display: block;
 }
 
+.md-typeset .highlight .md-code__button,
 .md-typeset .highlight .md-clipboard {
   top: 0.55rem;
   right: 0.55rem;
@@ -382,9 +383,22 @@ body {
   border-radius: var(--radius-sm);
 }
 
+.md-typeset .highlight .md-code__button:hover,
 .md-typeset .highlight .md-clipboard:hover {
   color: var(--accent);
   border-color: var(--border-2);
+}
+
+.md-dialog {
+  background: var(--bg-2) !important;
+  border: 1px solid var(--border-2) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35), 0 0 0 1px var(--border) !important;
+}
+
+.md-dialog__inner {
+  color: var(--text) !important;
+  font-weight: 600;
 }
 
 /* Highlight line numbers */
