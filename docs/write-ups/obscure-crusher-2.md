@@ -2,8 +2,8 @@
 title: obscure-crusher-2
 date: 2026-05-17
 tags:
-* forensics
-* TJCTF-2026
+- forensics
+- TJCTF-2026
 ---
 
 **Challenge:** obscure-crusher-2
