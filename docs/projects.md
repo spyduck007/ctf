@@ -105,18 +105,18 @@ hide:
     </div>
   </a>
 
-  <a href="https://github.com/spyduck007/deepseek-cli" class="writeup-card" target="_blank" rel="noopener noreferrer">
+  <a href="https://github.com/spyduck007/deepseek-api" class="writeup-card" target="_blank" rel="noopener noreferrer">
     <div class="card-content">
       <div class="card-header">
-        <h3 class="card-title">DeepSeek Terminal Studio</h3>
+        <h3 class="card-title">DeepSeek API</h3>
       </div>
       <p class="card-description">
-        A polished, reasoning-aware terminal workspace for DeepSeek chat and agentic coding/automation, built with Textual. Includes slash commands, search and reasoning toggles, offline token estimates, and an agent mode that can read, search, edit, patch, and run workspace commands.
+        A lean, OpenAI-compatible FastAPI wrapper around DeepSeek web chat. Supports chat completions, model listing, streaming SSE responses, reasoning output through a DeepSeek Pro model, optional web search, custom API-key authentication, and Docker Compose deployment.
       </p>
       <div class="card-tags">
         <span class="tag">Python</span>
-        <span class="tag">Textual</span>
-        <span class="tag">Automation</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">OpenAI-Compatible API</span>
       </div>
     </div>
   </a>
