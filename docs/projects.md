@@ -129,6 +129,22 @@ hide:
     </div>
   </a>
 
+  <a href="https://github.com/spyduck007/agent-mcp" class="writeup-card" target="_blank" rel="noopener noreferrer">
+    <div class="card-content">
+      <div class="card-header">
+        <h3 class="card-title">Agent MCP</h3>
+      </div>
+      <p class="card-description">
+        A containerized FastMCP server that gives coding agents a controlled workspace toolkit over streamable HTTP. Provides project introspection, file operations, shell commands, Git workflows, browser automation, snapshots, package management, and environment diagnostics.
+      </p>
+      <div class="card-tags">
+        <span class="tag">Python</span>
+        <span class="tag">MCP</span>
+        <span class="tag">Developer Tools</span>
+      </div>
+    </div>
+  </a>
+
   <a href="https://github.com/spyduck007/ScavSite" class="writeup-card" target="_blank" rel="noopener noreferrer">
     <div class="card-content">
       <div class="card-header">
