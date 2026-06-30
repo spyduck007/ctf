@@ -44,38 +44,38 @@ description: Personal cybersecurity and CTF portfolio of Ansh Agrawal, also know
 
 <div class="writeup-grid">
 
-  <a href="write-ups/ppp/" class="writeup-card">
+  <a href="write-ups/waypoint/" class="writeup-card">
     <div class="card-content">
       <div class="card-header">
-        <span class="card-date">2026-06-27</span>
-        <h3 class="card-title">PPP</h3>
+        <span class="card-date">2026-06-28</span>
+        <h3 class="card-title">waypoint</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">pwn</span><span class="tag">SekaiCTF-2026</span>
+        <span class="tag">misc</span><span class="tag">MntcrlCTF-2026</span>
       </div>
     </div>
   </a>
 
-  <a href="write-ups/retired-hacker/" class="writeup-card">
+  <a href="write-ups/nfz/" class="writeup-card">
     <div class="card-content">
       <div class="card-header">
-        <span class="card-date">2026-06-26</span>
-        <h3 class="card-title">Retired Hacker</h3>
+        <span class="card-date">2026-06-28</span>
+        <h3 class="card-title">nfz</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">osint</span><span class="tag">TraceBash-CTF-2026</span>
+        <span class="tag">forensics</span><span class="tag">MntcrlCTF-2026</span>
       </div>
     </div>
   </a>
 
-  <a href="write-ups/legacy-ledger/" class="writeup-card">
+  <a href="write-ups/mail0g/" class="writeup-card">
     <div class="card-content">
       <div class="card-header">
-        <span class="card-date">2026-06-26</span>
-        <h3 class="card-title">Legacy Ledger</h3>
+        <span class="card-date">2026-06-28</span>
+        <h3 class="card-title">mail0g</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">pwn</span><span class="tag">TraceBash-CTF-2026</span>
+        <span class="tag">forensics</span><span class="tag">MntcrlCTF-2026</span>
       </div>
     </div>
   </a>

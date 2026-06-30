@@ -14,7 +14,9 @@ hide:
       <option value="Advent-of-CTF-2025">Advent-of-CTF-2025</option>
       <option value="Jeanne-d-Hack-CTF-2026">Jeanne-d-Hack-CTF-2026</option>
       <option value="LakeCTF-Quals-2025">LakeCTF-Quals-2025</option>
+      <option value="MntcrlCTF-2026">MntcrlCTF-2026</option>
       <option value="SekaiCTF-2026">SekaiCTF-2026</option>
+      <option value="TJCTF-2026">TJCTF-2026</option>
       <option value="TraceBash-CTF-2026">TraceBash-CTF-2026</option>
       <option value="V1T-CTF-2026">V1T-CTF-2026</option>
     </select>
@@ -24,6 +26,7 @@ hide:
     <select id="writeup-category-filter" class="filter-select" aria-label="Filter writeups by category">
       <option value="all">All categories</option>
       <option value="crypto">crypto</option>
+      <option value="forensics">forensics</option>
       <option value="misc">misc</option>
       <option value="osint">osint</option>
       <option value="pwn">pwn</option>
@@ -32,10 +35,202 @@ hide:
     </select>
   </label>
   <button class="filter-reset" type="button" hidden>Reset</button>
-  <div class="filter-count" aria-live="polite">20 writeups</div>
+  <div class="filter-count" aria-live="polite">37 writeups</div>
 </div>
 
 <div class="writeup-grid filterable">
+
+  <a href="waypoint/" class="writeup-card" data-category="misc" data-ctf="MntcrlCTF-2026" data-tags="misc MntcrlCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-06-28</span>
+        <h3 class="card-title">waypoint</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">misc</span><span class="tag">MntcrlCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="nfz/" class="writeup-card" data-category="forensics" data-ctf="MntcrlCTF-2026" data-tags="forensics MntcrlCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-06-28</span>
+        <h3 class="card-title">nfz</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">forensics</span><span class="tag">MntcrlCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="mail0g/" class="writeup-card" data-category="forensics" data-ctf="MntcrlCTF-2026" data-tags="forensics MntcrlCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-06-28</span>
+        <h3 class="card-title">mail0g</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">forensics</span><span class="tag">MntcrlCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="fetcherx/" class="writeup-card" data-category="web" data-ctf="MntcrlCTF-2026" data-tags="web MntcrlCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-06-28</span>
+        <h3 class="card-title">fetcherx</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">web</span><span class="tag">MntcrlCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="aname/" class="writeup-card" data-category="pwn" data-ctf="MntcrlCTF-2026" data-tags="pwn MntcrlCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-06-28</span>
+        <h3 class="card-title">aName</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">pwn</span><span class="tag">MntcrlCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="the-sound-of-noise-2/" class="writeup-card" data-category="crypto" data-ctf="MntcrlCTF-2026" data-tags="crypto MntcrlCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-06-28</span>
+        <h3 class="card-title">The Sound of Noise 2</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">crypto</span><span class="tag">MntcrlCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="the-sound-of-noise/" class="writeup-card" data-category="crypto" data-ctf="MntcrlCTF-2026" data-tags="crypto MntcrlCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-06-28</span>
+        <h3 class="card-title">The Sound of Noise</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">crypto</span><span class="tag">MntcrlCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="repusping/" class="writeup-card" data-category="pwn" data-ctf="MntcrlCTF-2026" data-tags="pwn MntcrlCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-06-28</span>
+        <h3 class="card-title">RepusPing</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">pwn</span><span class="tag">MntcrlCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="hypertext-preprocessor/" class="writeup-card" data-category="pwn" data-ctf="MntcrlCTF-2026" data-tags="pwn MntcrlCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-06-28</span>
+        <h3 class="card-title">Hypertext Preprocessor</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">pwn</span><span class="tag">MntcrlCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="hyperelliptic-drift/" class="writeup-card" data-category="crypto" data-ctf="MntcrlCTF-2026" data-tags="crypto MntcrlCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-06-28</span>
+        <h3 class="card-title">Hyperelliptic Drift</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">crypto</span><span class="tag">MntcrlCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="find-me/" class="writeup-card" data-category="misc" data-ctf="MntcrlCTF-2026" data-tags="misc MntcrlCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-06-28</span>
+        <h3 class="card-title">Find Me</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">misc</span><span class="tag">MntcrlCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="eddsa/" class="writeup-card" data-category="crypto" data-ctf="MntcrlCTF-2026" data-tags="crypto MntcrlCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-06-28</span>
+        <h3 class="card-title">EDDSA</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">crypto</span><span class="tag">MntcrlCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="cosmic-rays/" class="writeup-card" data-category="pwn" data-ctf="MntcrlCTF-2026" data-tags="pwn MntcrlCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-06-28</span>
+        <h3 class="card-title">Cosmic Rays</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">pwn</span><span class="tag">MntcrlCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="codeword/" class="writeup-card" data-category="crypto" data-ctf="MntcrlCTF-2026" data-tags="crypto MntcrlCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-06-28</span>
+        <h3 class="card-title">Codeword</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">crypto</span><span class="tag">MntcrlCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="capa-spotted/" class="writeup-card" data-category="osint" data-ctf="MntcrlCTF-2026" data-tags="osint MntcrlCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-06-28</span>
+        <h3 class="card-title">Capa Spotted</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">osint</span><span class="tag">MntcrlCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="a-strange-snake/" class="writeup-card" data-category="rev" data-ctf="MntcrlCTF-2026" data-tags="rev MntcrlCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-06-28</span>
+        <h3 class="card-title">A Strange Snake</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">rev</span><span class="tag">MntcrlCTF-2026</span>
+      </div>
+    </div>
+  </a>
 
   <a href="ppp/" class="writeup-card" data-category="pwn" data-ctf="SekaiCTF-2026" data-tags="pwn SekaiCTF-2026">
     <div class="card-content">
@@ -141,6 +336,18 @@ hide:
       </div>
       <div class="card-tags">
         <span class="tag">misc</span><span class="tag">V1T-CTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="obscure-crusher-2/" class="writeup-card" data-category="forensics" data-ctf="TJCTF-2026" data-tags="forensics TJCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-05-17</span>
+        <h3 class="card-title">obscure-crusher-2</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">forensics</span><span class="tag">TJCTF-2026</span>
       </div>
     </div>
   </a>

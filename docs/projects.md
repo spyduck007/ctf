@@ -121,4 +121,20 @@ hide:
     </div>
   </a>
 
+  <a href="https://github.com/spyduck007/ScavSite" class="writeup-card" target="_blank" rel="noopener noreferrer">
+    <div class="card-content">
+      <div class="card-header">
+        <h3 class="card-title">ScavSite</h3>
+      </div>
+      <p class="card-description">
+        A Django-based scavenger hunt platform for school competitions. Includes Ion OAuth login, class-year teams, challenge solving, live leaderboards, admin challenge management, analytics, rate limiting, and Discord webhooks for first-blood notifications.
+      </p>
+      <div class="card-tags">
+        <span class="tag">Django</span>
+        <span class="tag">Competition Platform</span>
+        <span class="tag">OAuth</span>
+      </div>
+    </div>
+  </a>
+
 </div>
