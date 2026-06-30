@@ -27,6 +27,7 @@ Here is a record of my participation and rankings in various CTF competitions.
 
 | Competition                                                                                                                | Rank   | # of Teams |
 | :------------------------------------------------------------------------------------------------------------------------- | :----- | :--------- |
+| [MntcrlCTF 2026](https://ctftime.org/event/3282)                                                                           | 8th    | 118        |
 | [boroCTF 2026](https://ctftime.org/event/3309)                                                                             | 1st 👑 | 819        |
 | [GPN CTF 2026](https://ctftime.org/event/3041)                                                                             | 9th    | 613        |
 | [UMDCTF 2026](https://ctftime.org/event/3056)                                                                              | 9th    | 762        |
