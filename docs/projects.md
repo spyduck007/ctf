@@ -11,7 +11,7 @@ hide:
 
 <div class="writeup-grid projects-grid">
 
-  <a href="https://nhsjs.com/2026/genetic-neural-network-architecture-optimization-a-hybrid-evolutionary-and-bayesian-approach/" class="writeup-card" target="_blank" rel="noopener noreferrer">
+  <div class="writeup-card">
     <div class="card-content">
       <div class="card-header">
         <h3 class="card-title">Genetic Neural Network Architecture Optimization</h3>
@@ -24,8 +24,12 @@ hide:
         <span class="tag">Machine Learning</span>
         <span class="tag">Neural Architecture Search</span>
       </div>
+      <div class="card-actions">
+        <a href="https://nhsjs.com/2026/genetic-neural-network-architecture-optimization-a-hybrid-evolutionary-and-bayesian-approach/" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Read Paper</a>
+        <a href="https://github.com/spyduck007/gnn" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">View Code</a>
+      </div>
     </div>
-  </a>
+  </div>
 
   <a href="https://github.com/spyduck007/DeviceFileTransfer" class="writeup-card" target="_blank" rel="noopener noreferrer">
     <div class="card-content">
