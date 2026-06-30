@@ -53,13 +53,7 @@ Alongside security, I also work on **AI/ML projects and tools**, often experimen
 
 ## What I'm working on now
 
-Right now, I'm working mostly at the intersection of **AI and cybersecurity**. I'm interested in what happens when models are not just used as chatbots, but as tools that can reason about code, interact with systems, run experiments, and adapt their approach based on the security task in front of them.
-
-The first steps in that direction were **DeepSeek API** and **Agent MCP**. DeepSeek API gave me an OpenAI-compatible way to work with DeepSeek models, including reasoning and streaming support. Agent MCP gave coding agents a controlled workspace interface for file operations, shell commands, Git workflows, browser automation, and project inspection.
-
-My next bigger project is combining those ideas into a more autonomous cybersecurity agent. The goal is not just "an AI that solves security problems," but a system that can choose specialized models and tools depending on the task: reverse engineering, web testing, log analysis, exploit development, documentation, or code review. I want it to be able to break a problem down, call the right tools, test its assumptions, and produce work that is actually useful instead of just sounding confident.
-
-That is the direction I'm most excited about right now: building AI systems that are practical enough to help with real security workflows, but constrained and inspectable enough that I can understand what they are doing and where they fail.
+Right now, I'm working at the intersection of **AI and cybersecurity**, building toward a fully autonomous cybersecurity agent that combines **DeepSeek API** and **Agent MCP**. The hard part is not just connecting a model to tools; it is making a system that can route different security tasks to specialized models, use files, shell commands, Git, browser automation, and analysis tools safely, and handle complex workflows like reverse engineering, web testing, exploit development, log analysis, and code review without losing context or blindly trusting its own output.
 
 ## Outside the code
 
