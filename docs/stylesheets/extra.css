@@ -250,6 +250,10 @@ body {
   margin-right: auto !important;
 }
 
+.md-content:has(.projects-grid) {
+  max-width: 1180px !important;
+}
+
 .md-content__inner {
   margin: 0 auto;
   padding: 1.5rem 1rem 3rem !important;
@@ -777,6 +781,11 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   gap: 1rem;
   margin-top: 0.5rem;
+}
+
+.projects-grid {
+  grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+  gap: 1.25rem;
 }
 
 .writeup-card {
@@ -1579,6 +1588,10 @@ body.modal-open { overflow: hidden; }
   }
 
   .writeup-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
     grid-template-columns: 1fr;
   }
 

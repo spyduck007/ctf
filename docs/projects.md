@@ -9,7 +9,7 @@ hide:
   Here are some of the technical projects I've worked on, ranging from cybersecurity tools to AI/ML experiments.
 </div>
 
-<div class="writeup-grid">
+<div class="writeup-grid projects-grid">
 
   <a href="https://nhsjs.com/2026/genetic-neural-network-architecture-optimization-a-hybrid-evolutionary-and-bayesian-approach/" class="writeup-card" target="_blank" rel="noopener noreferrer">
     <div class="card-content">
