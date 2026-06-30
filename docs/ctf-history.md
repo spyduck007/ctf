@@ -9,17 +9,17 @@ Here is a record of my participation and rankings in various CTF competitions.
 
 <div class="ctf-stats-grid">
   <div class="stat-box" data-animate data-animate-delay="1">
-    <div class="stat-number" data-count="48">—</div>
+    <div class="stat-number" data-count="51">51</div>
     <div class="stat-title">Competitions</div>
-    <div class="stat-desc">Tracked from 2024–2026</div>
+    <div class="stat-desc">Tracked from 2024-2026</div>
   </div>
   <div class="stat-box" data-animate data-animate-delay="2">
-    <div class="stat-number" data-count="11">—</div>
+    <div class="stat-number" data-count="9">9</div>
     <div class="stat-title">1st Place Finishes</div>
     <div class="stat-desc">Across school, national, and global events</div>
   </div>
   <div class="stat-box" data-animate data-animate-delay="3">
-    <div class="stat-number" data-count="21">—</div>
+    <div class="stat-number" data-count="24">24</div>
     <div class="stat-title">Top-10 Finishes</div>
     <div class="stat-desc">Including multiple large international CTFs</div>
   </div>

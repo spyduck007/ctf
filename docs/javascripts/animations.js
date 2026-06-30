@@ -3,43 +3,6 @@
 document$.subscribe(function () {
 
   // =====================================================================
-  // 0. Auto-calculate CTF stats from the results table
-  // =====================================================================
-
-  (function () {
-    var table = document.querySelector('.ctf-stats-grid ~ .md-typeset__scrollwrap table, .ctf-stats-grid + * table, .md-typeset table');
-    if (!table) return;
-
-    var rows = Array.prototype.slice.call(table.querySelectorAll('tbody tr'));
-    var total = rows.length;
-    var firstPlace = 0;
-    var topTen = 0;
-
-    rows.forEach(function (row) {
-      var cells = row.querySelectorAll('td');
-      if (cells.length < 2) return;
-      var rankText = cells[1].textContent.trim();
-      var match = rankText.match(/(\d+)/);
-      if (match) {
-        var rank = parseInt(match[1], 10);
-        if (rank === 1) firstPlace++;
-        if (rank <= 10) topTen++;
-      }
-    });
-
-    var statBoxes = document.querySelectorAll('.ctf-stats-grid .stat-number[data-count]');
-    var labels = document.querySelectorAll('.ctf-stats-grid .stat-title');
-
-    statBoxes.forEach(function (box, i) {
-      var label = labels[i] ? labels[i].textContent.trim() : '';
-      if (label === 'Competitions') box.setAttribute('data-count', total);
-      else if (label === '1st Place Finishes') box.setAttribute('data-count', firstPlace);
-      else if (label === 'Top-10 Finishes') box.setAttribute('data-count', topTen);
-      box.textContent = '—';
-    });
-  })();
-
-  // =====================================================================
   // 1. Scroll-triggered reveal animations
   // =====================================================================
 

@@ -22,15 +22,15 @@ description: Personal cybersecurity and CTF portfolio of Ansh Agrawal, also know
   </div>
   <div class="hero__stats">
     <div class="hero__stat">
-      <div class="hero__stat-num" data-count="48">48</div>
+      <div class="hero__stat-num" data-count="51">51</div>
       <div class="hero__stat-label">CTF Competitions</div>
     </div>
     <div class="hero__stat">
-      <div class="hero__stat-num" data-count="11">11</div>
+      <div class="hero__stat-num" data-count="9">9</div>
       <div class="hero__stat-label">1st Place Finishes</div>
     </div>
     <div class="hero__stat">
-      <div class="hero__stat-num" data-count="21">21</div>
+      <div class="hero__stat-num" data-count="24">24</div>
       <div class="hero__stat-label">Top-10 Finishes</div>
     </div>
   </div>

@@ -14,6 +14,7 @@ except ModuleNotFoundError:
 DOCS_DIR = Path("docs/write-ups")
 INDEX_FILE = DOCS_DIR / "index.md"
 HOMEPAGE_FILE = Path("docs/index.md")
+CTF_HISTORY_FILE = Path("docs/ctf-history.md")
 
 GENERATED_START = "<!-- writeups:generated:start -->"
 GENERATED_END = "<!-- writeups:generated:end -->"
@@ -161,6 +162,92 @@ def write_file_if_changed(path: Path, content: str) -> None:
     print(f"Updated {path}")
 
 
+def parse_ctf_history_rows(content: str) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+
+    for line in content.splitlines():
+        stripped = line.strip()
+        if not stripped.startswith("|") or stripped.startswith("| :"):
+            continue
+
+        cells = [cell.strip() for cell in stripped.strip("|").split("|")]
+        if len(cells) < 3 or cells[0].lower() == "competition":
+            continue
+
+        rank_match = re.search(r"\d+", cells[1])
+        if not rank_match:
+            continue
+
+        year_match = re.search(r"\b(20\d{2})\b", cells[0])
+        rows.append(
+            {
+                "competition": cells[0],
+                "rank": int(rank_match.group(0)),
+                "year": int(year_match.group(1)) if year_match else None,
+            }
+        )
+
+    return rows
+
+
+def get_ctf_stats() -> dict[str, str]:
+    rows = parse_ctf_history_rows(CTF_HISTORY_FILE.read_text(encoding="utf-8"))
+    years = sorted({row["year"] for row in rows if row["year"] is not None})
+    first_place_count = sum(1 for row in rows if row["rank"] == 1)
+    top_ten_count = sum(1 for row in rows if row["rank"] <= 10)
+
+    if len(years) >= 2:
+        year_range = f"{years[0]}-{years[-1]}"
+    elif years:
+        year_range = str(years[0])
+    else:
+        year_range = "tracked results"
+
+    return {
+        "competitions": str(len(rows)),
+        "first_place": str(first_place_count),
+        "top_ten": str(top_ten_count),
+        "year_range": year_range,
+    }
+
+
+def generate_homepage_ctf_stats(stats: dict[str, str]) -> str:
+    return f"""  <div class="hero__stats">
+    <div class="hero__stat">
+      <div class="hero__stat-num" data-count="{stats["competitions"]}">{stats["competitions"]}</div>
+      <div class="hero__stat-label">CTF Competitions</div>
+    </div>
+    <div class="hero__stat">
+      <div class="hero__stat-num" data-count="{stats["first_place"]}">{stats["first_place"]}</div>
+      <div class="hero__stat-label">1st Place Finishes</div>
+    </div>
+    <div class="hero__stat">
+      <div class="hero__stat-num" data-count="{stats["top_ten"]}">{stats["top_ten"]}</div>
+      <div class="hero__stat-label">Top-10 Finishes</div>
+    </div>
+  </div>"""
+
+
+def generate_ctf_history_stats(stats: dict[str, str]) -> str:
+    return f"""<div class="ctf-stats-grid">
+  <div class="stat-box" data-animate data-animate-delay="1">
+    <div class="stat-number" data-count="{stats["competitions"]}">{stats["competitions"]}</div>
+    <div class="stat-title">Competitions</div>
+    <div class="stat-desc">Tracked from {stats["year_range"]}</div>
+  </div>
+  <div class="stat-box" data-animate data-animate-delay="2">
+    <div class="stat-number" data-count="{stats["first_place"]}">{stats["first_place"]}</div>
+    <div class="stat-title">1st Place Finishes</div>
+    <div class="stat-desc">Across school, national, and global events</div>
+  </div>
+  <div class="stat-box" data-animate data-animate-delay="3">
+    <div class="stat-number" data-count="{stats["top_ten"]}">{stats["top_ten"]}</div>
+    <div class="stat-title">Top-10 Finishes</div>
+    <div class="stat-desc">Including multiple large international CTFs</div>
+  </div>
+</div>"""
+
+
 def generate_writeups_index(writeups: list[dict[str, Any]]) -> None:
     categories = sorted({writeup["category"] for writeup in writeups if writeup["category"]}, key=str.lower)
     ctfs = sorted({writeup["ctf"] for writeup in writeups if writeup["ctf"]}, key=str.lower)
@@ -234,9 +321,18 @@ def generate_latest_writeups_section(writeups: list[dict[str, Any]]) -> str:
     return content
 
 
-def update_homepage(writeups: list[dict[str, Any]]) -> None:
+def update_homepage(writeups: list[dict[str, Any]], ctf_stats: dict[str, str]) -> None:
     content = HOMEPAGE_FILE.read_text(encoding="utf-8")
+    stats_section = generate_homepage_ctf_stats(ctf_stats)
     latest_section = generate_latest_writeups_section(writeups)
+
+    stats_pattern = re.compile(
+        rf'  <div class="hero__stats">.*?</div>\s*(?={re.escape(GENERATED_START)})',
+        re.DOTALL,
+    )
+    if not stats_pattern.search(content):
+        raise RuntimeError("Could not find the homepage CTF stats section in docs/index.md")
+    content = stats_pattern.sub(f"{stats_section}\n</div>\n\n", content, count=1)
 
     marker_pattern = re.compile(
         rf"{re.escape(GENERATED_START)}.*?{re.escape(GENERATED_END)}\s*",
@@ -260,10 +356,27 @@ def update_homepage(writeups: list[dict[str, Any]]) -> None:
     write_file_if_changed(HOMEPAGE_FILE, updated)
 
 
+def update_ctf_history(ctf_stats: dict[str, str]) -> None:
+    content = CTF_HISTORY_FILE.read_text(encoding="utf-8")
+    stats_section = generate_ctf_history_stats(ctf_stats)
+    stats_pattern = re.compile(
+        r'<div class="ctf-stats-grid">.*?</div>\s*(?=\| Competition)',
+        re.DOTALL,
+    )
+
+    if not stats_pattern.search(content):
+        raise RuntimeError("Could not find the CTF history stats section in docs/ctf-history.md")
+
+    updated = stats_pattern.sub(f"{stats_section}\n\n", content, count=1)
+    write_file_if_changed(CTF_HISTORY_FILE, updated)
+
+
 def main() -> None:
     writeups = get_all_writeups()
+    ctf_stats = get_ctf_stats()
     generate_writeups_index(writeups)
-    update_homepage(writeups)
+    update_homepage(writeups, ctf_stats)
+    update_ctf_history(ctf_stats)
 
 
 if __name__ == "__main__":

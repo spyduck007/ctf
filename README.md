@@ -40,7 +40,7 @@ Open <http://127.0.0.1:8000> in your browser.
 - `docs/write-ups/`: individual CTF writeups.
 - `docs/stylesheets/extra.css`: custom site styling.
 - `docs/javascripts/`: filters, animations, contact modal, and MathJax setup.
-- `scripts/build_writeups.py`: regenerates the writeup index and homepage latest-writeup cards from writeup front matter.
+- `scripts/build_writeups.py`: regenerates the writeup index, homepage latest-writeup cards, and CTF stats from source markdown.
 
 ## Adding Writeups
 
@@ -53,7 +53,7 @@ Open <http://127.0.0.1:8000> in your browser.
 python scripts/build_writeups.py
 ```
 
-The script updates `docs/write-ups/index.md` and the latest writeup cards on `docs/index.md`.
+The script updates `docs/write-ups/index.md`, the latest writeup cards on `docs/index.md`, and CTF stats on `docs/index.md` / `docs/ctf-history.md`.
 
 ## Building
 
