@@ -89,7 +89,7 @@ hide:
     </div>
   </a>
 
-  <a href="https://doi.org/10.13021/jssr2025.5364" class="writeup-card" target="_blank" rel="noopener noreferrer">
+  <div class="writeup-card">
     <div class="card-content">
       <div class="card-header">
         <h3 class="card-title">Understanding Deep Learning for Vulnerability Detection</h3>
@@ -102,8 +102,12 @@ hide:
         <span class="tag">Deep Learning</span>
         <span class="tag">Research</span>
       </div>
+      <div class="card-actions">
+        <a href="https://doi.org/10.13021/jssr2025.5364" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Read Abstract</a>
+        <a href="https://github.com/spyduck007/VulBG" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">View Code</a>
+      </div>
     </div>
-  </a>
+  </div>
 
   <a href="https://github.com/spyduck007/deepseek-api" class="writeup-card" target="_blank" rel="noopener noreferrer">
     <div class="card-content">

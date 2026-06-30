@@ -863,6 +863,18 @@ body {
   margin-top: auto;
 }
 
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.card-actions .btn {
+  padding: 0.45rem 0.8rem;
+  font-size: 0.72rem;
+}
+
 /* Filterable cards hidden by default */
 .writeup-grid.filterable .writeup-card { display: none; }
 .writeup-grid.filterable .writeup-card.show { display: flex; }
