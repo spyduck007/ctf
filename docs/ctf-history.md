@@ -9,7 +9,7 @@ Here is a record of my participation and rankings in various CTF competitions.
 
 <div class="ctf-stats-grid">
   <div class="stat-box" data-animate data-animate-delay="1">
-    <div class="stat-number" data-count="51">51</div>
+    <div class="stat-number" data-count="54">54</div>
     <div class="stat-title">Competitions</div>
     <div class="stat-desc">Tracked from 2024-2026</div>
   </div>
@@ -19,7 +19,7 @@ Here is a record of my participation and rankings in various CTF competitions.
     <div class="stat-desc">Across school, national, and global events</div>
   </div>
   <div class="stat-box" data-animate data-animate-delay="3">
-    <div class="stat-number" data-count="24">24</div>
+    <div class="stat-number" data-count="25">25</div>
     <div class="stat-title">Top-10 Finishes</div>
     <div class="stat-desc">Including multiple large international CTFs</div>
   </div>
@@ -27,6 +27,9 @@ Here is a record of my participation and rankings in various CTF competitions.
 
 | Competition                                                                                                                | Rank   | # of Teams |
 | :------------------------------------------------------------------------------------------------------------------------- | :----- | :--------- |
+| [LYKNCTF](https://ctftime.org/event/3280)                                                                                  | 54th   | 657        |
+| [No Hack No CTF 2026](https://ctftime.org/event/3180)                                                                      | 6th    | 844        |
+| [SekaiCTF 2026](https://ctftime.org/event/3113)                                                                            | 14th   | 925        |
 | [MntcrlCTF 2026](https://ctftime.org/event/3282)                                                                           | 8th    | 118        |
 | [boroCTF 2026](https://ctftime.org/event/3309)                                                                             | 1st 👑 | 819        |
 | [GPN CTF 2026](https://ctftime.org/event/3041)                                                                             | 9th    | 613        |

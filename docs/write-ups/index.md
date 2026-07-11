@@ -14,6 +14,7 @@ hide:
       <option value="Advent-of-CTF-2025">Advent-of-CTF-2025</option>
       <option value="Jeanne-d-Hack-CTF-2026">Jeanne-d-Hack-CTF-2026</option>
       <option value="LakeCTF-Quals-2025">LakeCTF-Quals-2025</option>
+      <option value="LYKNCTF">LYKNCTF</option>
       <option value="MntcrlCTF-2026">MntcrlCTF-2026</option>
       <option value="SekaiCTF-2026">SekaiCTF-2026</option>
       <option value="TJCTF-2026">TJCTF-2026</option>
@@ -35,10 +36,514 @@ hide:
     </select>
   </label>
   <button class="filter-reset" type="button" hidden>Reset</button>
-  <div class="filter-count" aria-live="polite">37 writeups</div>
+  <div class="filter-count" aria-live="polite">79 writeups</div>
 </div>
 
 <div class="writeup-grid filterable">
+
+  <a href="golfing/" class="writeup-card" data-category="pwn" data-ctf="LYKNCTF" data-tags="pwn LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">golfing</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">pwn</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="world-cup-2/" class="writeup-card" data-category="forensics" data-ctf="LYKNCTF" data-tags="forensics LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">World Cup 2</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">forensics</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="world-cup-1/" class="writeup-card" data-category="forensics" data-ctf="LYKNCTF" data-tags="forensics LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">World Cup 1</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">forensics</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="whispering/" class="writeup-card" data-category="crypto" data-ctf="LYKNCTF" data-tags="crypto LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Whispering</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">crypto</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="waguri2/" class="writeup-card" data-category="rev" data-ctf="LYKNCTF" data-tags="rev LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Waguri2</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">rev</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="waguri1/" class="writeup-card" data-category="web" data-ctf="LYKNCTF" data-tags="web LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Waguri1</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">web</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="unnamed-merchant/" class="writeup-card" data-category="osint" data-ctf="LYKNCTF" data-tags="osint LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">UNNAMED MERCHANT</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">osint</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="twelve-steps/" class="writeup-card" data-category="crypto" data-ctf="LYKNCTF" data-tags="crypto LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Twelve Steps</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">crypto</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="thanh-hoa-2/" class="writeup-card" data-category="forensics" data-ctf="LYKNCTF" data-tags="forensics LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Thanh Hoa 2</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">forensics</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="thanh-hoa-1/" class="writeup-card" data-category="forensics" data-ctf="LYKNCTF" data-tags="forensics LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Thanh Hoa 1</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">forensics</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="static/" class="writeup-card" data-category="misc" data-ctf="LYKNCTF" data-tags="misc LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Static</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">misc</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="sleepless-machine/" class="writeup-card" data-category="crypto" data-ctf="LYKNCTF" data-tags="crypto LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Sleepless Machine</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">crypto</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="shortcut/" class="writeup-card" data-category="crypto" data-ctf="LYKNCTF" data-tags="crypto LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Shortcut</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">crypto</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="shop/" class="writeup-card" data-category="pwn" data-ctf="LYKNCTF" data-tags="pwn LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Shop</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">pwn</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="right-in-front-of-your-eyes/" class="writeup-card" data-category="web" data-ctf="LYKNCTF" data-tags="web LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Right in front of your eyes</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">web</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="return-to-lose/" class="writeup-card" data-category="pwn" data-ctf="LYKNCTF" data-tags="pwn LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Return-to-Lose</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">pwn</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="replay-jasmine/" class="writeup-card" data-category="crypto" data-ctf="LYKNCTF" data-tags="crypto LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Replay-Jasmine?</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">crypto</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="remedy/" class="writeup-card" data-category="forensics" data-ctf="LYKNCTF" data-tags="forensics LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Remedy</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">forensics</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="postbox/" class="writeup-card" data-category="crypto" data-ctf="LYKNCTF" data-tags="crypto LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Postbox</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">crypto</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="noisy-broadcast/" class="writeup-card" data-category="crypto" data-ctf="LYKNCTF" data-tags="crypto LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Noisy Broadcast</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">crypto</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="miss-my-school/" class="writeup-card" data-category="osint" data-ctf="LYKNCTF" data-tags="osint LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Miss My School</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">osint</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="migrant/" class="writeup-card" data-category="web" data-ctf="LYKNCTF" data-tags="web LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Migrant</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">web</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="lykn-corp/" class="writeup-card" data-category="web" data-ctf="LYKNCTF" data-tags="web LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">LYKN Corp</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">web</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="inferior-student/" class="writeup-card" data-category="rev" data-ctf="LYKNCTF" data-tags="rev LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Inferior Student</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">rev</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="important-debris/" class="writeup-card" data-category="osint" data-ctf="LYKNCTF" data-tags="osint LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">IMPORTANT DEBRIS</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">osint</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="i-hate-this-app-revenge/" class="writeup-card" data-category="rev" data-ctf="LYKNCTF" data-tags="rev LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">I HATE THIS APP REVENGE</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">rev</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="i-hate-this-app/" class="writeup-card" data-category="rev" data-ctf="LYKNCTF" data-tags="rev LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">I HATE THIS APP</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">rev</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="hash-and-dash/" class="writeup-card" data-category="crypto" data-ctf="LYKNCTF" data-tags="crypto LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Hash &amp; Dash</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">crypto</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="gold-hunters/" class="writeup-card" data-category="web" data-ctf="LYKNCTF" data-tags="web LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Gold Hunters</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">web</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="glyph-cache/" class="writeup-card" data-category="pwn" data-ctf="LYKNCTF" data-tags="pwn LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Glyph Cache</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">pwn</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="far-away/" class="writeup-card" data-category="osint" data-ctf="LYKNCTF" data-tags="osint LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Far Away</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">osint</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="ez-pwn-revenge/" class="writeup-card" data-category="pwn" data-ctf="LYKNCTF" data-tags="pwn LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Ez Pwn Revenge</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">pwn</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="ez-pwn/" class="writeup-card" data-category="pwn" data-ctf="LYKNCTF" data-tags="pwn LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Ez Pwn</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">pwn</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="discord-nitro/" class="writeup-card" data-category="web" data-ctf="LYKNCTF" data-tags="web LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Discord Nitro</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">web</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="cyclic-echo/" class="writeup-card" data-category="crypto" data-ctf="LYKNCTF" data-tags="crypto LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Cyclic Echo</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">crypto</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="cr4ck-3/" class="writeup-card" data-category="rev" data-ctf="LYKNCTF" data-tags="rev LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Cr4ck 3</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">rev</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="cr4ck-2/" class="writeup-card" data-category="rev" data-ctf="LYKNCTF" data-tags="rev LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Cr4ck 2</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">rev</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="cr4ck-1/" class="writeup-card" data-category="rev" data-ctf="LYKNCTF" data-tags="rev LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Cr4ck 1</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">rev</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="control-freak-3/" class="writeup-card" data-category="rev" data-ctf="LYKNCTF" data-tags="rev LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Control Freak 3</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">rev</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="control-freak-2/" class="writeup-card" data-category="rev" data-ctf="LYKNCTF" data-tags="rev LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Control Freak 2</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">rev</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="control-freak-1/" class="writeup-card" data-category="rev" data-ctf="LYKNCTF" data-tags="rev LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">Control Freak 1</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">rev</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="67xbet/" class="writeup-card" data-category="crypto" data-ctf="LYKNCTF" data-tags="crypto LYKNCTF">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">67xbet</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">crypto</span><span class="tag">LYKNCTF</span>
+      </div>
+    </div>
+  </a>
 
   <a href="waypoint/" class="writeup-card" data-category="misc" data-ctf="MntcrlCTF-2026" data-tags="misc MntcrlCTF-2026">
     <div class="card-content">

@@ -22,7 +22,7 @@ description: Personal cybersecurity and CTF portfolio of Ansh Agrawal, also know
   </div>
   <div class="hero__stats">
     <div class="hero__stat">
-      <div class="hero__stat-num" data-count="51">51</div>
+      <div class="hero__stat-num" data-count="54">54</div>
       <div class="hero__stat-label">CTF Competitions</div>
     </div>
     <div class="hero__stat">
@@ -30,7 +30,7 @@ description: Personal cybersecurity and CTF portfolio of Ansh Agrawal, also know
       <div class="hero__stat-label">1st Place Finishes</div>
     </div>
     <div class="hero__stat">
-      <div class="hero__stat-num" data-count="24">24</div>
+      <div class="hero__stat-num" data-count="25">25</div>
       <div class="hero__stat-label">Top-10 Finishes</div>
     </div>
   </div>
@@ -44,38 +44,38 @@ description: Personal cybersecurity and CTF portfolio of Ansh Agrawal, also know
 
 <div class="writeup-grid">
 
-  <a href="write-ups/waypoint/" class="writeup-card">
+  <a href="write-ups/golfing/" class="writeup-card">
     <div class="card-content">
       <div class="card-header">
-        <span class="card-date">2026-06-28</span>
-        <h3 class="card-title">waypoint</h3>
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">golfing</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">misc</span><span class="tag">MntcrlCTF-2026</span>
+        <span class="tag">pwn</span><span class="tag">LYKNCTF</span>
       </div>
     </div>
   </a>
 
-  <a href="write-ups/nfz/" class="writeup-card">
+  <a href="write-ups/world-cup-2/" class="writeup-card">
     <div class="card-content">
       <div class="card-header">
-        <span class="card-date">2026-06-28</span>
-        <h3 class="card-title">nfz</h3>
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">World Cup 2</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">forensics</span><span class="tag">MntcrlCTF-2026</span>
+        <span class="tag">forensics</span><span class="tag">LYKNCTF</span>
       </div>
     </div>
   </a>
 
-  <a href="write-ups/mail0g/" class="writeup-card">
+  <a href="write-ups/world-cup-1/" class="writeup-card">
     <div class="card-content">
       <div class="card-header">
-        <span class="card-date">2026-06-28</span>
-        <h3 class="card-title">mail0g</h3>
+        <span class="card-date">2026-07-06</span>
+        <h3 class="card-title">World Cup 1</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">forensics</span><span class="tag">MntcrlCTF-2026</span>
+        <span class="tag">forensics</span><span class="tag">LYKNCTF</span>
       </div>
     </div>
   </a>
