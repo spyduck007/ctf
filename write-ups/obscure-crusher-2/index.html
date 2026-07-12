@@ -1,0 +1,1283 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Personal cybersecurity and CTF portfolio of Ansh Agrawal, also known online as spyduck007, a TJHSST student.">
+      
+      
+        <meta name="author" content="Ansh Agrawal">
+      
+      
+        <link rel="canonical" href="https://spyduck007.github.io/ctf/write-ups/obscure-crusher-2/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>obscure-crusher-2 - Ansh Agrawal</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  
+  
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="obscure-crusher-2">
+  <meta property="og:description" content="Personal cybersecurity and CTF portfolio of Ansh Agrawal, also known online as spyduck007, a TJHSST student.">
+  <meta property="og:url" content="https://spyduck007.github.io/ctf/write-ups/obscure-crusher-2/">
+  <meta property="og:image" content="https://spyduck007.github.io/ctf/assets/logo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="obscure-crusher-2">
+  <meta name="twitter:description" content="Personal cybersecurity and CTF portfolio of Ansh Agrawal, also known online as spyduck007, a TJHSST student.">
+  <meta name="twitter:image" content="https://spyduck007.github.io/ctf/assets/logo.png">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#my-initial-read-first-impressions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Ansh Agrawal" class="md-header__button md-logo" aria-label="Ansh Agrawal" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ansh Agrawal
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              obscure-crusher-2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Writeups
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ctf-history/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  CTF Results
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../projects/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Projects
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../mentoring/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Teaching
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="#" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contact
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Ansh Agrawal" class="md-nav__button md-logo" aria-label="Ansh Agrawal" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Ansh Agrawal
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Writeups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ctf-history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mentoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teaching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#my-initial-read-first-impressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My initial read / first impressions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parsing-the-icns-chunks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parsing the ICNS chunks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-icon-chunk-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The icon chunk material
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-embedded-ttf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The embedded TTF
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-lzma-chunk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The LZMA chunk
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decrypting-the-flag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decrypting the flag
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-solve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Solve
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-thoughts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Thoughts
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>obscure-crusher-2</h1>
+
+<ul>
+<li><strong>Challenge:</strong> obscure-crusher-2</li>
+<li><strong>Category:</strong> Forensics</li>
+<li><strong>Flag:</strong> <code>tjctf{polygl0t_m3tadata_1s_th3_k3y}</code></li>
+</ul>
+<hr />
+<h2 id="my-initial-read-first-impressions">My initial read / first impressions</h2>
+<p>We are given one file:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>chall.icns
+</code></pre></div>
+<p>and the challenge description says:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>What if the key isn’t something you find...
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>but something you build?
+</code></pre></div>
+<p>So right away, this does not feel like a normal “run strings and find the flag” challenge. The file extension is <code>.icns</code>, which is Apple’s icon format, but the description makes it sound like the flag is not directly hidden somewhere. Instead, some pieces of the file probably have to be combined to build a key.</p>
+<p>Opening the file in a hex editor shows that it starts like a normal ICNS-style file:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>69 63 6e 73
+</code></pre></div>
+<p>which is:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>icns
+</code></pre></div>
+<p>ICNS files are chunk-based. The rough structure is:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>magic:  4 bytes
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>size:   4 bytes, big endian
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>then repeated chunks:
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>type:   4 bytes
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>size:   4 bytes, big endian
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>data:   size - 8 bytes
+</code></pre></div>
+<p>That already matches the challenge description pretty well. If the file is made of chunks, then the “key” might come from metadata about those chunks instead of the raw contents.</p>
+<h2 id="parsing-the-icns-chunks">Parsing the ICNS chunks</h2>
+<p>The first thing I did was write a small parser for the ICNS container. The important part is that the lengths are big endian, not little endian:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">parse_icns</span><span class="p">(</span><span class="n">blob</span><span class="p">):</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="k">if</span> <span class="n">blob</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span> <span class="o">!=</span> <span class="sa">b</span><span class="s2">&quot;icns&quot;</span><span class="p">:</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;not an ICNS-like file&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">total</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="s2">&quot;&gt;I&quot;</span><span class="p">,</span> <span class="n">blob</span><span class="p">,</span> <span class="mi">4</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="n">chunks</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="n">p</span> <span class="o">=</span> <span class="mi">8</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="k">while</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">8</span> <span class="o">&lt;=</span> <span class="n">total</span><span class="p">:</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>        <span class="n">typ</span> <span class="o">=</span> <span class="n">blob</span><span class="p">[</span><span class="n">p</span><span class="p">:</span><span class="n">p</span> <span class="o">+</span> <span class="mi">4</span><span class="p">]</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>        <span class="n">length</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="s2">&quot;&gt;I&quot;</span><span class="p">,</span> <span class="n">blob</span><span class="p">,</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>        <span class="n">payload</span> <span class="o">=</span> <span class="n">blob</span><span class="p">[</span><span class="n">p</span> <span class="o">+</span> <span class="mi">8</span><span class="p">:</span><span class="n">p</span> <span class="o">+</span> <span class="n">length</span><span class="p">]</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>        <span class="n">chunks</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">typ</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">length</span><span class="p">))</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>        <span class="n">p</span> <span class="o">+=</span> <span class="n">length</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>    <span class="k">return</span> <span class="n">chunks</span>
+</code></pre></div>
+<p>Dumping the chunk types gives something like:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>TOC 
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>ic09
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>ic07
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>ic13
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>ic11
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>ttf 
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>lzM4
+</code></pre></div>
+<p>The <code>TOC</code> chunk is basically screaming at us:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>metadata/orders/checksums
+</code></pre></div>
+<p>That is a pretty good hint for what matters:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>metadata
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>order
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>checksums
+</code></pre></div>
+<p>So the actual icon image data is probably not the important thing by itself. The important thing is the metadata around the icon chunks: their type, length, and checksum.</p>
+<h2 id="the-icon-chunk-material">The icon chunk material</h2>
+<p>There are four normal-looking icon chunks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>ic07
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>ic09
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>ic11
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>ic13
+</code></pre></div>
+<p>They start with PNG magic bytes, but they are not really there to be opened as useful images. They are there to contribute to the key.</p>
+<p>The material from the icon chunks is built like this:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">icns_material</span><span class="p">(</span><span class="n">chunks</span><span class="p">):</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="n">interesting</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>        <span class="sa">b</span><span class="s2">&quot;ic07&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>        <span class="sa">b</span><span class="s2">&quot;ic09&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>        <span class="sa">b</span><span class="s2">&quot;ic11&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>        <span class="sa">b</span><span class="s2">&quot;ic13&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="p">}</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    <span class="n">icon_chunks</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    <span class="k">for</span> <span class="n">typ</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">off</span><span class="p">,</span> <span class="n">length</span> <span class="ow">in</span> <span class="n">chunks</span><span class="p">:</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>        <span class="k">if</span> <span class="n">typ</span> <span class="ow">in</span> <span class="n">interesting</span><span class="p">:</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>            <span class="n">icon_chunks</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">typ</span><span class="p">,</span> <span class="n">payload</span><span class="p">))</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>    <span class="n">h</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">()</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>    <span class="k">for</span> <span class="n">typ</span><span class="p">,</span> <span class="n">payload</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">icon_chunks</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>        <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">typ</span><span class="p">)</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>        <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;&gt;I&quot;</span><span class="p">,</span> <span class="mi">8</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">payload</span><span class="p">)))</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>        <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;&gt;I&quot;</span><span class="p">,</span> <span class="n">zlib</span><span class="o">.</span><span class="n">crc32</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFFFFFFFF</span><span class="p">))</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>    <span class="k">return</span> <span class="n">h</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+</code></pre></div>
+<p>There are a few easy places to mess this up:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>the chunks have to be sorted by type
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>the length includes the 8-byte chunk header
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>the CRC is over the payload only
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>the length and CRC are packed big endian
+</code></pre></div>
+<p>This is also where the challenge starts feeling less like “extract the hidden file” and more like “reconstruct the author’s exact key schedule.”</p>
+<h2 id="the-embedded-ttf">The embedded TTF</h2>
+<p>The next suspicious chunk is:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>ttf 
+</code></pre></div>
+<p>This contains a tiny TrueType font.</p>
+<p>A TTF file is also table-based. At the start, it has an offset table and then a table directory. One of those tables is the <code>name</code> table, which stores font names like the family name, style, full name, and so on.</p>
+<p>Parsing the TTF table directory shows a few tables:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>head
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>maxp
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>name
+</code></pre></div>
+<p>The normal names are boring:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Crush Sans
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>Regular
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Crush Sans Regular
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>CrushSans-Regular
+</code></pre></div>
+<p>But the custom name records are much more interesting:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>north-facing-icons
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>tables-before-strings
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>lengths-are-big-endian
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>names-sort-by-id
+</code></pre></div>
+<p>These are basically mini-hints hidden in the font metadata.</p>
+<p>The solve only cares about name records where:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>name_id &gt;= 0x0100
+</code></pre></div>
+<p>Those records are sorted and hashed into the key material.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">ttf_material</span><span class="p">(</span><span class="n">ttf</span><span class="p">):</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    <span class="n">sfnt</span><span class="p">,</span> <span class="n">num_tables</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="s2">&quot;&gt;IH&quot;</span><span class="p">,</span> <span class="n">ttf</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    <span class="k">if</span> <span class="n">sfnt</span> <span class="o">!=</span> <span class="mh">0x00010000</span><span class="p">:</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;embedded TTF has wrong sfnt version&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>    <span class="n">name_off</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>    <span class="n">p</span> <span class="o">=</span> <span class="mi">12</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_tables</span><span class="p">):</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>        <span class="n">tag</span> <span class="o">=</span> <span class="n">ttf</span><span class="p">[</span><span class="n">p</span><span class="p">:</span><span class="n">p</span> <span class="o">+</span> <span class="mi">4</span><span class="p">]</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>        <span class="n">checksum_value</span><span class="p">,</span> <span class="n">off</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="s2">&quot;&gt;III&quot;</span><span class="p">,</span> <span class="n">ttf</span><span class="p">,</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>        <span class="k">if</span> <span class="n">tag</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">&quot;name&quot;</span><span class="p">:</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>            <span class="n">name_off</span> <span class="o">=</span> <span class="n">off</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>        <span class="n">p</span> <span class="o">+=</span> <span class="mi">16</span>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>    <span class="k">if</span> <span class="n">name_off</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;embedded TTF has no name table&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a>    <span class="n">fmt</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">string_offset</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="s2">&quot;&gt;HHH&quot;</span><span class="p">,</span> <span class="n">ttf</span><span class="p">,</span> <span class="n">name_off</span><span class="p">)</span>
+<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a>
+<a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a>    <span class="n">string_base</span> <span class="o">=</span> <span class="n">name_off</span> <span class="o">+</span> <span class="n">string_offset</span>
+<a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a>    <span class="n">record_pos</span> <span class="o">=</span> <span class="n">name_off</span> <span class="o">+</span> <span class="mi">6</span>
+<a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a>    <span class="n">records</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a>
+<a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+<a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a>        <span class="n">platform</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="n">language</span><span class="p">,</span> <span class="n">name_id</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">off</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span>
+<a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a>            <span class="s2">&quot;&gt;HHHHHH&quot;</span><span class="p">,</span>
+<a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a>            <span class="n">ttf</span><span class="p">,</span>
+<a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a>            <span class="n">record_pos</span><span class="p">,</span>
+<a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a>        <span class="p">)</span>
+<a id="__codelineno-17-34" name="__codelineno-17-34" href="#__codelineno-17-34"></a>
+<a id="__codelineno-17-35" name="__codelineno-17-35" href="#__codelineno-17-35"></a>        <span class="n">raw</span> <span class="o">=</span> <span class="n">ttf</span><span class="p">[</span><span class="n">string_base</span> <span class="o">+</span> <span class="n">off</span><span class="p">:</span><span class="n">string_base</span> <span class="o">+</span> <span class="n">off</span> <span class="o">+</span> <span class="n">length</span><span class="p">]</span>
+<a id="__codelineno-17-36" name="__codelineno-17-36" href="#__codelineno-17-36"></a>
+<a id="__codelineno-17-37" name="__codelineno-17-37" href="#__codelineno-17-37"></a>        <span class="k">if</span> <span class="n">name_id</span> <span class="o">&gt;=</span> <span class="mh">0x0100</span><span class="p">:</span>
+<a id="__codelineno-17-38" name="__codelineno-17-38" href="#__codelineno-17-38"></a>            <span class="n">records</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">name_id</span><span class="p">,</span> <span class="n">platform</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="n">language</span><span class="p">,</span> <span class="n">raw</span><span class="p">))</span>
+<a id="__codelineno-17-39" name="__codelineno-17-39" href="#__codelineno-17-39"></a>
+<a id="__codelineno-17-40" name="__codelineno-17-40" href="#__codelineno-17-40"></a>        <span class="n">record_pos</span> <span class="o">+=</span> <span class="mi">12</span>
+<a id="__codelineno-17-41" name="__codelineno-17-41" href="#__codelineno-17-41"></a>
+<a id="__codelineno-17-42" name="__codelineno-17-42" href="#__codelineno-17-42"></a>    <span class="n">h</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">()</span>
+<a id="__codelineno-17-43" name="__codelineno-17-43" href="#__codelineno-17-43"></a>
+<a id="__codelineno-17-44" name="__codelineno-17-44" href="#__codelineno-17-44"></a>    <span class="k">for</span> <span class="n">name_id</span><span class="p">,</span> <span class="n">platform</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="n">language</span><span class="p">,</span> <span class="n">raw</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">records</span><span class="p">):</span>
+<a id="__codelineno-17-45" name="__codelineno-17-45" href="#__codelineno-17-45"></a>        <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;&gt;HHHHH&quot;</span><span class="p">,</span> <span class="n">name_id</span><span class="p">,</span> <span class="n">platform</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="n">language</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw</span><span class="p">)))</span>
+<a id="__codelineno-17-46" name="__codelineno-17-46" href="#__codelineno-17-46"></a>        <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span>
+<a id="__codelineno-17-47" name="__codelineno-17-47" href="#__codelineno-17-47"></a>
+<a id="__codelineno-17-48" name="__codelineno-17-48" href="#__codelineno-17-48"></a>    <span class="k">return</span> <span class="n">h</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+</code></pre></div>
+<p>Again, there are some annoying details that matter:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>the TTF directory comes before the table data
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>the name strings are stored after the name records
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>the strings use their own offset relative to the name table string area
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>the custom name records need to be sorted
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>the raw bytes should be hashed, not the decoded strings
+</code></pre></div>
+<p>That last point is especially important because some records are UTF-16-BE. If you decode and re-encode them slightly wrong, the hash changes and the final CRC check fails.</p>
+<h2 id="the-lzma-chunk">The LZMA chunk</h2>
+<p>The final suspicious chunk is:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>lzM4
+</code></pre></div>
+<p>The payload starts with:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>5d 00 00 80 00
+</code></pre></div>
+<p>Those are LZMA-Alone properties.</p>
+<p>The challenge also uses those exact 5 bytes as part of the key derivation, so they are not just a decompression detail. The key is built from:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>&quot;CRUSHER2|&quot;
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>+ icon metadata hash
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>+ TTF metadata hash
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>+ LZMA properties
+</code></pre></div>
+<p>In code:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">LZMA_PROPS</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s2">&quot;5d00008000&quot;</span><span class="p">)</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">derive_key</span><span class="p">(</span><span class="n">chunks</span><span class="p">,</span> <span class="n">ttf</span><span class="p">):</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>    <span class="n">data</span> <span class="o">=</span> <span class="p">(</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>        <span class="sa">b</span><span class="s2">&quot;CRUSHER2|&quot;</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>        <span class="o">+</span> <span class="n">icns_material</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>        <span class="o">+</span> <span class="n">ttf_material</span><span class="p">(</span><span class="n">ttf</span><span class="p">)</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>        <span class="o">+</span> <span class="n">LZMA_PROPS</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>    <span class="p">)</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>    <span class="k">return</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+</code></pre></div>
+<p>At this point, we can decompress the LZMA payload:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">inner</span> <span class="o">=</span> <span class="n">lzma</span><span class="o">.</span><span class="n">decompress</span><span class="p">(</span><span class="n">lzma_payload</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">lzma</span><span class="o">.</span><span class="n">FORMAT_ALONE</span><span class="p">)</span>
+</code></pre></div>
+<p>The decompressed payload starts with:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>CRUSHER2
+</code></pre></div>
+<p>Then it has a small header:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>magic:      8 bytes
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>version:    uint16 big endian
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>flag_len:   uint8
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>crc:        uint32 big endian
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>ciphertext: flag_len bytes
+</code></pre></div>
+<p>So the LZMA chunk does not directly contain the flag. It contains an encrypted flag and enough information to check whether the derived key was right.</p>
+<h2 id="decrypting-the-flag">Decrypting the flag</h2>
+<p>The encryption is a simple SHA-256 based XOR stream.</p>
+<p>For each block:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>sha256(key || counter)
+</code></pre></div>
+<p>where the counter is a big endian 32-bit integer.</p>
+<p>Then XOR the stream with the ciphertext:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">stream_xor</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>    <span class="n">stream</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">()</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>    <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>        <span class="n">block</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">key</span> <span class="o">+</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;&gt;I&quot;</span><span class="p">,</span> <span class="n">counter</span><span class="p">))</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>        <span class="n">stream</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>        <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>    <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">a</span> <span class="o">^</span> <span class="n">b</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">stream</span><span class="p">))</span>
+</code></pre></div>
+<p>After decrypting, the CRC from the inner payload confirms whether everything was parsed correctly.</p>
+<p>If the key is even slightly wrong, the CRC does not match. This made the challenge pretty unforgiving, because missing one endian swap or sorting detail completely breaks the solve.</p>
+<h2 id="final-solve">Final Solve</h2>
+<p>Here is the full solve script:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">struct</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">zlib</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">lzma</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="n">LZMA_PROPS</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s2">&quot;5d00008000&quot;</span><span class="p">)</span>
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>
+<a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">u32</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a>    <span class="k">return</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;&gt;I&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a>
+<a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a>
+<a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a><span class="k">def</span><span class="w"> </span><span class="nf">parse_icns</span><span class="p">(</span><span class="n">blob</span><span class="p">):</span>
+<a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a>    <span class="k">if</span> <span class="n">blob</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span> <span class="o">!=</span> <span class="sa">b</span><span class="s2">&quot;icns&quot;</span><span class="p">:</span>
+<a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;not an ICNS-like file&quot;</span><span class="p">)</span>
+<a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a>
+<a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a>    <span class="n">total</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="s2">&quot;&gt;I&quot;</span><span class="p">,</span> <span class="n">blob</span><span class="p">,</span> <span class="mi">4</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a>
+<a id="__codelineno-28-20" name="__codelineno-28-20" href="#__codelineno-28-20"></a>    <span class="k">if</span> <span class="n">total</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">blob</span><span class="p">):</span>
+<a id="__codelineno-28-21" name="__codelineno-28-21" href="#__codelineno-28-21"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;truncated ICNS file&quot;</span><span class="p">)</span>
+<a id="__codelineno-28-22" name="__codelineno-28-22" href="#__codelineno-28-22"></a>
+<a id="__codelineno-28-23" name="__codelineno-28-23" href="#__codelineno-28-23"></a>    <span class="n">chunks</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-28-24" name="__codelineno-28-24" href="#__codelineno-28-24"></a>    <span class="n">p</span> <span class="o">=</span> <span class="mi">8</span>
+<a id="__codelineno-28-25" name="__codelineno-28-25" href="#__codelineno-28-25"></a>
+<a id="__codelineno-28-26" name="__codelineno-28-26" href="#__codelineno-28-26"></a>    <span class="k">while</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">8</span> <span class="o">&lt;=</span> <span class="n">total</span><span class="p">:</span>
+<a id="__codelineno-28-27" name="__codelineno-28-27" href="#__codelineno-28-27"></a>        <span class="n">typ</span> <span class="o">=</span> <span class="n">blob</span><span class="p">[</span><span class="n">p</span><span class="p">:</span><span class="n">p</span> <span class="o">+</span> <span class="mi">4</span><span class="p">]</span>
+<a id="__codelineno-28-28" name="__codelineno-28-28" href="#__codelineno-28-28"></a>        <span class="n">length</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="s2">&quot;&gt;I&quot;</span><span class="p">,</span> <span class="n">blob</span><span class="p">,</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-28-29" name="__codelineno-28-29" href="#__codelineno-28-29"></a>
+<a id="__codelineno-28-30" name="__codelineno-28-30" href="#__codelineno-28-30"></a>        <span class="k">if</span> <span class="n">length</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">:</span>
+<a id="__codelineno-28-31" name="__codelineno-28-31" href="#__codelineno-28-31"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;bad chunk length at offset &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+<a id="__codelineno-28-32" name="__codelineno-28-32" href="#__codelineno-28-32"></a>
+<a id="__codelineno-28-33" name="__codelineno-28-33" href="#__codelineno-28-33"></a>        <span class="k">if</span> <span class="n">p</span> <span class="o">+</span> <span class="n">length</span> <span class="o">&gt;</span> <span class="n">total</span><span class="p">:</span>
+<a id="__codelineno-28-34" name="__codelineno-28-34" href="#__codelineno-28-34"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;chunk at offset &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; exceeds ICNS length&quot;</span><span class="p">)</span>
+<a id="__codelineno-28-35" name="__codelineno-28-35" href="#__codelineno-28-35"></a>
+<a id="__codelineno-28-36" name="__codelineno-28-36" href="#__codelineno-28-36"></a>        <span class="n">payload</span> <span class="o">=</span> <span class="n">blob</span><span class="p">[</span><span class="n">p</span> <span class="o">+</span> <span class="mi">8</span><span class="p">:</span><span class="n">p</span> <span class="o">+</span> <span class="n">length</span><span class="p">]</span>
+<a id="__codelineno-28-37" name="__codelineno-28-37" href="#__codelineno-28-37"></a>        <span class="n">chunks</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">typ</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">length</span><span class="p">))</span>
+<a id="__codelineno-28-38" name="__codelineno-28-38" href="#__codelineno-28-38"></a>
+<a id="__codelineno-28-39" name="__codelineno-28-39" href="#__codelineno-28-39"></a>        <span class="n">p</span> <span class="o">+=</span> <span class="n">length</span>
+<a id="__codelineno-28-40" name="__codelineno-28-40" href="#__codelineno-28-40"></a>
+<a id="__codelineno-28-41" name="__codelineno-28-41" href="#__codelineno-28-41"></a>    <span class="k">return</span> <span class="n">chunks</span>
+<a id="__codelineno-28-42" name="__codelineno-28-42" href="#__codelineno-28-42"></a>
+<a id="__codelineno-28-43" name="__codelineno-28-43" href="#__codelineno-28-43"></a>
+<a id="__codelineno-28-44" name="__codelineno-28-44" href="#__codelineno-28-44"></a><span class="k">def</span><span class="w"> </span><span class="nf">icns_material</span><span class="p">(</span><span class="n">chunks</span><span class="p">):</span>
+<a id="__codelineno-28-45" name="__codelineno-28-45" href="#__codelineno-28-45"></a>    <span class="n">interesting</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-28-46" name="__codelineno-28-46" href="#__codelineno-28-46"></a>        <span class="sa">b</span><span class="s2">&quot;ic07&quot;</span><span class="p">,</span>
+<a id="__codelineno-28-47" name="__codelineno-28-47" href="#__codelineno-28-47"></a>        <span class="sa">b</span><span class="s2">&quot;ic09&quot;</span><span class="p">,</span>
+<a id="__codelineno-28-48" name="__codelineno-28-48" href="#__codelineno-28-48"></a>        <span class="sa">b</span><span class="s2">&quot;ic11&quot;</span><span class="p">,</span>
+<a id="__codelineno-28-49" name="__codelineno-28-49" href="#__codelineno-28-49"></a>        <span class="sa">b</span><span class="s2">&quot;ic13&quot;</span><span class="p">,</span>
+<a id="__codelineno-28-50" name="__codelineno-28-50" href="#__codelineno-28-50"></a>    <span class="p">}</span>
+<a id="__codelineno-28-51" name="__codelineno-28-51" href="#__codelineno-28-51"></a>
+<a id="__codelineno-28-52" name="__codelineno-28-52" href="#__codelineno-28-52"></a>    <span class="n">icon_chunks</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-28-53" name="__codelineno-28-53" href="#__codelineno-28-53"></a>
+<a id="__codelineno-28-54" name="__codelineno-28-54" href="#__codelineno-28-54"></a>    <span class="k">for</span> <span class="n">typ</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">off</span><span class="p">,</span> <span class="n">length</span> <span class="ow">in</span> <span class="n">chunks</span><span class="p">:</span>
+<a id="__codelineno-28-55" name="__codelineno-28-55" href="#__codelineno-28-55"></a>        <span class="k">if</span> <span class="n">typ</span> <span class="ow">in</span> <span class="n">interesting</span><span class="p">:</span>
+<a id="__codelineno-28-56" name="__codelineno-28-56" href="#__codelineno-28-56"></a>            <span class="n">icon_chunks</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">typ</span><span class="p">,</span> <span class="n">payload</span><span class="p">))</span>
+<a id="__codelineno-28-57" name="__codelineno-28-57" href="#__codelineno-28-57"></a>
+<a id="__codelineno-28-58" name="__codelineno-28-58" href="#__codelineno-28-58"></a>    <span class="n">h</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">()</span>
+<a id="__codelineno-28-59" name="__codelineno-28-59" href="#__codelineno-28-59"></a>
+<a id="__codelineno-28-60" name="__codelineno-28-60" href="#__codelineno-28-60"></a>    <span class="k">for</span> <span class="n">typ</span><span class="p">,</span> <span class="n">payload</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">icon_chunks</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+<a id="__codelineno-28-61" name="__codelineno-28-61" href="#__codelineno-28-61"></a>        <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">typ</span><span class="p">)</span>
+<a id="__codelineno-28-62" name="__codelineno-28-62" href="#__codelineno-28-62"></a>        <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">u32</span><span class="p">(</span><span class="mi">8</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">payload</span><span class="p">)))</span>
+<a id="__codelineno-28-63" name="__codelineno-28-63" href="#__codelineno-28-63"></a>        <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">u32</span><span class="p">(</span><span class="n">zlib</span><span class="o">.</span><span class="n">crc32</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFFFFFFFF</span><span class="p">))</span>
+<a id="__codelineno-28-64" name="__codelineno-28-64" href="#__codelineno-28-64"></a>
+<a id="__codelineno-28-65" name="__codelineno-28-65" href="#__codelineno-28-65"></a>    <span class="k">return</span> <span class="n">h</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+<a id="__codelineno-28-66" name="__codelineno-28-66" href="#__codelineno-28-66"></a>
+<a id="__codelineno-28-67" name="__codelineno-28-67" href="#__codelineno-28-67"></a>
+<a id="__codelineno-28-68" name="__codelineno-28-68" href="#__codelineno-28-68"></a><span class="k">def</span><span class="w"> </span><span class="nf">ttf_material</span><span class="p">(</span><span class="n">ttf</span><span class="p">):</span>
+<a id="__codelineno-28-69" name="__codelineno-28-69" href="#__codelineno-28-69"></a>    <span class="n">sfnt</span><span class="p">,</span> <span class="n">num_tables</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="s2">&quot;&gt;IH&quot;</span><span class="p">,</span> <span class="n">ttf</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-28-70" name="__codelineno-28-70" href="#__codelineno-28-70"></a>
+<a id="__codelineno-28-71" name="__codelineno-28-71" href="#__codelineno-28-71"></a>    <span class="k">if</span> <span class="n">sfnt</span> <span class="o">!=</span> <span class="mh">0x00010000</span><span class="p">:</span>
+<a id="__codelineno-28-72" name="__codelineno-28-72" href="#__codelineno-28-72"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;embedded TTF has wrong sfnt version&quot;</span><span class="p">)</span>
+<a id="__codelineno-28-73" name="__codelineno-28-73" href="#__codelineno-28-73"></a>
+<a id="__codelineno-28-74" name="__codelineno-28-74" href="#__codelineno-28-74"></a>    <span class="n">name_off</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-28-75" name="__codelineno-28-75" href="#__codelineno-28-75"></a>    <span class="n">p</span> <span class="o">=</span> <span class="mi">12</span>
+<a id="__codelineno-28-76" name="__codelineno-28-76" href="#__codelineno-28-76"></a>
+<a id="__codelineno-28-77" name="__codelineno-28-77" href="#__codelineno-28-77"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_tables</span><span class="p">):</span>
+<a id="__codelineno-28-78" name="__codelineno-28-78" href="#__codelineno-28-78"></a>        <span class="n">tag</span> <span class="o">=</span> <span class="n">ttf</span><span class="p">[</span><span class="n">p</span><span class="p">:</span><span class="n">p</span> <span class="o">+</span> <span class="mi">4</span><span class="p">]</span>
+<a id="__codelineno-28-79" name="__codelineno-28-79" href="#__codelineno-28-79"></a>        <span class="n">checksum_value</span><span class="p">,</span> <span class="n">off</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="s2">&quot;&gt;III&quot;</span><span class="p">,</span> <span class="n">ttf</span><span class="p">,</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
+<a id="__codelineno-28-80" name="__codelineno-28-80" href="#__codelineno-28-80"></a>
+<a id="__codelineno-28-81" name="__codelineno-28-81" href="#__codelineno-28-81"></a>        <span class="k">if</span> <span class="n">tag</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">&quot;name&quot;</span><span class="p">:</span>
+<a id="__codelineno-28-82" name="__codelineno-28-82" href="#__codelineno-28-82"></a>            <span class="n">name_off</span> <span class="o">=</span> <span class="n">off</span>
+<a id="__codelineno-28-83" name="__codelineno-28-83" href="#__codelineno-28-83"></a>
+<a id="__codelineno-28-84" name="__codelineno-28-84" href="#__codelineno-28-84"></a>        <span class="n">p</span> <span class="o">+=</span> <span class="mi">16</span>
+<a id="__codelineno-28-85" name="__codelineno-28-85" href="#__codelineno-28-85"></a>
+<a id="__codelineno-28-86" name="__codelineno-28-86" href="#__codelineno-28-86"></a>    <span class="k">if</span> <span class="n">name_off</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-28-87" name="__codelineno-28-87" href="#__codelineno-28-87"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;embedded TTF has no name table&quot;</span><span class="p">)</span>
+<a id="__codelineno-28-88" name="__codelineno-28-88" href="#__codelineno-28-88"></a>
+<a id="__codelineno-28-89" name="__codelineno-28-89" href="#__codelineno-28-89"></a>    <span class="n">fmt</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">string_offset</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="s2">&quot;&gt;HHH&quot;</span><span class="p">,</span> <span class="n">ttf</span><span class="p">,</span> <span class="n">name_off</span><span class="p">)</span>
+<a id="__codelineno-28-90" name="__codelineno-28-90" href="#__codelineno-28-90"></a>
+<a id="__codelineno-28-91" name="__codelineno-28-91" href="#__codelineno-28-91"></a>    <span class="n">string_base</span> <span class="o">=</span> <span class="n">name_off</span> <span class="o">+</span> <span class="n">string_offset</span>
+<a id="__codelineno-28-92" name="__codelineno-28-92" href="#__codelineno-28-92"></a>    <span class="n">record_pos</span> <span class="o">=</span> <span class="n">name_off</span> <span class="o">+</span> <span class="mi">6</span>
+<a id="__codelineno-28-93" name="__codelineno-28-93" href="#__codelineno-28-93"></a>    <span class="n">records</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-28-94" name="__codelineno-28-94" href="#__codelineno-28-94"></a>
+<a id="__codelineno-28-95" name="__codelineno-28-95" href="#__codelineno-28-95"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+<a id="__codelineno-28-96" name="__codelineno-28-96" href="#__codelineno-28-96"></a>        <span class="n">platform</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="n">language</span><span class="p">,</span> <span class="n">name_id</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">off</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span>
+<a id="__codelineno-28-97" name="__codelineno-28-97" href="#__codelineno-28-97"></a>            <span class="s2">&quot;&gt;HHHHHH&quot;</span><span class="p">,</span>
+<a id="__codelineno-28-98" name="__codelineno-28-98" href="#__codelineno-28-98"></a>            <span class="n">ttf</span><span class="p">,</span>
+<a id="__codelineno-28-99" name="__codelineno-28-99" href="#__codelineno-28-99"></a>            <span class="n">record_pos</span><span class="p">,</span>
+<a id="__codelineno-28-100" name="__codelineno-28-100" href="#__codelineno-28-100"></a>        <span class="p">)</span>
+<a id="__codelineno-28-101" name="__codelineno-28-101" href="#__codelineno-28-101"></a>
+<a id="__codelineno-28-102" name="__codelineno-28-102" href="#__codelineno-28-102"></a>        <span class="n">raw</span> <span class="o">=</span> <span class="n">ttf</span><span class="p">[</span><span class="n">string_base</span> <span class="o">+</span> <span class="n">off</span><span class="p">:</span><span class="n">string_base</span> <span class="o">+</span> <span class="n">off</span> <span class="o">+</span> <span class="n">length</span><span class="p">]</span>
+<a id="__codelineno-28-103" name="__codelineno-28-103" href="#__codelineno-28-103"></a>
+<a id="__codelineno-28-104" name="__codelineno-28-104" href="#__codelineno-28-104"></a>        <span class="k">if</span> <span class="n">name_id</span> <span class="o">&gt;=</span> <span class="mh">0x0100</span><span class="p">:</span>
+<a id="__codelineno-28-105" name="__codelineno-28-105" href="#__codelineno-28-105"></a>            <span class="n">records</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">name_id</span><span class="p">,</span> <span class="n">platform</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="n">language</span><span class="p">,</span> <span class="n">raw</span><span class="p">))</span>
+<a id="__codelineno-28-106" name="__codelineno-28-106" href="#__codelineno-28-106"></a>
+<a id="__codelineno-28-107" name="__codelineno-28-107" href="#__codelineno-28-107"></a>        <span class="n">record_pos</span> <span class="o">+=</span> <span class="mi">12</span>
+<a id="__codelineno-28-108" name="__codelineno-28-108" href="#__codelineno-28-108"></a>
+<a id="__codelineno-28-109" name="__codelineno-28-109" href="#__codelineno-28-109"></a>    <span class="n">h</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">()</span>
+<a id="__codelineno-28-110" name="__codelineno-28-110" href="#__codelineno-28-110"></a>
+<a id="__codelineno-28-111" name="__codelineno-28-111" href="#__codelineno-28-111"></a>    <span class="k">for</span> <span class="n">name_id</span><span class="p">,</span> <span class="n">platform</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="n">language</span><span class="p">,</span> <span class="n">raw</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">records</span><span class="p">):</span>
+<a id="__codelineno-28-112" name="__codelineno-28-112" href="#__codelineno-28-112"></a>        <span class="n">packed</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;&gt;HHHHH&quot;</span><span class="p">,</span> <span class="n">name_id</span><span class="p">,</span> <span class="n">platform</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="n">language</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw</span><span class="p">))</span>
+<a id="__codelineno-28-113" name="__codelineno-28-113" href="#__codelineno-28-113"></a>        <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">packed</span><span class="p">)</span>
+<a id="__codelineno-28-114" name="__codelineno-28-114" href="#__codelineno-28-114"></a>        <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span>
+<a id="__codelineno-28-115" name="__codelineno-28-115" href="#__codelineno-28-115"></a>
+<a id="__codelineno-28-116" name="__codelineno-28-116" href="#__codelineno-28-116"></a>    <span class="k">return</span> <span class="n">h</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+<a id="__codelineno-28-117" name="__codelineno-28-117" href="#__codelineno-28-117"></a>
+<a id="__codelineno-28-118" name="__codelineno-28-118" href="#__codelineno-28-118"></a>
+<a id="__codelineno-28-119" name="__codelineno-28-119" href="#__codelineno-28-119"></a><span class="k">def</span><span class="w"> </span><span class="nf">derive_key</span><span class="p">(</span><span class="n">chunks</span><span class="p">,</span> <span class="n">ttf</span><span class="p">):</span>
+<a id="__codelineno-28-120" name="__codelineno-28-120" href="#__codelineno-28-120"></a>    <span class="n">data</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;CRUSHER2|&quot;</span> <span class="o">+</span> <span class="n">icns_material</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span> <span class="o">+</span> <span class="n">ttf_material</span><span class="p">(</span><span class="n">ttf</span><span class="p">)</span> <span class="o">+</span> <span class="n">LZMA_PROPS</span>
+<a id="__codelineno-28-121" name="__codelineno-28-121" href="#__codelineno-28-121"></a>    <span class="k">return</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+<a id="__codelineno-28-122" name="__codelineno-28-122" href="#__codelineno-28-122"></a>
+<a id="__codelineno-28-123" name="__codelineno-28-123" href="#__codelineno-28-123"></a>
+<a id="__codelineno-28-124" name="__codelineno-28-124" href="#__codelineno-28-124"></a><span class="k">def</span><span class="w"> </span><span class="nf">stream_xor</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<a id="__codelineno-28-125" name="__codelineno-28-125" href="#__codelineno-28-125"></a>    <span class="n">stream</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">()</span>
+<a id="__codelineno-28-126" name="__codelineno-28-126" href="#__codelineno-28-126"></a>    <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-28-127" name="__codelineno-28-127" href="#__codelineno-28-127"></a>
+<a id="__codelineno-28-128" name="__codelineno-28-128" href="#__codelineno-28-128"></a>    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<a id="__codelineno-28-129" name="__codelineno-28-129" href="#__codelineno-28-129"></a>        <span class="n">block</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">key</span> <span class="o">+</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;&gt;I&quot;</span><span class="p">,</span> <span class="n">counter</span><span class="p">))</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+<a id="__codelineno-28-130" name="__codelineno-28-130" href="#__codelineno-28-130"></a>        <span class="n">stream</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
+<a id="__codelineno-28-131" name="__codelineno-28-131" href="#__codelineno-28-131"></a>        <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-28-132" name="__codelineno-28-132" href="#__codelineno-28-132"></a>
+<a id="__codelineno-28-133" name="__codelineno-28-133" href="#__codelineno-28-133"></a>    <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">a</span> <span class="o">^</span> <span class="n">b</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">stream</span><span class="p">))</span>
+<a id="__codelineno-28-134" name="__codelineno-28-134" href="#__codelineno-28-134"></a>
+<a id="__codelineno-28-135" name="__codelineno-28-135" href="#__codelineno-28-135"></a>
+<a id="__codelineno-28-136" name="__codelineno-28-136" href="#__codelineno-28-136"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<a id="__codelineno-28-137" name="__codelineno-28-137" href="#__codelineno-28-137"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-28-138" name="__codelineno-28-138" href="#__codelineno-28-138"></a>        <span class="n">blob</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<a id="__codelineno-28-139" name="__codelineno-28-139" href="#__codelineno-28-139"></a>
+<a id="__codelineno-28-140" name="__codelineno-28-140" href="#__codelineno-28-140"></a>    <span class="n">chunks</span> <span class="o">=</span> <span class="n">parse_icns</span><span class="p">(</span><span class="n">blob</span><span class="p">)</span>
+<a id="__codelineno-28-141" name="__codelineno-28-141" href="#__codelineno-28-141"></a>
+<a id="__codelineno-28-142" name="__codelineno-28-142" href="#__codelineno-28-142"></a>    <span class="n">ttf_payload</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-28-143" name="__codelineno-28-143" href="#__codelineno-28-143"></a>    <span class="n">lzma_payload</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-28-144" name="__codelineno-28-144" href="#__codelineno-28-144"></a>
+<a id="__codelineno-28-145" name="__codelineno-28-145" href="#__codelineno-28-145"></a>    <span class="k">for</span> <span class="n">typ</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">off</span><span class="p">,</span> <span class="n">length</span> <span class="ow">in</span> <span class="n">chunks</span><span class="p">:</span>
+<a id="__codelineno-28-146" name="__codelineno-28-146" href="#__codelineno-28-146"></a>        <span class="k">if</span> <span class="n">typ</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">&quot;ttf &quot;</span><span class="p">:</span>
+<a id="__codelineno-28-147" name="__codelineno-28-147" href="#__codelineno-28-147"></a>            <span class="n">ttf_payload</span> <span class="o">=</span> <span class="n">payload</span>
+<a id="__codelineno-28-148" name="__codelineno-28-148" href="#__codelineno-28-148"></a>        <span class="k">elif</span> <span class="n">typ</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">&quot;lzM4&quot;</span><span class="p">:</span>
+<a id="__codelineno-28-149" name="__codelineno-28-149" href="#__codelineno-28-149"></a>            <span class="n">lzma_payload</span> <span class="o">=</span> <span class="n">payload</span>
+<a id="__codelineno-28-150" name="__codelineno-28-150" href="#__codelineno-28-150"></a>
+<a id="__codelineno-28-151" name="__codelineno-28-151" href="#__codelineno-28-151"></a>    <span class="k">if</span> <span class="n">ttf_payload</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-28-152" name="__codelineno-28-152" href="#__codelineno-28-152"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;missing embedded TTF chunk&quot;</span><span class="p">)</span>
+<a id="__codelineno-28-153" name="__codelineno-28-153" href="#__codelineno-28-153"></a>
+<a id="__codelineno-28-154" name="__codelineno-28-154" href="#__codelineno-28-154"></a>    <span class="k">if</span> <span class="n">lzma_payload</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-28-155" name="__codelineno-28-155" href="#__codelineno-28-155"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;missing embedded LZMA chunk&quot;</span><span class="p">)</span>
+<a id="__codelineno-28-156" name="__codelineno-28-156" href="#__codelineno-28-156"></a>
+<a id="__codelineno-28-157" name="__codelineno-28-157" href="#__codelineno-28-157"></a>    <span class="k">if</span> <span class="n">lzma_payload</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span> <span class="o">!=</span> <span class="n">LZMA_PROPS</span><span class="p">:</span>
+<a id="__codelineno-28-158" name="__codelineno-28-158" href="#__codelineno-28-158"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;unexpected LZMA properties&quot;</span><span class="p">)</span>
+<a id="__codelineno-28-159" name="__codelineno-28-159" href="#__codelineno-28-159"></a>
+<a id="__codelineno-28-160" name="__codelineno-28-160" href="#__codelineno-28-160"></a>    <span class="n">key</span> <span class="o">=</span> <span class="n">derive_key</span><span class="p">(</span><span class="n">chunks</span><span class="p">,</span> <span class="n">ttf_payload</span><span class="p">)</span>
+<a id="__codelineno-28-161" name="__codelineno-28-161" href="#__codelineno-28-161"></a>
+<a id="__codelineno-28-162" name="__codelineno-28-162" href="#__codelineno-28-162"></a>    <span class="n">inner</span> <span class="o">=</span> <span class="n">lzma</span><span class="o">.</span><span class="n">decompress</span><span class="p">(</span><span class="n">lzma_payload</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">lzma</span><span class="o">.</span><span class="n">FORMAT_ALONE</span><span class="p">)</span>
+<a id="__codelineno-28-163" name="__codelineno-28-163" href="#__codelineno-28-163"></a>
+<a id="__codelineno-28-164" name="__codelineno-28-164" href="#__codelineno-28-164"></a>    <span class="k">if</span> <span class="n">inner</span><span class="p">[:</span><span class="mi">8</span><span class="p">]</span> <span class="o">!=</span> <span class="sa">b</span><span class="s2">&quot;CRUSHER2&quot;</span><span class="p">:</span>
+<a id="__codelineno-28-165" name="__codelineno-28-165" href="#__codelineno-28-165"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;bad inner payload magic&quot;</span><span class="p">)</span>
+<a id="__codelineno-28-166" name="__codelineno-28-166" href="#__codelineno-28-166"></a>
+<a id="__codelineno-28-167" name="__codelineno-28-167" href="#__codelineno-28-167"></a>    <span class="n">version</span><span class="p">,</span> <span class="n">flag_len</span><span class="p">,</span> <span class="n">expected_crc</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="s2">&quot;&gt;HBI&quot;</span><span class="p">,</span> <span class="n">inner</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<a id="__codelineno-28-168" name="__codelineno-28-168" href="#__codelineno-28-168"></a>
+<a id="__codelineno-28-169" name="__codelineno-28-169" href="#__codelineno-28-169"></a>    <span class="k">if</span> <span class="n">version</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+<a id="__codelineno-28-170" name="__codelineno-28-170" href="#__codelineno-28-170"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;unexpected payload version&quot;</span><span class="p">)</span>
+<a id="__codelineno-28-171" name="__codelineno-28-171" href="#__codelineno-28-171"></a>
+<a id="__codelineno-28-172" name="__codelineno-28-172" href="#__codelineno-28-172"></a>    <span class="n">ciphertext</span> <span class="o">=</span> <span class="n">inner</span><span class="p">[</span><span class="mi">15</span><span class="p">:</span><span class="mi">15</span> <span class="o">+</span> <span class="n">flag_len</span><span class="p">]</span>
+<a id="__codelineno-28-173" name="__codelineno-28-173" href="#__codelineno-28-173"></a>
+<a id="__codelineno-28-174" name="__codelineno-28-174" href="#__codelineno-28-174"></a>    <span class="n">flag</span> <span class="o">=</span> <span class="n">stream_xor</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+<a id="__codelineno-28-175" name="__codelineno-28-175" href="#__codelineno-28-175"></a>
+<a id="__codelineno-28-176" name="__codelineno-28-176" href="#__codelineno-28-176"></a>    <span class="n">actual_crc</span> <span class="o">=</span> <span class="n">zlib</span><span class="o">.</span><span class="n">crc32</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFFFFFFFF</span>
+<a id="__codelineno-28-177" name="__codelineno-28-177" href="#__codelineno-28-177"></a>
+<a id="__codelineno-28-178" name="__codelineno-28-178" href="#__codelineno-28-178"></a>    <span class="k">if</span> <span class="n">actual_crc</span> <span class="o">!=</span> <span class="n">expected_crc</span><span class="p">:</span>
+<a id="__codelineno-28-179" name="__codelineno-28-179" href="#__codelineno-28-179"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;wrong key or corrupted file&quot;</span><span class="p">)</span>
+<a id="__codelineno-28-180" name="__codelineno-28-180" href="#__codelineno-28-180"></a>
+<a id="__codelineno-28-181" name="__codelineno-28-181" href="#__codelineno-28-181"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">flag</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+<a id="__codelineno-28-182" name="__codelineno-28-182" href="#__codelineno-28-182"></a>
+<a id="__codelineno-28-183" name="__codelineno-28-183" href="#__codelineno-28-183"></a>
+<a id="__codelineno-28-184" name="__codelineno-28-184" href="#__codelineno-28-184"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-28-185" name="__codelineno-28-185" href="#__codelineno-28-185"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-28-186" name="__codelineno-28-186" href="#__codelineno-28-186"></a>        <span class="n">target</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<a id="__codelineno-28-187" name="__codelineno-28-187" href="#__codelineno-28-187"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-28-188" name="__codelineno-28-188" href="#__codelineno-28-188"></a>        <span class="n">target</span> <span class="o">=</span> <span class="s2">&quot;chall.icns&quot;</span>
+<a id="__codelineno-28-189" name="__codelineno-28-189" href="#__codelineno-28-189"></a>
+<a id="__codelineno-28-190" name="__codelineno-28-190" href="#__codelineno-28-190"></a>    <span class="n">main</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+</code></pre></div>
+<p>Running it:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>python3<span class="w"> </span>solve.py<span class="w"> </span>chall.icns
+</code></pre></div>
+<p>prints:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>tjctf{polygl0t_m3tadata_1s_th3_k3y}
+</code></pre></div>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>I think the main trap in this challenge is that the flag is not hidden in one place. There is no single “important” chunk that you can extract and be done with.</p>
+<p>The file is basically a small polyglot puzzle:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>ICNS chunk metadata
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>+ fake icon payload checksums
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>+ TTF name table metadata
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>+ LZMA properties
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>= decryption key
+</code></pre></div>
+<p>The <code>TOC</code> chunk and the weird font names are the main breadcrumbs, but the solve still depends on matching the exact parsing rules of both formats. Sort order, endian-ness, raw string bytes, chunk sizes, and checksums all matter.</p>
+<p>So the real lesson is probably:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>do not just look inside the file
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>look at how the file is put together
+</code></pre></div>
+<p>The final flag was:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>tjctf{polygl0t_m3tadata_1s_th3_k3y}
+</code></pre></div>
+<p>And if another Crusher ever shows up, I am definitely not trusting the file extension first.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/spyduck007" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/ansh-agrawal-3b7a14356/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "content.code.copy", "header.autohide"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="../../javascripts/writeup_filters.js"></script>
+      
+        <script src="../../javascripts/contact_modal.js"></script>
+      
+        <script src="../../javascripts/animations.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
