@@ -27,6 +27,11 @@ Here is a record of my participation and rankings in various CTF competitions.
 
 | Competition                                                                                                                | Rank   | # of Teams |
 | :------------------------------------------------------------------------------------------------------------------------- | :----- | :--------- |
+| [UIUCTF 2026](https://ctftime.org/event/3148)                                                                              | 19th   | 548        |
+| [Lexington Informatics Tournament CTF 2026](https://ctftime.org/event/3373)                                                | 6th    | 509        |
+| [VuwCTF 2026](https://ctftime.org/event/3311)                                                                              | 3rd    | 123        |
+| [ENOWARS 10](https://ctftime.org/event/3324)                                                                               | 35th   | 145        |
+| [OmniCTF 2026 Quals](https://ctftime.org/event/3104)                                                                       | 23rd   | 778        |
 | [LYKNCTF](https://ctftime.org/event/3280)                                                                                  | 54th   | 657        |
 | [No Hack No CTF 2026](https://ctftime.org/event/3180)                                                                      | 6th    | 844        |
 | [SekaiCTF 2026](https://ctftime.org/event/3113)                                                                            | 14th   | 925        |
