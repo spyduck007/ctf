@@ -27,6 +27,10 @@ Here is a record of my participation and rankings in various CTF competitions.
 
 | Competition                                                                                                                | Rank   | # of Teams |
 | :------------------------------------------------------------------------------------------------------------------------- | :----- | :--------- |
+| [ FAUST CTF 2026](https://ctftime.org/event/3312)                                                                          | 87th   | 223        |
+| [TFC CTF 2026](https://ctftime.org/event/3344)                                                                             | 13th   | 504        |
+| [ASIS CTF Quals 2026](https://ctftime.org/event/3033)                                                                      | 36th   | 608        |
+| [z0d1ak CTF Qualifiers](https://ctftime.org/event/3370)                                                                    | 1st 👑 | 420        |
 | [UIUCTF 2026](https://ctftime.org/event/3148)                                                                              | 19th   | 548        |
 | [Lexington Informatics Tournament CTF 2026](https://ctftime.org/event/3373)                                                | 6th    | 509        |
 | [VuwCTF 2026](https://ctftime.org/event/3311)                                                                              | 3rd    | 123        |
