@@ -27,7 +27,9 @@ Here is a record of my participation and rankings in various CTF competitions.
 
 | Competition                                                                                                                | Rank   | # of Teams |
 | :------------------------------------------------------------------------------------------------------------------------- | :----- | :--------- |
-| [ FAUST CTF 2026](https://ctftime.org/event/3312)                                                                          | 87th   | 223        |
+| [Platypwn 2026](https://ctftime.org/event/3082)                                                                            | 1st    | 202        |
+| [DEADFACE CTF 2026](https://ctftime.org/event/3279)                                                                        | 2nd    | 989        |
+| [FAUST CTF 2026](https://ctftime.org/event/3312)                                                                           | 87th   | 223        |
 | [TFC CTF 2026](https://ctftime.org/event/3344)                                                                             | 13th   | 504        |
 | [ASIS CTF Quals 2026](https://ctftime.org/event/3033)                                                                      | 36th   | 608        |
 | [z0d1ak CTF Qualifiers](https://ctftime.org/event/3370)                                                                    | 1st 👑 | 420        |
