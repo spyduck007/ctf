@@ -9,17 +9,17 @@ Here is a record of my participation and rankings in various CTF competitions.
 
 <div class="ctf-stats-grid">
   <div class="stat-box" data-animate data-animate-delay="1">
-    <div class="stat-number" data-count="54">54</div>
+    <div class="stat-number" data-count="65">65</div>
     <div class="stat-title">Competitions</div>
     <div class="stat-desc">Tracked from 2024-2026</div>
   </div>
   <div class="stat-box" data-animate data-animate-delay="2">
-    <div class="stat-number" data-count="9">9</div>
+    <div class="stat-number" data-count="11">11</div>
     <div class="stat-title">1st Place Finishes</div>
     <div class="stat-desc">Across school, national, and global events</div>
   </div>
   <div class="stat-box" data-animate data-animate-delay="3">
-    <div class="stat-number" data-count="25">25</div>
+    <div class="stat-number" data-count="30">30</div>
     <div class="stat-title">Top-10 Finishes</div>
     <div class="stat-desc">Including multiple large international CTFs</div>
   </div>
@@ -27,7 +27,7 @@ Here is a record of my participation and rankings in various CTF competitions.
 
 | Competition                                                                                                                | Rank   | # of Teams |
 | :------------------------------------------------------------------------------------------------------------------------- | :----- | :--------- |
-| [Platypwn 2026](https://ctftime.org/event/3082)                                                                            | 1st    | 202        |
+| [Platypwn 2026](https://ctftime.org/event/3082)                                                                            | 1st 👑 | 202        |
 | [DEADFACE CTF 2026](https://ctftime.org/event/3279)                                                                        | 2nd    | 989        |
 | [FAUST CTF 2026](https://ctftime.org/event/3312)                                                                           | 87th   | 223        |
 | [TFC CTF 2026](https://ctftime.org/event/3344)                                                                             | 13th   | 504        |

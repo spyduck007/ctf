@@ -22,15 +22,15 @@ description: Personal cybersecurity and CTF portfolio of Ansh Agrawal, also know
   </div>
   <div class="hero__stats">
     <div class="hero__stat">
-      <div class="hero__stat-num" data-count="54">54</div>
+      <div class="hero__stat-num" data-count="65">65</div>
       <div class="hero__stat-label">CTF Competitions</div>
     </div>
     <div class="hero__stat">
-      <div class="hero__stat-num" data-count="9">9</div>
+      <div class="hero__stat-num" data-count="11">11</div>
       <div class="hero__stat-label">1st Place Finishes</div>
     </div>
     <div class="hero__stat">
-      <div class="hero__stat-num" data-count="25">25</div>
+      <div class="hero__stat-num" data-count="30">30</div>
       <div class="hero__stat-label">Top-10 Finishes</div>
     </div>
   </div>
@@ -44,38 +44,38 @@ description: Personal cybersecurity and CTF portfolio of Ansh Agrawal, also know
 
 <div class="writeup-grid">
 
-  <a href="write-ups/golfing/" class="writeup-card">
+  <a href="write-ups/xor-os/" class="writeup-card">
     <div class="card-content">
       <div class="card-header">
-        <span class="card-date">2026-07-06</span>
-        <h3 class="card-title">golfing</h3>
+        <span class="card-date">2026-11-20</span>
+        <h3 class="card-title">XOR OS</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">pwn</span><span class="tag">LYKNCTF</span>
+        <span class="tag">crypto</span><span class="tag">WolvCTF-2026</span>
       </div>
     </div>
   </a>
 
-  <a href="write-ups/world-cup-2/" class="writeup-card">
+  <a href="write-ups/the-missing-scan/" class="writeup-card">
     <div class="card-content">
       <div class="card-header">
-        <span class="card-date">2026-07-06</span>
-        <h3 class="card-title">World Cup 2</h3>
+        <span class="card-date">2026-11-20</span>
+        <h3 class="card-title">The Missing Scan</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">forensics</span><span class="tag">LYKNCTF</span>
+        <span class="tag">forensics</span><span class="tag">WolvCTF-2026</span>
       </div>
     </div>
   </a>
 
-  <a href="write-ups/world-cup-1/" class="writeup-card">
+  <a href="write-ups/the-broken-time-capsule/" class="writeup-card">
     <div class="card-content">
       <div class="card-header">
-        <span class="card-date">2026-07-06</span>
-        <h3 class="card-title">World Cup 1</h3>
+        <span class="card-date">2026-11-20</span>
+        <h3 class="card-title">The Broken Time Capsule</h3>
       </div>
       <div class="card-tags">
-        <span class="tag">forensics</span><span class="tag">LYKNCTF</span>
+        <span class="tag">rev</span><span class="tag">WolvCTF-2026</span>
       </div>
     </div>
   </a>

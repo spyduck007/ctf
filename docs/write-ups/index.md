@@ -12,6 +12,7 @@ hide:
       <option value="all">All CTFs</option>
       <option value="0xL4ugh-CTF-v5">0xL4ugh-CTF-v5</option>
       <option value="Advent-of-CTF-2025">Advent-of-CTF-2025</option>
+      <option value="BroncoCTF-2026">BroncoCTF-2026</option>
       <option value="Jeanne-d-Hack-CTF-2026">Jeanne-d-Hack-CTF-2026</option>
       <option value="LakeCTF-Quals-2025">LakeCTF-Quals-2025</option>
       <option value="LYKNCTF">LYKNCTF</option>
@@ -20,6 +21,7 @@ hide:
       <option value="TJCTF-2026">TJCTF-2026</option>
       <option value="TraceBash-CTF-2026">TraceBash-CTF-2026</option>
       <option value="V1T-CTF-2026">V1T-CTF-2026</option>
+      <option value="WolvCTF-2026">WolvCTF-2026</option>
     </select>
   </label>
   <label class="filter-field" for="writeup-category-filter">
@@ -36,10 +38,190 @@ hide:
     </select>
   </label>
   <button class="filter-reset" type="button" hidden>Reset</button>
-  <div class="filter-count" aria-live="polite">79 writeups</div>
+  <div class="filter-count" aria-live="polite">94 writeups</div>
 </div>
 
 <div class="writeup-grid filterable">
+
+  <a href="xor-os/" class="writeup-card" data-category="crypto" data-ctf="WolvCTF-2026" data-tags="crypto WolvCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-11-20</span>
+        <h3 class="card-title">XOR OS</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">crypto</span><span class="tag">WolvCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="the-missing-scan/" class="writeup-card" data-category="forensics" data-ctf="WolvCTF-2026" data-tags="forensics WolvCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-11-20</span>
+        <h3 class="card-title">The Missing Scan</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">forensics</span><span class="tag">WolvCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="the-broken-time-capsule/" class="writeup-card" data-category="rev" data-ctf="WolvCTF-2026" data-tags="rev WolvCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-11-20</span>
+        <h3 class="card-title">The Broken Time Capsule</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">rev</span><span class="tag">WolvCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="on-the-rail-fence/" class="writeup-card" data-category="crypto" data-ctf="WolvCTF-2026" data-tags="crypto WolvCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-11-20</span>
+        <h3 class="card-title">On the Rail Fence</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">crypto</span><span class="tag">WolvCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="motor-city-search/" class="writeup-card" data-category="forensics" data-ctf="WolvCTF-2026" data-tags="forensics WolvCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-11-20</span>
+        <h3 class="card-title">Motor City Search</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">forensics</span><span class="tag">WolvCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="motor-city-hotwire/" class="writeup-card" data-category="rev" data-ctf="WolvCTF-2026" data-tags="rev WolvCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-11-20</span>
+        <h3 class="card-title">Motor City Hotwire</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">rev</span><span class="tag">WolvCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="maize-poster/" class="writeup-card" data-category="crypto" data-ctf="WolvCTF-2026" data-tags="crypto WolvCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-11-20</span>
+        <h3 class="card-title">Maize Poster</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">crypto</span><span class="tag">WolvCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="in-jeopardy/" class="writeup-card" data-category="rev" data-ctf="WolvCTF-2026" data-tags="rev WolvCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-11-20</span>
+        <h3 class="card-title">In Jeopardy!</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">rev</span><span class="tag">WolvCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="cancelled/" class="writeup-card" data-category="crypto" data-ctf="WolvCTF-2026" data-tags="crypto WolvCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-11-20</span>
+        <h3 class="card-title">Cancelled</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">crypto</span><span class="tag">WolvCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="a-very-meta-ctf/" class="writeup-card" data-category="forensics" data-ctf="WolvCTF-2026" data-tags="forensics WolvCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-11-20</span>
+        <h3 class="card-title">A Very Meta CTF</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">forensics</span><span class="tag">WolvCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="terminal-diff/" class="writeup-card" data-category="misc" data-ctf="BroncoCTF-2026" data-tags="misc BroncoCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-11</span>
+        <h3 class="card-title">Terminal Diff</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">misc</span><span class="tag">BroncoCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="negative-bread/" class="writeup-card" data-category="rev" data-ctf="BroncoCTF-2026" data-tags="rev BroncoCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-11</span>
+        <h3 class="card-title">Negative Bread</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">rev</span><span class="tag">BroncoCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="mirror-mirror/" class="writeup-card" data-category="rev" data-ctf="BroncoCTF-2026" data-tags="rev BroncoCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-11</span>
+        <h3 class="card-title">Mirror Mirror</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">rev</span><span class="tag">BroncoCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="cat-simulator/" class="writeup-card" data-category="rev" data-ctf="BroncoCTF-2026" data-tags="rev BroncoCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-11</span>
+        <h3 class="card-title">Cat Simulator</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">rev</span><span class="tag">BroncoCTF-2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="atomic-substitution-theory/" class="writeup-card" data-category="misc" data-ctf="BroncoCTF-2026" data-tags="misc BroncoCTF-2026">
+    <div class="card-content">
+      <div class="card-header">
+        <span class="card-date">2026-07-11</span>
+        <h3 class="card-title">Atomic Substitution Theory</h3>
+      </div>
+      <div class="card-tags">
+        <span class="tag">misc</span><span class="tag">BroncoCTF-2026</span>
+      </div>
+    </div>
+  </a>
 
   <a href="golfing/" class="writeup-card" data-category="pwn" data-ctf="LYKNCTF" data-tags="pwn LYKNCTF">
     <div class="card-content">
